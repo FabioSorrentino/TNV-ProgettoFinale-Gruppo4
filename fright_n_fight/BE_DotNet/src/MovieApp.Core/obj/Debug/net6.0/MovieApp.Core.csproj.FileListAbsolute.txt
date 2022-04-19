@@ -1,0 +1,12 @@
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\bin\Debug\net6.0\MovieApp.Core.deps.json
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\bin\Debug\net6.0\MovieApp.Core.dll
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\bin\Debug\net6.0\MovieApp.Core.pdb
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\MovieApp.Core.csproj.AssemblyReference.cache
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\MovieApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\MovieApp.Core.AssemblyInfoInputs.cache
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\MovieApp.Core.AssemblyInfo.cs
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\MovieApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\MovieApp.Core.dll
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\refint\MovieApp.Core.dll
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\MovieApp.Core.pdb
+C:\Users\fabio\Desktop\MovieApp\src\MovieApp.Core\obj\Debug\net6.0\ref\MovieApp.Core.dll

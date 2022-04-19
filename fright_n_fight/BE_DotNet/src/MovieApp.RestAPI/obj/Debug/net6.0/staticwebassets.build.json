@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "at7z0+uEjLBJlByPpAQtVmsuIzQZAFxRTCerFJKE2F0=",
+  "Source": "MovieApp.RestAPI",
+  "BasePath": "_content/MovieApp.RestAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
