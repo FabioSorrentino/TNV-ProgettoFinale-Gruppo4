@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabio\\Desktop\\MovieApp\\src\\MovieApp.Core\\MovieApp.Core.csproj",
+      "projectUniqueName": "C:\\Users\\fabio\\Desktop\\ProgettoFinaleTNV\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.Core\\MovieApp.Core.csproj",
       "projectName": "MovieApp.Core",
-      "projectPath": "C:\\Users\\fabio\\Desktop\\MovieApp\\src\\MovieApp.Core\\MovieApp.Core.csproj",
+      "projectPath": "C:\\Users\\fabio\\Desktop\\ProgettoFinaleTNV\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.Core\\MovieApp.Core.csproj",
       "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabio\\Desktop\\MovieApp\\src\\MovieApp.Core\\obj\\",
+      "outputPath": "C:\\Users\\fabio\\Desktop\\ProgettoFinaleTNV\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",

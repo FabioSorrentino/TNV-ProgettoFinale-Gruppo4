@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+sCMR+HA2gBOz5lppnMyRdh+djjTuoTKQ6y3vJLL6HbgmRDYqTBoPQgzDTdjFmWI0IfdI3JvGTHIlSOXFf4P0g==",
+  "dgSpecHash": "2kdyyjZSAlTAKKtTiHclDTgAbaSDuG/kROmxR+jl7BtY8fIxGX/QT7JrK37oeZ3T10ufCS6y6e37sYX4BwAbKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabio\\Desktop\\MovieApp\\src\\MovieApp.RestAPI\\MovieApp.RestAPI.csproj",
+  "projectFilePath": "C:\\Users\\fabio\\Desktop\\ProgettoFinaleTNV\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.RestAPI\\MovieApp.RestAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabio\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\fabio\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
