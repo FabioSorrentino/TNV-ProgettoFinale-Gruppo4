@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { CommentiComponent } from './components/commenti/commenti.component';
 import { DeleteCommentComponent } from './delete-comment/delete-comment.component';
 import { ListCommentsComponent } from './list-comments/list-comments.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material.module';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -15,12 +18,17 @@ import { ListCommentsComponent } from './list-comments/list-comments.component';
     CommentiComponent,
     DeleteCommentComponent,
     ListCommentsComponent,
+    NavigationComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
