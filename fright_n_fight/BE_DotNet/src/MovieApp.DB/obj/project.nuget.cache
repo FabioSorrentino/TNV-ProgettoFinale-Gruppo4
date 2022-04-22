@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NKM+2qomu2RQH2zWvIjLXlt6r4TdOrQM0AhAwZfXBtRSRl3OQEYFRZPDbOtIj39WVOQ216o37epiMq1lquPxog==",
+  "dgSpecHash": "WN55PFWfgy9BIX/ZNiL4MsjQvu1CVxIFwQ3jPe9je/XekrdodRYcitIVoPVZniXF0/jiKs+ReWEvadTc9FafdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabio\\Desktop\\ProgettoFinaleTNV\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\MovieApp.DB.csproj",
+  "projectFilePath": "C:\\Users\\fabio\\Desktop\\TNV-FinalProject\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\MovieApp.DB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabio\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\fabio\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.1\\microsoft.entityframeworkcore.6.0.1.nupkg.sha512",
