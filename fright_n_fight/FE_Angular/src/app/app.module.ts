@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { InsertRatingComponent } from './components/insert-rating/insert-rating.
     DeleteCommentComponent,
     ListCommentsComponent,
     NavigationComponent,
-    InsertRatingComponent
+    InsertRatingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

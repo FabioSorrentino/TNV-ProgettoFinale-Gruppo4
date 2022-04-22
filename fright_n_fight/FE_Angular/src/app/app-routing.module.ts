@@ -5,12 +5,14 @@ import { DeleteCommentComponent } from './components/delete-comment/delete-comme
 import { ListCommentsComponent } from './components/list-comments/list-comments.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
     { path: '', component: NavigationComponent},
     { path: 'comments', component: CommentiComponent},
     { path: 'comments/list', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
+    { path: 'login', component: LoginComponent },
     { path: 'rating', component: InsertRatingComponent},
     { path:'', redirectTo: '/', pathMatch: 'full'}
   ];
