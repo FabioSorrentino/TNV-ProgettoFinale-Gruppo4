@@ -1,0 +1,26 @@
+
+
+<form #commentsForm="ngForm" (submit)="createComment(commentsForm)">
+    <input
+        [ngModel]
+        name="user_id"
+        placeholder="user_id"
+        type="number" 
+    >
+
+    <input
+        [ngModel]
+        name="movie_id"
+        placeholder="movie_id"
+        type="number" 
+    >
+
+    <input 
+        [ngModel]
+        name="comment"
+        placeholder="comment"
+        type="text" maxlength="160"
+    >
+    <button type="submit">Create Comment</button>
+  </form>
+  

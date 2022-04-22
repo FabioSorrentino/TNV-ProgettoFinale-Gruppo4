@@ -1,3 +1,10 @@
+#.net
+*.cache
+*.AssemblyInfo.cs
+
+#VScode
+.vscode/*
+
 # Logs
 logs
 *.log

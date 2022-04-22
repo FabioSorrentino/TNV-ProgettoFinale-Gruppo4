@@ -176,7 +176,7 @@ namespace MovieApp.RestAPI.Controllers
 
         [EnableCors("Policy1")]
         [HttpDelete]
-        [Route("{comment-id}")]
+        [Route("delete/{comment-id}")]
         public ActionResult<bool> DeleteCommentById([FromRoute(Name = "comment-id")] int commentId)
         {
             try

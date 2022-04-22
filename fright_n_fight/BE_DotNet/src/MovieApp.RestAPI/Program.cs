@@ -31,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseCors("Policy1");
 
 app.UseAuthorization();
