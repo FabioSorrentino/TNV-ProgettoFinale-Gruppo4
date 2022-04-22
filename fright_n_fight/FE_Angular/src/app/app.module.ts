@@ -5,12 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommentiComponent } from './components/create-comment/create-comment.component';
-import { DeleteCommentComponent } from './delete-comment/delete-comment.component';
-import { ListCommentsComponent } from './list-comments/list-comments.component';
+import { DeleteCommentComponent } from './components/delete-comment/delete-comment.component';
+import { ListCommentsComponent } from './components/list-comments/list-comments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
-import { NavigationComponent } from './navigation/navigation.component';
-import { InsertRatingComponent } from './insert-rating/insert-rating.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
 
 
 @NgModule({

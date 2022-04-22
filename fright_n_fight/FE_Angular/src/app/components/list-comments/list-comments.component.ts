@@ -5,7 +5,7 @@ import { Comments } from 'src/app/models/comments';
 @Component({
   selector: 'app-list-comments',
   templateUrl: './list-comments.component.html',
-  styleUrls: ['./list-comments.component.css']
+  styleUrls: ['./list-comments.component.scss']
 })
 export class ListCommentsComponent implements OnInit {
 

@@ -1,0 +1,22 @@
+<form #loginForm="ngForm" (submit)="login(loginForm)">
+    <input
+        [ngModel]
+        name="username"
+        type="text" 
+        placeholder="username"
+    >
+
+    <input
+        [ngModel]
+        name="password"
+        type="password" 
+        placeholder="password"
+    >
+    <button type="submit">Login</button>
+  </form>
+
+  <div *ngFor="let prova of stringProva">
+      <li>
+          <ul>{{prova}}</ul>
+      </li>
+  </div>

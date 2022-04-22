@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-insert-rating',
   templateUrl: './insert-rating.component.html',
-  styleUrls: ['./insert-rating.component.css']
+  styleUrls: ['./insert-rating.component.scss']
 })
 export class InsertRatingComponent implements OnInit {
 
