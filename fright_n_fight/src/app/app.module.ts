@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommentiComponent } from './components/commenti/commenti.component';
+import { CommentiComponent } from './components/create-comment/create-comment.component';
 import { DeleteCommentComponent } from './delete-comment/delete-comment.component';
 import { ListCommentsComponent } from './list-comments/list-comments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

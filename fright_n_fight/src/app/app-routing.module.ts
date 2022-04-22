@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CommentiComponent } from './components/commenti/commenti.component';
+import { CommentiComponent } from './components/create-comment/create-comment.component';
 import { DeleteCommentComponent } from './delete-comment/delete-comment.component';
 import { ListCommentsComponent } from './list-comments/list-comments.component';
 import { NavigationComponent } from './navigation/navigation.component';

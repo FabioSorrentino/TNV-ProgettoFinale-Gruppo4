@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-commenti',
-  templateUrl: './commenti.component.html',
-  styleUrls: ['./commenti.component.css']
+  selector: 'app-create-comment',
+  templateUrl: './create-comment.component.html',
+  styleUrls: ['./create-comment.component.css']
 })
 export class CommentiComponent implements OnInit {
 

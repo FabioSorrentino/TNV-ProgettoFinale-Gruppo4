@@ -1,3 +1,5 @@
+
+
 <form #commentsForm="ngForm" (submit)="createComment(commentsForm)">
     <input
         [ngModel]
@@ -10,16 +12,15 @@
         [ngModel]
         name="movie_id"
         placeholder="movie_id"
-
         type="number" 
     >
 
-    <input
+    <input 
         [ngModel]
         name="comment"
         placeholder="comment"
-
-        type="text" 
+        type="text" maxlength="160"
     >
     <button type="submit">Create Comment</button>
   </form>
+  
