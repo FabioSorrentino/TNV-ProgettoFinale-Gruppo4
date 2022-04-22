@@ -10,6 +10,7 @@ import { ListCommentsComponent } from './list-comments/list-comments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { NavigationComponent } from './navigation/navigation.component';
+import { InsertRatingComponent } from './insert-rating/insert-rating.component';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     DeleteCommentComponent,
     ListCommentsComponent,
     NavigationComponent,
-    
+    InsertRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,6 @@ import { NavigationComponent } from './navigation/navigation.component';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

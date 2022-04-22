@@ -1,0 +1,75 @@
+<form #ratingForm="ngForm" (submit)="newRating(ratingForm)">
+    <p> Id Film:<input
+        
+        [ngModel]
+        name="movie_id"
+        placeholder="ID Film"
+        type="text" 
+        
+
+        
+    >
+</p>
+
+<p> Id User: 
+    <input
+        [ngModel]
+        name="user_id"
+        placeholder="user id"
+        type="text" 
+    >
+    <br>
+</p>
+<p> Rating: <br>   
+    &nbsp;<input 
+        [ngModel]
+        name="movie_rating"
+        id="1"
+        type="radio"
+        value="1"
+    >
+    <label for="1">1</label> <br>
+
+    
+    &nbsp;<input 
+        [ngModel]
+        name="movie_rating"
+        id="2"
+        type="radio"
+        value="2"
+    >
+    <label for="2">2</label><br>
+
+    
+    &nbsp;<input 
+        [ngModel]
+        name="movie_rating"
+        id="3"
+        type="radio"
+        value="3"
+    >
+    <label for="3">3</label><br>
+
+    
+    &nbsp;<input 
+        [ngModel]
+        name="movie_rating"
+        id="4"
+        type="radio"
+        value="4"
+    >
+    <label for="4">4</label><br>
+
+    
+    &nbsp;<input 
+        [ngModel]
+        name="movie_rating"
+        id="5"
+        type="radio"
+        value="5"
+    >
+    <label for="5">5</label><br>
+    <br>
+</p>
+    <button type="submit">Vota!</button>
+  </form>
