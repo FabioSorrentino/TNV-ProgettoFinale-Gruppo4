@@ -17,15 +17,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginForm: NgForm) {
-    //let credentials = {'Authorization': btoa(Object.values(loginForm.value).toString().replace(',',':'))};
-    let credentials = 'Basic ' + btoa('admin:1234');//{'Authorization': btoa('admin:1234')};
+    let credentials = 'Basic ' + btoa(Object.values(loginForm.value).toString().replace(',',':'));
     let header = {'Authorization': credentials}
     this.httpClient.get<boolean>('http://localhost:8080/login', {headers: header}).subscribe({
       next: (res) => console.log(res),
       error: () => console.log()
     });
 
-    this.httpClient.get<boolean>('http://localhost:8080/user', {headers: header}).subscribe({
+    /*this.httpClient.get<boolean>('http://localhost:8080/user', {headers: header}).subscribe({
       next: (res) => console.log(res),
       error: () => console.log()
     });
@@ -33,6 +32,6 @@ export class LoginComponent implements OnInit {
     this.httpClient.get<boolean>('http://localhost:8080/admin', {headers: header}).subscribe({
       next: (res) => console.log(res),
       error: () => console.log()
-    });
+    });*/
   }
 }

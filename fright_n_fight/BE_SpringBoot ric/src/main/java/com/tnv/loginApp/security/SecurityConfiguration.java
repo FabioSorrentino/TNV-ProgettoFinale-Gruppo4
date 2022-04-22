@@ -3,6 +3,7 @@ package com.tnv.loginApp.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -26,33 +27,36 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .dataSource(this.dataSource)
-                .withUser("user")
+                .usersByUsernameQuery("select username,password,enabled "
+                        + "from users "
+                        + "where username = ?")
+                .authoritiesByUsernameQuery("select username, authority "
+                        + "from authorities "
+                        + "where username = ?");
+                // FIRST RUN CONFIG
+                /*.withUser("user")
                 .password(passwordEncoder.encode("1234"))
                 .roles("USER")
                 .and()
                 .withUser("admin")
                 .password(passwordEncoder.encode("1234"))
-                .roles("ADMIN");
-                /*.usersByUsernameQuery("select username,password,enabled "
-                        + "from users "
-                        + "where username = ?")
-                .authoritiesByUsernameQuery("select username, authority "
-                        + "from authorities "
-                        + "where username = ?");*/
+                .roles("ADMIN");*/
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        // CORS config
         http.cors().and()
                 .authorizeRequests()
-                //.antMatchers("login/*").permitAll()
-                .antMatchers("/*").hasAnyRole("USER")
-                .antMatchers("/*").hasAnyRole("ADMIN")
-                .anyRequest().authenticated()
-                .and().httpBasic();
+                .antMatchers("login/*").permitAll()
+                //.antMatchers("/*").hasAnyRole("USER")
+                //.antMatchers("/*").hasAnyRole("ADMIN")
+                //.anyRequest().authenticated()
+                //.and().httpBasic();
 
                 //.and().authorizeRequests().anyRequest().permitAll(); // this works
-                /*.and()
+                .and()
+         /* http */ // CSRF config
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/*")
@@ -65,7 +69,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .httpBasic();*/
+                .httpBasic();
     }
 
     /*@Bean
