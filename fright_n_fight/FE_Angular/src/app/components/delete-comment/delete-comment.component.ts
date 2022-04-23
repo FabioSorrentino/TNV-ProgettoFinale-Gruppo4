@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BackendApiService } from 'src/app/backend-api.service';
 
 import { Comments } from 'src/app/models/comments';
 
@@ -12,7 +13,7 @@ import { Comments } from 'src/app/models/comments';
 export class DeleteCommentComponent implements OnInit {
 
   commentId: number;
-  constructor(private httpClient: HttpClient, activatedRoute: ActivatedRoute) {
+  constructor(private httpClient: HttpClient, activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
     this.commentId = +activatedRoute.snapshot.params['commentId'];
    }
 
@@ -22,10 +23,10 @@ export class DeleteCommentComponent implements OnInit {
   }
 
   deleteComment() {
-    this.httpClient.delete<Comments>(`http://localhost:5161/comments/delete/${this.commentId}`)
+    this.backendAPIService.deleteComment(this.commentId)
     .subscribe({
       error: () => console.log('error'),
-      complete: () => console.log('list comments') 
+      complete: () => console.log('delete complete') 
     });
   }
 }

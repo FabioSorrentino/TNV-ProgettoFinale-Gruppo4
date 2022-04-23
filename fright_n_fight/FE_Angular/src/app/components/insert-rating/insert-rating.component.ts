@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { BackendApiService } from 'src/app/backend-api.service';
 
 @Component({
   selector: 'app-insert-rating',
@@ -9,13 +10,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InsertRatingComponent implements OnInit {
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient, private backendAPIService: BackendApiService) { }
 
   ngOnInit(): void {
   }
 
-  newRating (ratingForm: NgForm) {
-    this.httpClient.post(`http://localhost:8000/api/movie`, ratingForm.value).subscribe({
+  createNewRating (ratingForm: NgForm) {
+    this.backendAPIService.createNewRating(ratingForm.value).subscribe({
       next: () => console.log('New rating created!'),
       error: () => console.log('Error!')
     });

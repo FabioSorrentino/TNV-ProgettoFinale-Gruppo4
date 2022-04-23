@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListCommentsComponent } from './list-comments.component';
+import { GetRatingComponent } from './get-rating.component';
 
-describe('ListCommentsComponent', () => {
-  let component: ListCommentsComponent;
-  let fixture: ComponentFixture<ListCommentsComponent>;
+describe('GetRatingComponent', () => {
+  let component: GetRatingComponent;
+  let fixture: ComponentFixture<GetRatingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListCommentsComponent ]
+      declarations: [ GetRatingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListCommentsComponent);
+    fixture = TestBed.createComponent(GetRatingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
