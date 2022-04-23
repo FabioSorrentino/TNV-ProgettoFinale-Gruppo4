@@ -1,7 +1,5 @@
 package com.tnv.loginApp.model;
-
 import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 
 @Entity
@@ -38,5 +36,5 @@ public class User {
 
     public boolean getEnabledStatus() { return enabled; }
 
-    public void setEnabledStatus(boolean isEnabled) { this.enabled = enabled; }
+    public void setEnabledStatus(boolean enabled) { this.enabled = enabled; }
 }
