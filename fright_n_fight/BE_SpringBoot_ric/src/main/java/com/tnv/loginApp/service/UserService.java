@@ -2,17 +2,11 @@ package com.tnv.loginApp.service;
 
 import com.tnv.loginApp.dao.UserRepositoryDAO;
 import com.tnv.loginApp.model.User;
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.servlet.http.HttpServletRequest;
-import java.net.http.HttpResponse;
-import java.util.Base64;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -22,23 +16,6 @@ public class UserService {
     @Autowired
     public UserService(@Qualifier("dbUserDAO") UserRepositoryDAO userDAO) {
         _userDAO = userDAO;
-    }
-
-    public boolean login(String authorization) {
-        //for (User userToFind: getAllUsers()) {
-            //return userToFind.getUsername().equals(user.getUsername());
-            //if(userToFind.getUsername().equals(user.getUsername()))
-                //return passwordEncoder.matches(user.getPassword(),userToFind.getPassword());
-        //}
-        System.out.println(authorization);
-
-        return true;
-    }
-
-    public String user(HttpServletRequest request) {
-        String authToken = request.getHeader("Authorization")
-                .substring("Basic".length()).trim();
-        return new String(Base64.getDecoder().decode(authToken)).split(":")[0];
     }
 
     public String addUser(User user) {
@@ -56,8 +33,15 @@ public class UserService {
     }
 
     public User getUserById(int userId){
-        Optional result = _userDAO.findById(userId);
-        return (User) result.get();
+        return (User) _userDAO.findById(userId).get();
+    }
+
+    public Integer getUserIdByUsername(String username){
+        for (User user: this.getAllUsers()) {
+            if(user.getUsername().equals(username))
+                return user.getId();
+        }
+        return null;
     }
 
     public User updateUser(int userId, User updatedUser){

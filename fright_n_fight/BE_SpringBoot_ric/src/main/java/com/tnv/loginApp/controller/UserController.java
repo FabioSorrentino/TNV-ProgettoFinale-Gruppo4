@@ -4,6 +4,7 @@ import com.tnv.loginApp.model.User;
 import com.tnv.loginApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.Base64;
 
 @RestController
 //@RequestMapping("/users")
@@ -17,25 +18,15 @@ public class UserController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/login")
-    public boolean login(@RequestHeader(required = false, value="Authorization") String authorization) {
-        return _userService.login(authorization);
+    public Integer login(@RequestHeader(required = false, value="Authorization") String authorization) {
+        String username = new String(
+                Base64.getDecoder().decode(authorization // decodes Authorizazion header
+                        .substring("Basic".length()).trim())) // trims "Basic" from header
+                        .split(":")[0]; // selects username property
+        return _userService.getUserIdByUsername(username);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/user")
-    public boolean user(@RequestHeader(required = false, value="Authorization") String authorization) {
-        System.out.println(authorization);
-        return true;
-    }
-
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/admin")
-    public boolean admin(@RequestHeader(required = false, value="Authorization") String authorization) {
-        System.out.println(authorization);
-        return true;
-    }
-
-    @PostMapping("/")
+    @PostMapping("/adduser")
     public String AddUser(@RequestBody User user) {
         return _userService.addUser(user);
     }

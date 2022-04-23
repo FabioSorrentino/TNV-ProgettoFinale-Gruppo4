@@ -1,7 +1,6 @@
 package com.tnv.loginApp.model;
 
 import com.sun.istack.NotNull;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Index;
