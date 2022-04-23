@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { GetRatingComponent } from './components/get-rating/get-rating.component
     NavigationComponent,
     InsertRatingComponent,
     LoginComponent,
-    GetRatingComponent
+    GetRatingComponent,
+    
   ],
   imports: [
     BrowserModule,

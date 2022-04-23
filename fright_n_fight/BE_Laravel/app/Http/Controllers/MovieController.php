@@ -113,10 +113,10 @@ class MovieController extends Controller
     }
 
     public function getRatingByMovieId($movie_id){
-        return response()->json([
-            'Ratings'=>new MovieCollection( Movie::where('movie_id','LIKE',$movie_id)->get()),
-            'Response Status'=>Response::HTTP_OK
-        ]);
+        return response()->json(
+            new MovieCollection( Movie::where('movie_id','LIKE',$movie_id)->get()),
+            
+        );
     }
 
     public function getRatingByUserId($user_id){

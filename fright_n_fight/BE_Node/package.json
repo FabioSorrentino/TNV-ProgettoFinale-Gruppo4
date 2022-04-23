@@ -1,0 +1,18 @@
+{
+  "name": "FavouriteMovie",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "BE Node for manage favourites film",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Davide Saddi, Fabio Sorrentino, Riccardo Pilloni, Alessandro Murtas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.4"
+  }
+}

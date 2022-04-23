@@ -106,3 +106,39 @@ C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_figh
 C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.pdb
 C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.genruntimeconfig.cache
 C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\ref\MovieApp.RestAPI.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.RestAPI.exe
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.RestAPI.deps.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.RestAPI.runtimeconfig.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.RestAPI.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.RestAPI.pdb
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.Core.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.DB.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.Core.pdb
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\bin\Debug\net6.0\MovieApp.DB.pdb
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.csproj.AssemblyReference.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.AssemblyInfoInputs.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.AssemblyInfo.cs
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\scopedcss\bundle\MovieApp.RestAPI.styles.css
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.csproj.CopyComplete
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\refint\MovieApp.RestAPI.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.pdb
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\MovieApp.RestAPI.genruntimeconfig.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.RestAPI\obj\Debug\net6.0\ref\MovieApp.RestAPI.dll

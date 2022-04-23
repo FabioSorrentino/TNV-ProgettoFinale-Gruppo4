@@ -757,19 +757,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fabio\\.nuget\\packages\\": {}
+    "C:\\Users\\david\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabio\\Desktop\\TNV-FinalProject\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\MovieApp.DB.csproj",
+      "projectUniqueName": "C:\\Users\\david\\OneDrive\\Desktop\\tnv\\PROGETTO FINALE\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\MovieApp.DB.csproj",
       "projectName": "MovieApp.DB",
-      "projectPath": "C:\\Users\\fabio\\Desktop\\TNV-FinalProject\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\MovieApp.DB.csproj",
-      "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabio\\Desktop\\TNV-FinalProject\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\obj\\",
+      "projectPath": "C:\\Users\\david\\OneDrive\\Desktop\\tnv\\PROGETTO FINALE\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\MovieApp.DB.csproj",
+      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\david\\OneDrive\\Desktop\\tnv\\PROGETTO FINALE\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.DB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -783,8 +783,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\fabio\\Desktop\\TNV-FinalProject\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.Core\\MovieApp.Core.csproj": {
-              "projectPath": "C:\\Users\\fabio\\Desktop\\TNV-FinalProject\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.Core\\MovieApp.Core.csproj"
+            "C:\\Users\\david\\OneDrive\\Desktop\\tnv\\PROGETTO FINALE\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.Core\\MovieApp.Core.csproj": {
+              "projectPath": "C:\\Users\\david\\OneDrive\\Desktop\\tnv\\PROGETTO FINALE\\TNV-ProgettoFinale-Gruppo4\\fright_n_fight\\BE_DotNet\\src\\MovieApp.Core\\MovieApp.Core.csproj"
             }
           }
         }
@@ -825,7 +825,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

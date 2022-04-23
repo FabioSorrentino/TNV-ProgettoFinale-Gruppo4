@@ -30,11 +30,11 @@ export class BackendApiService {
   //servizi Laravel
 
   createNewRating(rating: Rating){
-    return this.httpClient.post(`http://localhost:8000/api/movie`, rating);
+    return this.httpClient.post<Rating>(`http://localhost:8000/api/movie`, rating);
   }
 
   getRating (movie_id: number | null){
-    return this.httpClient.get(`http://localhost:8000/api/movie_id/${movie_id}`)
+    return this.httpClient.get<Rating>(`http://localhost:8000/api/movie_id/${movie_id}`)
   }
 
 }

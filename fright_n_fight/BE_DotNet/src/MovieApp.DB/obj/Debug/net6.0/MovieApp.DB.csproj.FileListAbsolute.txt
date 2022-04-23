@@ -49,3 +49,20 @@ C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_figh
 C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.pdb
 C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.genruntimeconfig.cache
 C:\Users\fabio\Desktop\TNV-FinalProject\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\ref\MovieApp.DB.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\bin\Debug\net6.0\MovieApp.DB.deps.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\bin\Debug\net6.0\MovieApp.DB.runtimeconfig.json
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\bin\Debug\net6.0\MovieApp.DB.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\bin\Debug\net6.0\MovieApp.DB.pdb
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\bin\Debug\net6.0\MovieApp.Core.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\bin\Debug\net6.0\MovieApp.Core.pdb
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.csproj.AssemblyReference.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.AssemblyInfoInputs.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.AssemblyInfo.cs
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.csproj.CopyComplete
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\refint\MovieApp.DB.dll
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.pdb
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\MovieApp.DB.genruntimeconfig.cache
+C:\Users\david\OneDrive\Desktop\tnv\PROGETTO FINALE\TNV-ProgettoFinale-Gruppo4\fright_n_fight\BE_DotNet\src\MovieApp.DB\obj\Debug\net6.0\ref\MovieApp.DB.dll

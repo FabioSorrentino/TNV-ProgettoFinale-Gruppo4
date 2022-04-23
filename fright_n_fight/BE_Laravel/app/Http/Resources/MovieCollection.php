@@ -15,7 +15,7 @@ class MovieCollection extends ResourceCollection
     public function toArray($request)
     {
         return $this->collection;
-            //'author' => 'Fabio Sorrentino'
+          
         
     }
 }
