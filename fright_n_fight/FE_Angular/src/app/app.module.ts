@@ -13,6 +13,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
 import { LoginComponent } from './components/login/login.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
+import { GetFavouriteMoviesComponent } from './get-favourite-movies/get-favourite-movies.component';
 
 
 
@@ -26,6 +27,7 @@ import { GetRatingComponent } from './components/get-rating/get-rating.component
     InsertRatingComponent,
     LoginComponent,
     GetRatingComponent,
+    GetFavouriteMoviesComponent,
     
   ],
   imports: [

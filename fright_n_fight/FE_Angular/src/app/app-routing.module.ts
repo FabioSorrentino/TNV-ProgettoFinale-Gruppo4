@@ -6,6 +6,7 @@ import { ListCommentsComponent } from './components/get-comment/get-comment.comp
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { LoginComponent } from './components/login/login.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
+import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'rating', component: GetRatingComponent},
     { path: 'rating/:movie_id', component: GetRatingComponent},
+    { path: 'favourites', component: GetFavouriteMoviesComponent},
     { path:'', redirectTo: '/', pathMatch: 'full'}
   ];
   
