@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Comments } from './models/comments';
+import { FavouriteMovie } from './models/favouriteMovie';
 import { Rating } from './models/rating';
 
 @Injectable({
@@ -34,7 +35,24 @@ export class BackendApiService {
   }
 
   getRating (movie_id: number | null){
-    return this.httpClient.get<Rating>(`http://localhost:8000/api/movie_id/${movie_id}`)
+    return this.httpClient.get<Rating>(`http://localhost:8000/api/movie_id/${movie_id}`);
   }
 
+  //servizi NODE
+
+  getAllFavouriteMovies(){
+    return this.httpClient.get<FavouriteMovie[]>(`http://localhost:3001/favourites`);
+  }
+
+  getFavouriteMovieById(movie_id: number | null){
+    return this.httpClient.get<FavouriteMovie>(`http://localhost:3001/favourites/${movie_id}`);
+  }
+
+  createFavouriteMovie(movie: FavouriteMovie){
+    return this.httpClient.post<FavouriteMovie>(`http://localhost:3001/favourites`, movie);
+  }
+
+  deleteFavouriteMovie(movie_id: number | null){
+    return this.httpClient.delete<FavouriteMovie>(`http://localhost:3001/favourites/${movie_id}`);
+  }
 }
