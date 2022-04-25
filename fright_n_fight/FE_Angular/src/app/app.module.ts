@@ -13,7 +13,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
 import { LoginComponent } from './components/login/login.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
-import { GetFavouriteMoviesComponent } from './get-favourite-movies/get-favourite-movies.component';
+import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
+import { CreateFavouriteMovieComponent } from './components/create-favourite-movie/create-favourite-movie.component';
+import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
+
 
 
 
@@ -28,6 +31,8 @@ import { GetFavouriteMoviesComponent } from './get-favourite-movies/get-favourit
     LoginComponent,
     GetRatingComponent,
     GetFavouriteMoviesComponent,
+    CreateFavouriteMovieComponent,
+    DeleteFavouriteMovieComponent,
     
   ],
   imports: [

@@ -7,17 +7,21 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { LoginComponent } from './components/login/login.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
 import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
+import { CreateFavouriteMovieComponent } from './components/create-favourite-movie/create-favourite-movie.component';
+import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
 
 
 const routes: Routes = [
     { path: '', component: NavigationComponent},
-    { path: 'comments', component: CommentiComponent},
+    { path: 'comments/create', component: CommentiComponent},
     { path: 'comments/:movie_id', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
     { path: 'login', component: LoginComponent },
     { path: 'rating', component: GetRatingComponent},
     { path: 'rating/:movie_id', component: GetRatingComponent},
     { path: 'favourites', component: GetFavouriteMoviesComponent},
+    { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
+    { path: 'favourites/delete/:movie_id', component: DeleteFavouriteMovieComponent},
     { path:'', redirectTo: '/', pathMatch: 'full'}
   ];
   

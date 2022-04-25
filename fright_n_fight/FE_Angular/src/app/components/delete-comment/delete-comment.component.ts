@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BackendApiService } from 'src/app/backend-api.service';
 
-import { Comments } from 'src/app/models/comments';
 
 @Component({
   selector: 'app-delete-comment',
@@ -13,7 +11,7 @@ import { Comments } from 'src/app/models/comments';
 export class DeleteCommentComponent implements OnInit {
 
   commentId: number;
-  constructor(private httpClient: HttpClient, activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
+  constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
     this.commentId = +activatedRoute.snapshot.params['commentId'];
    }
 
