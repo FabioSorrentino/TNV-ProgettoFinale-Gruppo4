@@ -12,14 +12,13 @@ import { Rating } from 'src/app/models/rating';
 export class GetRatingComponent implements OnInit {
 
   movie_id: number;
-  rate: Rating | null = null;
-  //rating: Partial<Rating> = {};
+  rating: Partial<Rating> = {};
   
 
 
 
   constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
-    this.movie_id = +activatedRoute.snapshot.params['movie_id'];
+    this.movie_id = activatedRoute.snapshot.params['movie_id'];
     
   }
   ngOnInit(): void {
@@ -29,8 +28,7 @@ export class GetRatingComponent implements OnInit {
 
   getRating() {
     return this.backendAPIService.getRating(this.movie_id).subscribe({ 
-    //next: (res) => console.log(res),
-    next: (res) => this.rate = res,
+    next: (res) => this.rating = res,
     error: () => console.log('error'),
     complete: () => console.log('Stampa completata')
   });
