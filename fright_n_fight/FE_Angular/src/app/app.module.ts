@@ -8,8 +8,6 @@ import { CommentiComponent } from './components/create-comment/create-comment.co
 import { DeleteCommentComponent } from './components/delete-comment/delete-comment.component';
 import { ListCommentsComponent } from './components/get-comment/get-comment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/material.module';
-import { NavigationComponent } from './components/navigation/navigation.component';
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
 import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
@@ -26,7 +24,6 @@ import { LoginComponent } from './components/login/login.component';
     CommentiComponent,
     DeleteCommentComponent,
     ListCommentsComponent,
-    NavigationComponent,
     InsertRatingComponent,
     LoginComponent,
     GetRatingComponent,
@@ -43,7 +40,6 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
