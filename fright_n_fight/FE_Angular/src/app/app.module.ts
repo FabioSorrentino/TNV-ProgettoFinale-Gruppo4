@@ -17,6 +17,7 @@ import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/g
 import { CreateFavouriteMovieComponent } from './components/create-favourite-movie/create-favourite-movie.component';
 import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
 import { AdduserComponent } from './components/adduser/adduser.component';
+import { GetMovieDetailComponent } from './get-movie-detail/get-movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     CreateFavouriteMovieComponent,
     DeleteFavouriteMovieComponent,
     AdduserComponent,
+    GetMovieDetailComponent,
   ],
   imports: [
     BrowserModule,

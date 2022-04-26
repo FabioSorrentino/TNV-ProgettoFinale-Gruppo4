@@ -1,13 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Comments } from './models/comments';
-import { FavouriteMovie } from './models/favouriteMovie';
-import { Rating } from './models/rating';
-import { User } from './models/user';
 import { Comments } from '../models/comments';
 import { FavouriteMovie } from '../models/favouriteMovie';
 import { Rating } from '../models/rating';
+import { User } from '../models/user';
 
 
 @Injectable({
