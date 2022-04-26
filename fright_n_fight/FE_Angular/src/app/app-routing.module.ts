@@ -9,6 +9,7 @@ import { GetRatingComponent } from './components/get-rating/get-rating.component
 import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
 import { CreateFavouriteMovieComponent } from './components/create-favourite-movie/create-favourite-movie.component';
 import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
+import { AdduserComponent } from './components/adduser/adduser.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
     { path: 'comments/create', component: CommentiComponent},
     { path: 'comments/:movie_id', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
-    { path: 'login', component: LoginComponent },
+    { path: 'login', component: LoginComponent},
+    { path: 'adduser', component: AdduserComponent},
     { path: 'rating', component: GetRatingComponent},
     { path: 'rating/:movie_id', component: GetRatingComponent},
     { path: 'favourites', component: GetFavouriteMoviesComponent},

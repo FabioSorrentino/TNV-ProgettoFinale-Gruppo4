@@ -1,5 +1,6 @@
 package com.tnv.loginApp.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tnv.loginApp.model.User;
 import com.tnv.loginApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Base64;
 
 @RestController
-//@RequestMapping("/users")
 public class UserController {
     private UserService _userService;
 
@@ -27,8 +27,14 @@ public class UserController {
     }
 
     @PostMapping("/adduser")
-    public String AddUser(@RequestBody User user) {
-        return _userService.addUser(user);
+    public Integer addUser(@RequestBody String userform) {
+        try {
+            User newUser = new ObjectMapper().readValue(userform,User.class);
+            return _userService.addUser(newUser);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @GetMapping("/")

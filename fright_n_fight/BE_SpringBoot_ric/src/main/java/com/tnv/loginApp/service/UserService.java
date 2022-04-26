@@ -1,6 +1,8 @@
 package com.tnv.loginApp.service;
 
+import com.tnv.loginApp.dao.AuthoritiesRepositoryDAO;
 import com.tnv.loginApp.dao.UserRepositoryDAO;
+import com.tnv.loginApp.model.Authorities;
 import com.tnv.loginApp.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,21 +13,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     UserRepositoryDAO _userDAO;
+    AuthoritiesRepositoryDAO _authoritiesDAO;
     PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
-    public UserService(@Qualifier("dbUserDAO") UserRepositoryDAO userDAO) {
+    public UserService(
+            @Qualifier("dbUserDAO") UserRepositoryDAO userDAO,
+            @Qualifier("dbAuthoritiesDAO") AuthoritiesRepositoryDAO authoritiesDAO)
+    {
         _userDAO = userDAO;
+        _authoritiesDAO = authoritiesDAO;
     }
 
-    public String addUser(User user) {
-        User result = _userDAO.save(user);
-        if(result != null){
-            return "utente salvato correttamente";
-        }
-        else {
-            return "Errore nel salvataggio dell'utente";
-        }
+    public Integer addUser(User user) {
+        Authorities auth = new Authorities();
+        auth.setUsername(user.getUsername());
+        auth.setAuthority("ROLE_USER");
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabledStatus(true);
+        _userDAO.save(user);
+        _authoritiesDAO.save(auth);
+        return user.getId();
     }
 
     public Iterable<User> getAllUsers(){

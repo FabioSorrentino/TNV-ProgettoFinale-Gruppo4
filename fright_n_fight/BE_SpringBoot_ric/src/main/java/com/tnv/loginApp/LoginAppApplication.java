@@ -19,6 +19,7 @@ public class LoginAppApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/login").allowedOrigins("http://localhost:4200");
+				registry.addMapping("/adduser").allowedOrigins("http://localhost:4200");
 			}
 		};
 	}
