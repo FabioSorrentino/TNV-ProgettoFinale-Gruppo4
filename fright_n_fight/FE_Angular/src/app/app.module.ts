@@ -11,13 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
-import { LoginComponent } from './components/login/login.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
 import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
 import { CreateFavouriteMovieComponent } from './components/create-favourite-movie/create-favourite-movie.component';
 import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
 import { AdduserComponent } from './components/adduser/adduser.component';
-import { GetMovieDetailComponent } from './get-movie-detail/get-movie-detail.component';
+import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
+import { LoginComponent } from './components/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { GetMovieDetailComponent } from './get-movie-detail/get-movie-detail.com
     CreateFavouriteMovieComponent,
     DeleteFavouriteMovieComponent,
     AdduserComponent,
-    GetMovieDetailComponent,
+    GetMovieDetailComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/g
 import { CreateFavouriteMovieComponent } from './components/create-favourite-movie/create-favourite-movie.component';
 import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
 import { AdduserComponent } from './components/adduser/adduser.component';
+import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'favourites', component: GetFavouriteMoviesComponent},
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete/:movie_id', component: DeleteFavouriteMovieComponent},
+    { path: 'movie/details', component: GetMovieDetailComponent},
     { path:'', redirectTo: '/', pathMatch: 'full'}
   ];
   

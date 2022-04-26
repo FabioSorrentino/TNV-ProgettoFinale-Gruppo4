@@ -1,1 +1,52 @@
-<p>get-movie-detail works!</p>
+<div class="container">
+
+  <div class="col-sm-6" id="poster">
+      <img [src]="this.movieAPIService.getLocandina( this.movieData?.poster_path)" alt="locandina film"  class="rounded mx-auto d-block"  width="65%" height="65%"/>
+  </div>
+  <div style='margin-top:30px;'></div>
+  <div class="row justify-content-end">
+      <div class="col-4">
+        <h5>Titolo:</h5>
+      </div>
+      <div class="col-4">
+      {{movieData?.title}}
+      </div>
+  </div>
+  <div style='margin-top:30px;'></div>
+  <div class="row justify-content-end">
+      <div class="col-4">
+        <h5>Genere:</h5>
+      </div>
+      <div class="col-4">
+      <span *ngFor="let genres of movieData?.genres"> 
+          {{genres.name}}
+      </span>
+  </div>
+  <div style='margin-top:30px;'></div>
+  <div class="row justify-content-end">
+    <div class="col-4">
+      <h5>Durata:</h5>
+    </div>
+    <div class="col-4">
+      {{movieData?.runtime}} minuti
+    </div>
+  </div>
+  <div style='margin-top:30px;'></div>
+  <div class="row justify-content-end">
+    <div class="col-4">
+      <h5>Data d'uscita:</h5>
+    </div>
+    <div class="col-4">
+    {{movieData?.release_date}}
+    </div>
+  </div>
+  <div style='margin-top:30px;'></div>
+  <div class="row justify-content-end">
+    <div class="col-4">
+      <h5>Votazione media:</h5>
+    </div>
+    <div class="col-4">
+      {{movieData?.vote_average}}
+    </div>
+  </div>
+</div>
