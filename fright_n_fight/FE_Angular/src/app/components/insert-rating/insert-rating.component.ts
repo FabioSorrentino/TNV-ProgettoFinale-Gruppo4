@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { BackendApiService } from 'src/app/backend-api.service';
+import { BackendApiService } from 'src/app/service/backend-api.service';
+
 
 @Component({
   selector: 'app-insert-rating',

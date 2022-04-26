@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BackendApiService } from 'src/app/backend-api.service';
 import { FavouriteMovie } from 'src/app/models/favouriteMovie';
+import { BackendApiService } from 'src/app/service/backend-api.service';
 
 
 @Component({
