@@ -40,8 +40,8 @@ export class BackendApiService {
 
   //servizi NODE
 
-  getAllFavouriteMovies(){
-    return this.httpClient.get<FavouriteMovie[]>(`http://localhost:3001/favourites`);
+  getAllFavouriteMoviesByUser(userId: number){
+    return this.httpClient.get<FavouriteMovie[]>(`http://localhost:3001/favourites/${userId}`);
   }
 
   getFavouriteMovieById(movie_id: number | null){

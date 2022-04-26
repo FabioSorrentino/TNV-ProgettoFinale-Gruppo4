@@ -12,7 +12,7 @@ import { Rating } from 'src/app/models/rating';
 export class GetRatingComponent implements OnInit {
 
   movie_id: number;
-  rating: Partial<Rating> = {};
+  rating: Rating | null = null;
   
 
 

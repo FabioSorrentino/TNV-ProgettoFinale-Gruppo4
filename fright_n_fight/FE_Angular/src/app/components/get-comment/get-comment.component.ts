@@ -12,7 +12,7 @@ import { Comments } from 'src/app/models/comments';
 export class ListCommentsComponent implements OnInit {
 
   movie_id: number;
-  comment: Partial<Comments> = {};
+  comment: Comments | null = null;
   constructor(private httpClient: HttpClient, activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
     this.movie_id = +activatedRoute.snapshot.params['movie_id'];
   }
