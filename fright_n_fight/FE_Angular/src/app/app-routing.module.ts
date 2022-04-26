@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router'
 import { CommentiComponent } from './components/create-comment/create-comment.component';
 import { DeleteCommentComponent } from './components/delete-comment/delete-comment.component';
 import { ListCommentsComponent } from './components/get-comment/get-comment.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
 import { LoginComponent } from './components/login/login.component';
 import { GetRatingComponent } from './components/get-rating/get-rating.component';
 import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
@@ -14,7 +13,6 @@ import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie
 
 
 const routes: Routes = [
-    { path: '', component: NavigationComponent},
     { path: 'comments/create', component: CommentiComponent},
     { path: 'comments/:movie_id', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
