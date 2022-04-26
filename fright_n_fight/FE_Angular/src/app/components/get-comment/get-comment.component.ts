@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BackendApiService } from 'src/app/backend-api.service';
 import { Comments } from 'src/app/models/comments';
+import { BackendApiService } from 'src/app/service/backend-api.service';
 
 @Component({
   selector: 'app-get-comment',

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MovieCredits } from './models/movieCredits';
-import { MovieData } from './models/movieData';
+import { MovieCredits } from '../models/movieCredits';
+import { MovieData } from '../models/movieData';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { MovieData } from './models/movieData';
 export class MovieApiService {
 
   TMDBKey : string = "d62b14e9585c8c3ee60681ad78dc178a" ;
-  TMDBUrlBase : string = "`https://api.themoviedb.org/3/movie/"
+  TMDBUrlBase : string = "https://api.themoviedb.org/3/movie/"
 
   constructor(private httpClient: HttpClient) { }
 

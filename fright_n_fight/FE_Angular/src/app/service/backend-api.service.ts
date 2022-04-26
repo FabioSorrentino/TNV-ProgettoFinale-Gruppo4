@@ -5,6 +5,10 @@ import { Comments } from './models/comments';
 import { FavouriteMovie } from './models/favouriteMovie';
 import { Rating } from './models/rating';
 import { User } from './models/user';
+import { Comments } from '../models/comments';
+import { FavouriteMovie } from '../models/favouriteMovie';
+import { Rating } from '../models/rating';
+
 
 @Injectable({
   providedIn: 'root'
