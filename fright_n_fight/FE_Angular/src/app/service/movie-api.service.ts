@@ -9,7 +9,7 @@ import { MovieData } from '../models/movieData';
 export class MovieApiService {
 
   TMDBKey : string = "d62b14e9585c8c3ee60681ad78dc178a" ;
-  TMDBUrlBase : string = "`https://api.themoviedb.org/3/movie/"
+  TMDBUrlBase : string = "https://api.themoviedb.org/3/movie/"
 
   constructor(private httpClient: HttpClient) { }
 

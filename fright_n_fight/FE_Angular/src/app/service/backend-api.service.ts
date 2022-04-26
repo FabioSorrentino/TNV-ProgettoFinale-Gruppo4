@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Comments } from './models/comments';
-import { FavouriteMovie } from './models/favouriteMovie';
-import { Rating } from './models/rating';
+import { Comments } from '../models/comments';
+import { FavouriteMovie } from '../models/favouriteMovie';
+import { Rating } from '../models/rating';
+
 
 @Injectable({
   providedIn: 'root'
