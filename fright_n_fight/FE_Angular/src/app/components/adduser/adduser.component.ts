@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
+import { LoginComponent } from '../login/login.component';
+import { ActivatedRoute } from '@angular/router';
+import { BackendApiService } from 'src/app/backend-api.service';
 
 @Component({
   selector: 'app-adduser',
@@ -10,13 +12,17 @@ import { User } from 'src/app/models/user';
 })
 export class AdduserComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  loggedinUser: User = {} as User;
+
+  constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
+    this.loggedinUser.id = activatedRoute.snapshot.params['user_id'];
+  }
 
   ngOnInit(): void {
   }
 
   adduser(addUserForm: NgForm){
-    this.httpClient.post<number>('http://localhost:8080/adduser', addUserForm.value).subscribe({
+    this.backendAPIService.addUser(addUserForm.value).subscribe({
       next: (res) => console.log(res),
       error: () => console.log()
     });

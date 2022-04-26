@@ -25,15 +25,23 @@ public class UserService {
         _authoritiesDAO = authoritiesDAO;
     }
 
-    public Integer addUser(User user) {
+    public User addUser(User user) {
+        Integer userId = getUserByUsername(user.getUsername()).getId();
+        String username = user.getUsername();
+
+        if(userId!=null) {
+            return null;
+        }
+
         Authorities auth = new Authorities();
-        auth.setUsername(user.getUsername());
+        auth.setUsername(username);
         auth.setAuthority("ROLE_USER");
+
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabledStatus(true);
         _userDAO.save(user);
         _authoritiesDAO.save(auth);
-        return user.getId();
+        return getUserByUsername(username);
     }
 
     public Iterable<User> getAllUsers(){
@@ -44,10 +52,13 @@ public class UserService {
         return (User) _userDAO.findById(userId).get();
     }
 
-    public Integer getUserIdByUsername(String username){
+    public User getUserByUsername(String username){
+        System.out.println(username);
         for (User user: this.getAllUsers()) {
-            if(user.getUsername().equals(username))
-                return user.getId();
+            if(user.getUsername().equals(username)) {
+                user.setPassword(null);
+                return user;
+            }
         }
         return null;
     }

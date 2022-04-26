@@ -16,9 +16,6 @@ export class ListCommentsComponent implements OnInit {
   constructor(private httpClient: HttpClient, activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
     this.movie_id = +activatedRoute.snapshot.params['movie_id'];
   }
-  
-
-
 
   ngOnInit(): void {
     this.getComment();

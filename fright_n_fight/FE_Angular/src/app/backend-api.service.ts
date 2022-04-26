@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Comments } from './models/comments';
 import { FavouriteMovie } from './models/favouriteMovie';
 import { Rating } from './models/rating';
+import { User } from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -54,5 +56,13 @@ export class BackendApiService {
 
   deleteFavouriteMovie(movie_id: number | null){
     return this.httpClient.delete<FavouriteMovie>(`http://localhost:3001/favourites/${movie_id}`);
+  }
+
+  //servizi SB
+  login(header: {}){
+    return this.httpClient.get<User>('http://localhost:8080/login', {headers: header})
+  }
+  addUser(addUserForm: NgForm){
+    return this.httpClient.post<User>('http://localhost:8080/adduser', addUserForm.value)
   }
 }

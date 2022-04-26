@@ -13,14 +13,11 @@ export class GetRatingComponent implements OnInit {
 
   movie_id: number;
   rating: Rating | null = null;
-  
-
-
 
   constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
-    this.movie_id = activatedRoute.snapshot.params['movie_id'];
-    
+    this.movie_id = activatedRoute.snapshot.params['movie_id'];  
   }
+  
   ngOnInit(): void {
     this.getRating();
     
