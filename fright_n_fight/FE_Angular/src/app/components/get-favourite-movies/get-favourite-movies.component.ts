@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FavouriteMovie } from 'src/app/models/favouriteMovie';
 import { BackendApiService } from 'src/app/service/backend-api.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 
 @Component({
@@ -11,11 +12,10 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 })
 export class GetFavouriteMoviesComponent implements OnInit {
 
-  userId: number;
+  userId: number | null = null;
   movies: FavouriteMovie[] = [];
 
-  constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute) {
-    this.userId = + activatedRoute.snapshot.params['userId'];
+  constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute, public tokenStorageService: TokenStorageService) {
    }
 
   ngOnInit(): void {
@@ -23,6 +23,7 @@ export class GetFavouriteMoviesComponent implements OnInit {
   }
 
   getAllFavouriteMovies(){
+    this.userId = this.tokenStorageService.getUserId();
     this.backendAPIService.getAllFavouriteMoviesByUser(this.userId).subscribe({
       next: (res) => this.movies = res,
       error: () => console.log('Error!'),
