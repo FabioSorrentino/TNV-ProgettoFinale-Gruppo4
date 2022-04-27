@@ -23,6 +23,4 @@ export class CommentiComponent implements OnInit {
     error: () => console.log('error')
   });
   }
-
-
 }

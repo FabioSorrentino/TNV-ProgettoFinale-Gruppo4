@@ -13,7 +13,7 @@ export class ListCommentsComponent implements OnInit {
 
   movie_id: number;
   comment: Comments | null = null;
-  constructor(private httpClient: HttpClient, activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
+  constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
     this.movie_id = +activatedRoute.snapshot.params['movie_id'];
   }
 

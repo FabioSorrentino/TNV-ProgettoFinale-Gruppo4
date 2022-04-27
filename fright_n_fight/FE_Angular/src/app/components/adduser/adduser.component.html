@@ -1,16 +1,24 @@
-<form #addUserForm="ngForm" (submit)="adduser(addUserForm)">
-    <input
-        [ngModel]
-        name="username"
-        type="text" 
-        placeholder="username"
-    >
+<ng-component ngif="!isLoggedIn">
+    <form #addUserForm="ngForm" (submit)="adduser(addUserForm)">
+        <input
+            [ngModel]
+            name="username"
+            type="text" 
+            placeholder="username"
+        >
 
-    <input
+        <input
+            [ngModel]
+            name="password"
+            type="password" 
+            placeholder="password"
+        >
+        <input
         [ngModel]
-        name="password"
+        name="repeat password"
         type="password" 
         placeholder="password"
-    >
-    <button type="submit">addUser</button>
-  </form>
+        >
+        <button type="submit">register</button>
+    </form>
+</ng-component>

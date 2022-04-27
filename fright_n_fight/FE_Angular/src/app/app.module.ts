@@ -26,11 +26,11 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     ListCommentsComponent,
     NavigationComponent,
     InsertRatingComponent,
-    LoginComponent,
     GetRatingComponent,
     GetFavouriteMoviesComponent,
     CreateFavouriteMovieComponent,
     DeleteFavouriteMovieComponent,
+    LoginComponent,
     AdduserComponent,
   ],
   imports: [

@@ -1,5 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
-import { BackendApiService } from 'src/app/backend-api.service';
+import { BackendApiService } from 'src/app/service/backend-api.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
@@ -11,10 +10,9 @@ import { User } from 'src/app/models/user';
 })
 export class LoginComponent implements OnInit {
 
-  loggedinUser: User = {} as User;
+  //loggedInUser: User = {} as User;
 
-  constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
-    this.loggedinUser.id = activatedRoute.snapshot.params['user_id'];
+  constructor(private backendAPIService: BackendApiService) {
   }
 
   ngOnInit(): void {
@@ -26,9 +24,11 @@ export class LoginComponent implements OnInit {
       'Authorization': credentials
     }
     this.backendAPIService.login(header).subscribe({
-      next: (res) => {
-        this.loggedinUser.id = res.id;
-        this.loggedinUser.username = res.username;
+      next: (res: User) => {
+        
+        this.loggedInUser.id = res.id;
+        this.loggedInUser.username = res.username;
+        this.isLoggedIn = true;
       },
       error: () => console.log(),
     });

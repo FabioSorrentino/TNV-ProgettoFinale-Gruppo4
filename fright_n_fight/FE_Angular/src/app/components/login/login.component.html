@@ -1,16 +1,23 @@
-<form #loginForm="ngForm" (submit)="login(loginForm)">
-    <input
-        [ngModel]
-        name="username"
-        type="text" 
-        placeholder="username"
-    >
+<ng-container *ngIf="!isLoggedIn">
+    <form #loginForm="ngForm" (submit)="login(loginForm)">
+        <input
+            [ngModel]
+            name="username"
+            type="text" 
+            placeholder="username"
+        >
 
-    <input
-        [ngModel]
-        name="password"
-        type="password" 
-        placeholder="username"
-    >
+        <input
+            [ngModel]
+            name="password"
+            type="password" 
+            placeholder="password"
+        >
     <button type="submit">Login</button>
-  </form>
+    </form>
+    <button onclick="/adduser/">Register</button>
+    <a href="../adduser/">Register</a>
+</ng-container>
+<ng-container *ngIf="isLoggedIn">
+    <button (click)="isLoggedIn = !isLoggedIn">Logout</button>
+</ng-container>
