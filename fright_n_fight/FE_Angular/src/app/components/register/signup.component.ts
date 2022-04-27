@@ -11,6 +11,9 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 export class SignupComponent implements OnInit {
 
   isLoggedIn = false;
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
   constructor(private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService) {
 
@@ -25,11 +28,16 @@ export class SignupComponent implements OnInit {
   signup(signupForm: NgForm){
     this.backendAPIService.signup(signupForm).subscribe({
       next: (res) => {
+        console.log(res.valueOf)
         this.tokenStorageService.saveToken(res);
         this.tokenStorageService.saveUser(res);
         this.isLoggedIn = true;
+        this.isSuccessful = true;
       },
-      error: () => console.log()
+      error: (err) => {
+        this.isSignUpFailed = true;
+        this.errorMessage = err.error.errorMessage;
+      }
     });
   }
 }
