@@ -5,38 +5,52 @@ import FavouriteMovie from "../model/film.js";
 
 export const allFavouriteMovies = async (req, res) => {
     try {
-        const movie = await FavouriteMovie.findAll(); 
-        res.send(movie);
+        const favMovies = await FavouriteMovie.findAll(); 
+        res.send(favMovies);
     } catch (err) {
         console.log(err);
     }
 }
 
-export const getFavouriteMovieById = async (req, res) => {
+export const getFavouriteMovieByUserId = async (req, res) => {
     try {
-        const movie = await FavouriteMovie.findOne({
+        const favMovies = await FavouriteMovie.findAll({
             where: {
-                user_id:req.params.id
+                user_id: req.params.user_id
             }
         });
-        
-        if (movie) {
-            res.send(movie);
-        } else {
-            res.sendStatus(404);
-        }
+            res.send(favMovies);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export const createFavouriteMovie = async (req, res) => {
+    try {
+        const favMovie = await FavouriteMovie.create(req.body);
+        res.json({
+            "message": "Movie added to Favourites!",
+            "data" : favMovie
+        });
     } catch (err) {
         console.log(err);
         res.sendStatus(500);
     }
 }
 
-export const createFavouriteMovie = async (req, res) => {
+export const getPrefMovieById = async (req, res) => {
     try {
-        await FavouriteMovie.create(req.body);
-        res.json({
-            "message": "Movie added to Favourites!"
+        const favMovie = await FavouriteMovie.findOne({
+            where: {
+                id: req.params.id
+            }
         });
+        
+        if (favMovie) {
+            res.send(favMovie);
+        } else {
+            res.sendStatus(404);
+        }
     } catch (err) {
         console.log(err);
         res.sendStatus(500);
@@ -56,6 +70,20 @@ export const updateFavouriteMovie = async (req, res) => {
     } catch (err) {
         console.log(err);
         res.sendStatus(500);
+    }
+}
+
+export const getFavMoviesbyUserIdMovieId = async (req, res) => {
+    try {
+        const favMovies = await FavouriteMovie.findOne({
+            where : {
+                user_id : req.params.user_id,
+                movie_id : req.params.movie_id
+            }
+        });
+        res.send(favMovies);
+    } catch (err) {
+        console.log(err);
     }
 }
 
