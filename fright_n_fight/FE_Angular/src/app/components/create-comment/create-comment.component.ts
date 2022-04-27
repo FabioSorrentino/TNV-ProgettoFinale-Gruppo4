@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Comments } from 'src/app/models/comments';
 import { BackendApiService } from 'src/app/service/backend-api.service';
-
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-create-comment',
@@ -13,9 +11,10 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 export class CommentiComponent implements OnInit {
 
   
-  constructor (private httpClient: HttpClient, private backendAPIService: BackendApiService) { }
+  constructor (private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
+    console.log(this.tokenStorageService.getUser());
   }
 
   createComment(comment: NgForm) {

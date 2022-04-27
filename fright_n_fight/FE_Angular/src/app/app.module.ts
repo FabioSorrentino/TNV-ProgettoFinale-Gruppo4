@@ -17,7 +17,6 @@ import { SignupComponent } from './components/register/signup.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 import { LoginComponent } from './components/login/login.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +30,8 @@ import { LoginComponent } from './components/login/login.component';
     DeleteFavouriteMovieComponent,
     LoginComponent,
     SignupComponent,
-    GetMovieDetailComponent
-    
+    GetMovieDetailComponent,
+
   ],
   imports: [
     BrowserModule,

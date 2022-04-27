@@ -4,13 +4,15 @@ import { NgForm } from '@angular/forms';
 import { Comments } from '../models/comments';
 import { FavouriteMovie } from '../models/favouriteMovie';
 import { Rating } from '../models/rating';
-import { User } from '../models/user';
 
+const SB_API_URL = 'http://localhost:8080/api/auth/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendApiService {
+
+  loggedInUserId: number|null = null;
 
   constructor(private httpClient: HttpClient) { 
   }
@@ -59,10 +61,11 @@ export class BackendApiService {
 
   //servizi SB
   login(header: {}){
-    return this.httpClient.get<number>('http://localhost:8080/api/auth/login', {headers: header})
+    return this.httpClient.get<string>(SB_API_URL + 'login', {headers: header})
   }
+
   signup(addUserForm: NgForm){
     console.log(addUserForm.value);
-    return this.httpClient.post<number>('http://localhost:8080/api/auth/register', addUserForm.value)
+    return this.httpClient.post<string>(SB_API_URL + 'register', addUserForm.value)
   }
 }

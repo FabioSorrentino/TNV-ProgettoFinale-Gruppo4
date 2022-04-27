@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from 'src/app/models/user';
-import { LoginComponent } from '../login/login.component';
-import { ActivatedRoute } from '@angular/router';
 import { BackendApiService } from 'src/app/service/backend-api.service';
-
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,24 +10,26 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 })
 export class SignupComponent implements OnInit {
 
-  loggedInUser: User = {} as User;
   isLoggedIn = false;
 
-  constructor(private backendAPIService: BackendApiService) {
+  constructor(private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService) {
 
   }
 
   ngOnInit(): void {
+    if(this.tokenStorageService.getToken()) {
+      this.isLoggedIn = true;
+    }
   }
 
   signup(signupForm: NgForm){
     this.backendAPIService.signup(signupForm).subscribe({
       next: (res) => {
-        this.loggedInUser.id = res;
+        this.tokenStorageService.saveToken(res);
+        this.tokenStorageService.saveUser(res);
         this.isLoggedIn = true;
       },
       error: () => console.log()
     });
-    console.log(this.loggedInUser.id);
   }
 }

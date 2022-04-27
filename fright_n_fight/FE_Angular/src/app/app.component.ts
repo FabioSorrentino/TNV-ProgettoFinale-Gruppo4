@@ -9,6 +9,5 @@ import { User } from './models/user';
 export class AppComponent {
   title = 'fright_n_fight';
 
-  loggedInUser: User|null = {} as User;
-  isLoggedIn = false;
+  loggedInUserId: number|null = null;
 }

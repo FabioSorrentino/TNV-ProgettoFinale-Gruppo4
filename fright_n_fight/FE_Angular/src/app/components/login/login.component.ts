@@ -1,8 +1,7 @@
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from 'src/app/models/user';
 import { BackendApiService } from 'src/app/service/backend-api.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +10,15 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 })
 export class LoginComponent implements OnInit {
 
-  loggedInUser: User = {} as User;
   isLoggedIn = false;
 
-  constructor(private backendAPIService: BackendApiService) {
+  constructor(private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService) {
   }
 
   ngOnInit(): void {
+    if(this.tokenStorageService.getToken()) {
+      this.isLoggedIn = true;
+    }
   }
 
   login(loginForm: NgForm) {
@@ -27,10 +28,15 @@ export class LoginComponent implements OnInit {
     }
     this.backendAPIService.login(header).subscribe({
       next: (res) => {
-        this.loggedInUser.id = res;
+        this.tokenStorageService.saveToken(res);
+        this.tokenStorageService.saveUser(res);
         this.isLoggedIn = true;
       },
-      error: () => console.log(),
+      error: () => console.log()
     });
+  }
+
+  logout() {
+    this.tokenStorageService.logout();
   }
 }
