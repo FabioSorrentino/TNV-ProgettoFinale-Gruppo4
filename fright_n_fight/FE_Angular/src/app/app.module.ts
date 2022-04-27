@@ -30,7 +30,6 @@ import { GameComponent } from './components/game/game.component';
     CreateFavouriteMovieComponent,
     DeleteFavouriteMovieComponent,
     LoginComponent,
-    //AdduserComponent,
     GetMovieDetailComponent,
     GameComponent,
     SignupComponent
