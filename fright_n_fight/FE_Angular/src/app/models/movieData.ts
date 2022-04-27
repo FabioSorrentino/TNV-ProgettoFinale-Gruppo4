@@ -1,3 +1,8 @@
+interface Genre {
+  id: number;
+  name: string;
+}
+
 export interface MovieData {
     adult: boolean;
     backdrop_path: string;
@@ -44,7 +49,3 @@ export interface MovieData {
     origin_country: string;
   }
   
-  interface Genre {
-    id: number;
-    name: string;
-  }
