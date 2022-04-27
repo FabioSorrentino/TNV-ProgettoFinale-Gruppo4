@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   logout() {
+    this.isLoggedIn = false;
     this.tokenStorageService.logout();
   }
 }

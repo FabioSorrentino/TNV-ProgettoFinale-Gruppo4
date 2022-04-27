@@ -1,4 +1,4 @@
-<div class="text-center" style="padding:50px 0">
+<div *ngIf="!isLoggedIn" class="text-center" style="padding:50px 0">
 	<div class="logo">Login</div>
 	<div class="login-form-1">
 		<form #loginForm="ngForm" id="login-form" class="text-left" (submit)="login(loginForm)">
@@ -21,4 +21,11 @@
 			</div>
 		</form>
 	</div>
+</div>
+<div *ngIf="isLoggedIn" class="text-center" style="padding:50px 0">
+    <div class="login-form-1">
+        <div class="main-login-form">
+            <button (click)="logout()" class="login-button">Logout</button>
+        </div>  
+    </div>
 </div>
