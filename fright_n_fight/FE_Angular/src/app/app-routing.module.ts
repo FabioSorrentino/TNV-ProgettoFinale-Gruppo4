@@ -11,6 +11,7 @@ import { DeleteFavouriteMovieComponent } from './components/delete-favourite-mov
 import { SignupComponent } from './components/register/signup.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
@@ -22,12 +23,13 @@ const routes: Routes = [
     { path: 'rating', component: InsertRatingComponent},
     { path: 'rating/:movie_id', component: GetRatingComponent},
     { path: 'favourites', component: GetFavouriteMoviesComponent},
-    { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
+    { path: 'favourites/create', component: CreateFavouriteMovieComponent},
     { path: 'favourites/delete/:movie_id', component: DeleteFavouriteMovieComponent},
     { path: 'movie/details', component: GetMovieDetailComponent},
+    { path: 'home', component: HomeComponent},
     { path:'', redirectTo: '/', pathMatch: 'full'}
   ];
-  
+
   @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
