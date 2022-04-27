@@ -32,7 +32,8 @@ import { GameComponent } from './components/game/game.component';
     LoginComponent,
     SignupComponent,
     GetMovieDetailComponent,
-    GameComponent
+    GameComponent,
+    SignupComponent
     
   ],
   imports: [
