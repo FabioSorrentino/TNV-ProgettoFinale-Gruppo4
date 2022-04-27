@@ -49,7 +49,7 @@ export class BackendApiService {
     return this.httpClient.get<FavouriteMovie>(`http://localhost:3001/favourites/${movie_id}`);
   }
 
-  createFavouriteMovie(movie: FavouriteMovie){
+  addFavouriteMovie(movie: FavouriteMovie){
     return this.httpClient.post<FavouriteMovie>(`http://localhost:3001/favourites`, movie);
   }
 

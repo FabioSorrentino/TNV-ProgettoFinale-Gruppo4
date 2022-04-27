@@ -18,7 +18,7 @@ export class CreateFavouriteMovieComponent implements OnInit {
   }
 
   createFavouriteMovie(favMovie: NgForm) {
-    this.backendAPIService.createFavouriteMovie(favMovie.value).subscribe({
+    this.backendAPIService.addFavouriteMovie(favMovie.value).subscribe({
       next: () => console.log('Favourite Movie added!'),
       error: () => console.log('Error!')
     })

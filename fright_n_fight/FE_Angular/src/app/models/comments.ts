@@ -4,3 +4,4 @@ export interface Comments {
     movie_id: number;
     comment: string;
 }
+
