@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: 'comments/:movie_id', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
     { path: 'login', component: LoginComponent},
-    { path: 'signup', component: SignupComponent},
+    { path: 'register', component: SignupComponent},
     { path: 'rating', component: GetRatingComponent},
     { path: 'rating/:movie_id', component: GetRatingComponent},
     { path: 'favourites', component: GetFavouriteMoviesComponent},
