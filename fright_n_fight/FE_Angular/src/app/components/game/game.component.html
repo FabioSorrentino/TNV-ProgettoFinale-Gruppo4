@@ -1,0 +1,85 @@
+<div class="container-fluid text-center">
+    <div class="row">
+    
+        <div> 
+            <!--Avvio: modificare nel caso si voglia rimuovere bottone-->
+             <div *ngIf="this.start; then body else startBlock"> </div> 
+                    
+                <ng-template #body>
+                    <div class="row">
+                        <div class="col-8">
+                            <h2 *ngIf="this.finish">Ecco il nome del film: {{movieDetails?.title}}</h2>    <!--Se il timer si chiude, visualizza il titolo del film-->
+                        </div>
+                        
+                        <div class="col-6">
+                            <h2 *ngIf="!this.finish" >{{minutes}}:{{seconds}}</h2>  <!--visualizza il timer fino a quando il timer termina-->
+                        
+                        
+                        <!--da spostare all'occorenza-->
+                        <h2 *ngIf="this.win"> Hai vinto {{points}}pt. </h2>
+                        <h2 *ngIf="!this.win && this.finish">Hai perso {{points}}pt.</h2>
+                    </div>
+                    </div>
+
+                     <!--   Sezione dati da indovinare   -->
+                <div class="row">
+                    <div class="col-5 align-self-center">
+                       
+                       <!--Avvio description list-->
+                       <dl class="row">
+                            <dt class="col-sm-4">Genere:</dt>
+                        <dd class="col-sm-8" >
+                        <p *ngFor="let genres of movieDetails?.genres">  {{genres.name}} </p>
+                        </dd> 
+                      </dl>
+
+                     <!--test-->
+                      <dl class="row">
+                        <dt class="col-sm-4">Titolo:</dt>
+                        <dd class="col-sm-8" ><p>{{movieDetails?.title}}</p></dd> 
+                      </dl>
+
+                      <!--Metodi che dovranno esser cliccabili-->
+                      
+                      <dl class="row">
+                        <dt class="col-sm-4">Popolarità:</dt>
+                        <dd class="col-sm-8"> <button (click)="clickEvent()"> HELP! </button> 
+                            <ng-container *ngIf="showDetails" > {{movieDetails?.popularity}} </ng-container>
+                        </dd> 
+                      </dl>
+
+                      <dl class="row">
+                        <dt class="col-sm-4">Budget:</dt>
+                        <dd class="col-sm-8"> <button (click)="clickEvent()"> HELP! </button> 
+                            <ng-container *ngIf="showDetails" > {{movieDetails?.budget}} </ng-container>
+                        </dd> 
+                      </dl>
+
+
+                    </div>
+                </div>
+
+                <ng-template #guessingBlock>
+                <form  #guessForm="ngForm">
+                    <div class="mb-3">
+                      <label for="guessTitle" class="form-label">Titolo:</label>
+                      <input [ngModel] name="guessTitle" type="text" class="form-control" id="guessTitle" aria-describedby="guess">
+                      
+                    </div>
+                    <button type="submit" class="btn btn-primary">Prova a indovinare!</button>
+                </form>
+                </ng-template>
+                </ng-template>
+                    
+
+                <!--Script di avvio opzionale(modificare ngIf in partenza qualora si voglia rimuovere)-->
+                <ng-template #startBlock>
+                    <div class="text-center"> 
+                    <button (click)="onStart()" type="button" class="btn btn-danger">Play the game</button></div>
+                </ng-template>
+   
+   
+ 
+
+
+
