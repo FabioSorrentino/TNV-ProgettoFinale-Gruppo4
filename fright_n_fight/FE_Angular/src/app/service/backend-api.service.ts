@@ -23,7 +23,7 @@ export class BackendApiService {
     return this.httpClient.get<Comments>(`http://localhost:5161/comments/${movie_id}`);
   }
 
-  createComment(comment: Comments){
+  createComment(comment: Partial<Comments>){
     return this.httpClient.post<Comments>(`http://localhost:5161/comments/`, comment);
   }
 
@@ -33,7 +33,7 @@ export class BackendApiService {
 
   //servizi Laravel
 
-  createNewRating(rating: Rating){
+  createNewRating(rating: Partial<Rating>){
     return this.httpClient.post<Rating>(`http://localhost:8000/api/movie`, rating);
   }
 
