@@ -21,7 +21,7 @@ export class GameComponent implements OnInit {
   showActors: boolean[] = [false,false,false];
   showGenres: boolean[] = [false,false]
   showDate: boolean = false;
-  showButton: boolean = false;
+  showDetails: boolean = false;
   showDirector: boolean = false;
 
   // id film e massimo range del random
@@ -69,8 +69,9 @@ export class GameComponent implements OnInit {
   
   
   clickEvent() {
-    this.showButton = true;
-  
+
+    this.showDetails = true;
+    
   }
   
  
@@ -102,12 +103,12 @@ export class GameComponent implements OnInit {
               this.minutes = Math.floor(this.subscribeTimer % 3600 / 60).toString().padStart(2,'0'),
               this.seconds = Math.floor(this.subscribeTimer % 60).toString().padStart(2,'0')
         
-        if (this.showButton)
+     /*   if (this.showDetails)
            return
             this.subscribeTimer = this.time + this.amount,
             this.minutes = Math.floor(this.subscribeTimer % 3600 / 60).toString().padStart(2,'0'),
             this.seconds = Math.floor(this.subscribeTimer % 60).toString().padStart(2,'0')
-        
+        */
       });
     }
   
