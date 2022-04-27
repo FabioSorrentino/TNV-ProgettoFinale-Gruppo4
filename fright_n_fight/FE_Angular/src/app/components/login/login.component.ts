@@ -26,10 +26,8 @@ export class LoginComponent implements OnInit {
       'Authorization': credentials
     }
     this.backendAPIService.login(header).subscribe({
-      next: (res: User) => {
-        
-        this.loggedInUser.id = res.id;
-        this.loggedInUser.username = res.username;
+      next: (res) => {
+        this.loggedInUser.id = res;
         this.isLoggedIn = true;
       },
       error: () => console.log(),

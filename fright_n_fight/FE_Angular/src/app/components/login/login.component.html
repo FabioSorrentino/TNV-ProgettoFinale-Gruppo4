@@ -1,5 +1,4 @@
-<ng-container *ngIf="!isLoggedIn">
-    <form #loginForm="ngForm" (submit)="login(loginForm)">
+<form #loginForm="ngForm" (submit)="login(loginForm)">
         <input
             [ngModel]
             name="username"
@@ -14,10 +13,4 @@
             placeholder="password"
         >
     <button type="submit">Login</button>
-    </form>
-    <button onclick="/adduser/">Register</button>
-    <a href="../adduser/">Register</a>
-</ng-container>
-<ng-container *ngIf="isLoggedIn">
-    <button (click)="isLoggedIn = !isLoggedIn">Logout</button>
-</ng-container>
+</form>

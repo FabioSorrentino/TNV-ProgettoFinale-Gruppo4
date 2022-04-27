@@ -7,11 +7,11 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 
 
 @Component({
-  selector: 'app-adduser',
-  templateUrl: './adduser.component.html',
-  styleUrls: ['./adduser.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class AdduserComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
   loggedInUser: User = {} as User;
   isLoggedIn = false;
@@ -23,14 +23,14 @@ export class AdduserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  adduser(addUserForm: NgForm){
-    this.backendAPIService.addUser(addUserForm.value).subscribe({
+  signup(signupForm: NgForm){
+    this.backendAPIService.signup(signupForm).subscribe({
       next: (res) => {
-        this.loggedInUser.id = res.id;
-        this.loggedInUser.username = res.username;
+        this.loggedInUser.id = res;
         this.isLoggedIn = true;
       },
       error: () => console.log()
     });
+    console.log(this.loggedInUser.id);
   }
 }

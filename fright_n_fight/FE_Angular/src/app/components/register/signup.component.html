@@ -1,5 +1,4 @@
-<ng-component ngif="!isLoggedIn">
-    <form #addUserForm="ngForm" (submit)="adduser(addUserForm)">
+<form #signupForm="ngForm" (submit)="signup(signupForm)">
         <input
             [ngModel]
             name="username"
@@ -13,12 +12,5 @@
             type="password" 
             placeholder="password"
         >
-        <input
-        [ngModel]
-        name="repeat password"
-        type="password" 
-        placeholder="password"
-        >
         <button type="submit">register</button>
-    </form>
-</ng-component>
+</form>
