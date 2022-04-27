@@ -12,7 +12,7 @@ export const allFavouriteMovies = async (req, res) => {
     }
 }
 
-export const getFavouriteMovieByUserId = async (req, res) => {
+export const getAllFavouriteMoviesByUserId = async (req, res) => {
     try {
         const favMovies = await FavouriteMovie.findAll({
             where: {

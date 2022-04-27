@@ -1,7 +1,7 @@
 import express from "express";
 
 import {
-    getFavouriteMovieByUserId,
+    getAllFavouriteMoviesByUserId,
     createFavouriteMovie,
     updateFavouriteMovie,
     deleteFavouriteMovie,
@@ -14,7 +14,7 @@ import {
 const router = express.Router();
 
 router.get('/favourites', allFavouriteMovies);
-router.get('/favourites/:user_id', getFavouriteMovieByUserId);
+router.get('/favourites/:user_id', getAllFavouriteMoviesByUserId);
 router.get('/favourites/:id', getPrefMovieById);
 router.get('/favourites/:user_id/:movie_id', getFavMoviesbyUserIdMovieId);
 router.post('/favourites', createFavouriteMovie);

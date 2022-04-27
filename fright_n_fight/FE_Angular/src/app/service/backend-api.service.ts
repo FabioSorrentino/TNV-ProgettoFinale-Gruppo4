@@ -43,12 +43,12 @@ export class BackendApiService {
 
   //servizi NODE
 
-  getAllFavouriteMoviesByUser(userId: number | null){
+  getAllFavouriteMoviesByUserId(userId: number | null){
     return this.httpClient.get<FavouriteMovie[]>(`http://localhost:3001/favourites/${userId}`);
   }
 
-  getFavouriteMovieById(movie_id: number | null){
-    return this.httpClient.get<FavouriteMovie>(`http://localhost:3001/favourites/${movie_id}`);
+  getFavouriteMovieByUserIdMovieId(user_id: number | null, movie_id: number | null){
+    return this.httpClient.get<FavouriteMovie>(`http://localhost:3001/favourites/${user_id}/${movie_id}`);
   }
 
   addFavouriteMovie(movie: FavouriteMovie){
