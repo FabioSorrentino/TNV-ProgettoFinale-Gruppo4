@@ -24,7 +24,7 @@ const routes: Routes = [
     { path: 'rating/:movie_id', component: GetRatingComponent},
     { path: 'favourites', component: GetFavouriteMoviesComponent},
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
-    { path: 'favourites/delete/:movie_id', component: DeleteFavouriteMovieComponent},
+    { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
     { path: 'movie/details', component: GetMovieDetailComponent},
     { path: 'game', component: GameComponent },
     { path:'', redirectTo: '/', pathMatch: 'full'}

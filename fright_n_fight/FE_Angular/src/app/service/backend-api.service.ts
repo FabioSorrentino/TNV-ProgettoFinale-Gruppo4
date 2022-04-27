@@ -6,6 +6,7 @@ import { FavouriteMovie } from '../models/favouriteMovie';
 import { Rating } from '../models/rating';
 
 const SB_API_URL = 'http://localhost:8080/api/auth/';
+const NODE_API_URL = 'http://localhost:3001/favourites/';
 
 @Injectable({
   providedIn: 'root'
@@ -51,12 +52,12 @@ export class BackendApiService {
     return this.httpClient.get<FavouriteMovie>(`http://localhost:3001/favourites/${user_id}/${movie_id}`);
   }
 
-  addFavouriteMovie(movie: FavouriteMovie){
-    return this.httpClient.post<FavouriteMovie>(`http://localhost:3001/favourites`, movie);
+  addFavouriteMovie(favouriteMovie: FavouriteMovie){
+    return this.httpClient.post<FavouriteMovie>(NODE_API_URL, favouriteMovie);
   }
 
-  deleteFavouriteMovie(movie_id: number | null){
-    return this.httpClient.delete<FavouriteMovie>(`http://localhost:3001/favourites/${movie_id}`);
+  deleteFavouriteMovie(favourite_id: number | null){
+    return this.httpClient.delete<FavouriteMovie>(NODE_API_URL + `${favourite_id}`);
   }
 
   //servizi SB

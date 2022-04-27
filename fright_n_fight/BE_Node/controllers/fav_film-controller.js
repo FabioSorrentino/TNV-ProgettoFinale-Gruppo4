@@ -1,6 +1,5 @@
 import FavouriteMovie from "../model/film.js";
 
-
 /*CRUD Logic*/
 
 export const allFavouriteMovies = async (req, res) => {

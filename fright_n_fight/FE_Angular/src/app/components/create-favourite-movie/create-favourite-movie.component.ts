@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FavouriteMovie } from 'src/app/models/favouriteMovie';
 import { BackendApiService } from 'src/app/service/backend-api.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-create-favourite-movie',
@@ -10,16 +11,19 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 })
 export class CreateFavouriteMovieComponent implements OnInit {
 
-  movie : FavouriteMovie | null = null;
+  userId: number = 155; // PROVA DA CANCELLARE -- prende il userId da tokenStorageService 
+  movieId: number = 42; // PROVA DA CANCELLARE -- prende il movieId da ???
+  favouriteMovie : FavouriteMovie | null = null;
   favList: FavouriteMovie[] = [];
 
-  constructor(private backendAPIService : BackendApiService) { }
+  constructor(private backendAPIService : BackendApiService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
   }
 
-  createFavouriteMovie(favMovie: NgForm) {
-    this.backendAPIService.addFavouriteMovie(favMovie.value).subscribe({
+  createFavouriteMovie() {
+    this.favouriteMovie = { movie_id: this.movieId, user_id: this.userId }
+    this.backendAPIService.addFavouriteMovie(this.favouriteMovie).subscribe({
       next: () => console.log('Favourite Movie added!'),
       error: () => console.log('Error!')
     })

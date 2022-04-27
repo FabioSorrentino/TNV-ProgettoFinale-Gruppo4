@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BackendApiService } from 'src/app/service/backend-api.service';
+import { FavouriteMovie } from 'src/app/models/favouriteMovie';
 
 
 @Component({
@@ -10,17 +11,18 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 })
 export class DeleteFavouriteMovieComponent implements OnInit {
 
-  movie_id: number;
+  movieId: number|null = null;
+  favouriteMovieId : number = 1 // PROVA DA CANCELLARE -- prende il valore da ???
   constructor(activatedRoute : ActivatedRoute, private backendAPIService: BackendApiService) { 
-    this.movie_id = +activatedRoute.snapshot.params['movie_id'];
+    this.movieId = +activatedRoute.snapshot.params['movie_id'];
   }
+
   ngOnInit(): void {
-    this.deleteFavouriteMovie()
   }
 
   deleteFavouriteMovie()
   {
-    this.backendAPIService.deleteFavouriteMovie(this.movie_id).subscribe({
+    this.backendAPIService.deleteFavouriteMovie(this.favouriteMovieId).subscribe({
       error: () => console.log('Error!'),
       complete: () => console.log('Favourite Movie deleted!')
     });
