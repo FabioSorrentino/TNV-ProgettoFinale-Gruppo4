@@ -15,19 +15,21 @@ import { Rating } from 'src/app/models/rating';
 })
 export class InsertRatingComponent implements OnInit {
 
-  movie_id: number = 0;
+  movieId: number = 0;
 
   constructor(private httpClient : HttpClient, private backendAPIService: BackendApiService, public tokenStorageService: TokenStorageService,
-    activatedRoute: ActivatedRoute, public movieAPIService: MovieApiService) { 
-      this.movie_id = +activatedRoute.snapshot.params['movie_id'];
+    private activatedRoute: ActivatedRoute, public movieAPIService: MovieApiService) { 
     }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(p =>{
+      this.movieId = +p['movieId'];
+    })
   }
 
   createNewRating (ratingForm: NgForm) {
     let userId: number | null = this.tokenStorageService.getUserId();
-    let firstRating: Partial<Rating> ={user_id: userId, movie_id: this.movie_id, movie_rating: ratingForm.value.movie_rating};
+    let firstRating: Partial<Rating> ={user_id: userId, movie_id: this.movieId, movie_rating: ratingForm.value.movie_rating};
     this.backendAPIService.createNewRating(firstRating).subscribe({
       next: () => console.log('New rating created!'),
       error: () => console.log('Error!')
