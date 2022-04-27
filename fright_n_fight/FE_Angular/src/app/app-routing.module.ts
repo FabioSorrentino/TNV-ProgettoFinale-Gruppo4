@@ -10,7 +10,7 @@ import { CreateFavouriteMovieComponent } from './components/create-favourite-mov
 import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
 import { SignupComponent } from './components/register/signup.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
-import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
+import { GameComponent } from './components/game/game.component';
 
 
 const routes: Routes = [
@@ -25,6 +25,7 @@ const routes: Routes = [
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete/:movie_id', component: DeleteFavouriteMovieComponent},
     { path: 'movie/details', component: GetMovieDetailComponent},
+    { path: 'game', component: GameComponent },
     { path:'', redirectTo: '/', pathMatch: 'full'}
   ];
   
