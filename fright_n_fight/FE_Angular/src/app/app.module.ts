@@ -31,7 +31,6 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent,
     SignupComponent,
     GetMovieDetailComponent,
-
   ],
   imports: [
     BrowserModule,
