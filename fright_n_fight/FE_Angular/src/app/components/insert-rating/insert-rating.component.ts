@@ -26,7 +26,7 @@ export class InsertRatingComponent implements OnInit {
   }
 
   createNewRating (ratingForm: NgForm) {
-    let userId: number = this.tokenStorageService.getUserId();
+    let userId: number | null = this.tokenStorageService.getUserId();
     let firstRating: Partial<Rating> ={user_id: userId, movie_id: this.movie_id, movie_rating: ratingForm.value.movie_rating};
     this.backendAPIService.createNewRating(firstRating).subscribe({
       next: () => console.log('New rating created!'),

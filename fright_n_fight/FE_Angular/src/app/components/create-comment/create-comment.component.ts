@@ -24,7 +24,7 @@ export class CommentiComponent implements OnInit {
   }
 
   createComment(comment: NgForm) {
-    let userId: number = this.tokenStorageService.getUserId();
+    let userId: number | null = this.tokenStorageService.getUserId();
     let firstComment: Partial<Comments> ={user_id: userId, movie_id: this.movie_id, comment: comment.value.comment};
     this.backendAPIService.createComment(firstComment).subscribe({ 
     next: () => console.log('comment created'),
