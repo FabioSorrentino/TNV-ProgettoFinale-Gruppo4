@@ -4,15 +4,16 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
   isLoggedIn = false;
 
   constructor(private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService) {
+
   }
 
   ngOnInit(): void {
@@ -21,12 +22,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  login(loginForm: NgForm) {
-    let credentials = 'Basic ' + btoa(Object.values(loginForm.value).toString().replace(',',':'));
-    let header = {
-      'Authorization': credentials
-    }
-    this.backendAPIService.login(header).subscribe({
+  signup(signupForm: NgForm){
+    this.backendAPIService.signup(signupForm).subscribe({
       next: (res) => {
         this.tokenStorageService.saveToken(res);
         this.tokenStorageService.saveUser(res);
@@ -34,9 +31,5 @@ export class LoginComponent implements OnInit {
       },
       error: () => console.log()
     });
-  }
-
-  logout() {
-    this.tokenStorageService.logout();
   }
 }

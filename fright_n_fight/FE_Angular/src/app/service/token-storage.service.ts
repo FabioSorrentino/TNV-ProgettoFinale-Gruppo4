@@ -6,7 +6,7 @@ const USER_KEY = 'auth-user';
 })
 export class TokenStorageService {
   constructor() { }
-  signOut(): void {
+  logout(): void {
     window.sessionStorage.clear();
   }
   public saveToken(token: string): void {
@@ -16,15 +16,15 @@ export class TokenStorageService {
   public getToken(): string | null {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
-  public saveUser(user: any): void {
+  public saveUser(userId: string): void {
     window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+    window.sessionStorage.setItem(USER_KEY, userId);
   }
-  public getUser(): any {
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
-      return JSON.parse(user);
+  public getUserId(): number|null {
+    const userId = window.sessionStorage.getItem(USER_KEY);
+    if (userId) {
+      return Number.parseInt(userId);
     }
-    return {};
+    return null;
   }
 }

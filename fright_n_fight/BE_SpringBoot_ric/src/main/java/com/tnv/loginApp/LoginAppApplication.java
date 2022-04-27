@@ -13,14 +13,14 @@ public class LoginAppApplication {
 		SpringApplication.run(LoginAppApplication.class, args);
 	}
 
-	/*@Bean
+	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				//registry.addMapping("/login").allowedOrigins("http://localhost:4200");
-				//registry.addMapping("/adduser").allowedOrigins("http://localhost:4200");
+				registry.addMapping("/api/auth/**").allowedOrigins("http://localhost:4200");
+				//registry.addMapping("/api/adduser").allowedOrigins("http://localhost:4200");
 			}
 		};
-	}*/
+	}
 }

@@ -13,11 +13,10 @@ import { GetRatingComponent } from './components/get-rating/get-rating.component
 import { GetFavouriteMoviesComponent } from './components/get-favourite-movies/get-favourite-movies.component';
 import { CreateFavouriteMovieComponent } from './components/create-favourite-movie/create-favourite-movie.component';
 import { DeleteFavouriteMovieComponent } from './components/delete-favourite-movie/delete-favourite-movie.component';
-import { AdduserComponent } from './components/adduser/adduser.component';
+import { SignupComponent } from './components/register/signup.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { GameComponent } from './components/game/game.component';
-
 
 @NgModule({
   declarations: [

@@ -1,26 +1,7 @@
+<div class="container-fluid text-center">
 <form #ratingForm="ngForm" (submit)="createNewRating(ratingForm)">
-    <p> Id Film:<input
-        
-        [ngModel]
-        name="movie_id"
-        placeholder="ID Film"
-        type="text" 
-        
-
-        
-    >
-</p>
-
-<p> Id User: 
-    <input
-        [ngModel]
-        name="user_id"
-        placeholder="user id"
-        type="text" 
-    >
-    <br>
-</p>
-<p> Rating: <br>   
+    <h1>Rating:</h1>  <br>   
+ <p>
     &nbsp;<input 
         [ngModel]
         name="movie_rating"
@@ -69,7 +50,7 @@
         value="5"
     >
     <label for="5">5</label><br>
-    <br>
 </p>
-    <button type="submit">Vota!</button>
-  </form>
+<button type="submit" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Vota</button>
+</form>
+</div>

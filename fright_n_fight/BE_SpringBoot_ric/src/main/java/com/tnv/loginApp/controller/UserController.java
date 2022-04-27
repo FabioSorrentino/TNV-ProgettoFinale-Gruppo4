@@ -6,7 +6,6 @@ import com.tnv.loginApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.Base64;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -19,16 +18,16 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public User login(@RequestHeader(required = false, value="Authorization") String authorization) {
+    public Integer login(@RequestHeader(required = false, value="Authorization") String authorization) {
         String username = new String(
                 Base64.getDecoder().decode(authorization // decodes Authorizazion header
                         .substring("Basic".length()).trim())) // trims "Basic" from header
                         .split(":")[0]; // selects username property
-        return _userService.getUserByUsername(username);
+        return _userService.getUserIdByUsername(username);
     }
 
     @PostMapping("/register")
-    public User addUser(@RequestBody String userform) {
+    public Integer addUser(@RequestBody String userform) {
         try {
             User newUser = new ObjectMapper().readValue(userform,User.class);
             return _userService.addUser(newUser);

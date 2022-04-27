@@ -4,13 +4,15 @@ import { NgForm } from '@angular/forms';
 import { Comments } from '../models/comments';
 import { FavouriteMovie } from '../models/favouriteMovie';
 import { Rating } from '../models/rating';
-import { User } from '../models/user';
 
+const SB_API_URL = 'http://localhost:8080/api/auth/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendApiService {
+
+  loggedInUserId: number|null = null;
 
   constructor(private httpClient: HttpClient) { 
   }
@@ -21,7 +23,7 @@ export class BackendApiService {
     return this.httpClient.get<Comments>(`http://localhost:5161/comments/${movie_id}`);
   }
 
-  createComment(comment: Comments){
+  createComment(comment: Partial<Comments>){
     return this.httpClient.post<Comments>(`http://localhost:5161/comments/`, comment);
   }
 
@@ -31,7 +33,7 @@ export class BackendApiService {
 
   //servizi Laravel
 
-  createNewRating(rating: Rating){
+  createNewRating(rating: Partial<Rating>){
     return this.httpClient.post<Rating>(`http://localhost:8000/api/movie`, rating);
   }
 
@@ -49,7 +51,7 @@ export class BackendApiService {
     return this.httpClient.get<FavouriteMovie>(`http://localhost:3001/favourites/${movie_id}`);
   }
 
-  createFavouriteMovie(movie: FavouriteMovie){
+  addFavouriteMovie(movie: FavouriteMovie){
     return this.httpClient.post<FavouriteMovie>(`http://localhost:3001/favourites`, movie);
   }
 
@@ -59,9 +61,11 @@ export class BackendApiService {
 
   //servizi SB
   login(header: {}){
-    return this.httpClient.get<User>('http://localhost:8080/api/auth/login', {headers: header})
+    return this.httpClient.get<string>(SB_API_URL + 'login', {headers: header})
   }
-  addUser(addUserForm: NgForm){
-    return this.httpClient.post<User>('http://localhost:8080/api/auth/adduser', addUserForm.value)
+
+  signup(addUserForm: NgForm){
+    console.log(addUserForm.value);
+    return this.httpClient.post<string>(SB_API_URL + 'register', addUserForm.value)
   }
 }

@@ -11,6 +11,7 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 export class CreateFavouriteMovieComponent implements OnInit {
 
   movie : FavouriteMovie | null = null;
+  favList: FavouriteMovie[] = [];
 
   constructor(private backendAPIService : BackendApiService) { }
 
@@ -18,7 +19,7 @@ export class CreateFavouriteMovieComponent implements OnInit {
   }
 
   createFavouriteMovie(favMovie: NgForm) {
-    this.backendAPIService.createFavouriteMovie(favMovie.value).subscribe({
+    this.backendAPIService.addFavouriteMovie(favMovie.value).subscribe({
       next: () => console.log('Favourite Movie added!'),
       error: () => console.log('Error!')
     })
