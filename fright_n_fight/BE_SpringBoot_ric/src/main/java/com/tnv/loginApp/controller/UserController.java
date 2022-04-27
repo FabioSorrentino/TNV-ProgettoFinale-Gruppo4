@@ -9,6 +9,7 @@ import java.util.Base64;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/api/auth")
 public class UserController {
     private UserService _userService;
 
@@ -17,7 +18,6 @@ public class UserController {
         _userService = userService;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/login")
     public User login(@RequestHeader(required = false, value="Authorization") String authorization) {
         String username = new String(
@@ -27,7 +27,7 @@ public class UserController {
         return _userService.getUserByUsername(username);
     }
 
-    @PostMapping("/adduser")
+    @PostMapping("/register")
     public User addUser(@RequestBody String userform) {
         try {
             User newUser = new ObjectMapper().readValue(userform,User.class);

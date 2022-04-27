@@ -11,7 +11,8 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 })
 export class LoginComponent implements OnInit {
 
-  //loggedInUser: User = {} as User;
+  loggedInUser: User = {} as User;
+  isLoggedIn = false;
 
   constructor(private backendAPIService: BackendApiService) {
   }

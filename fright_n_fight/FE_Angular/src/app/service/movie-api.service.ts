@@ -19,10 +19,6 @@ export class MovieApiService {
     return this.httpClient.get<MovieData>(`${this.TMDBUrlBase}${movieId}?api_key=${this.TMDBKey}&language=it-it`);
   }
 
-  getMovieDetails(movieId: number){
-    return this.httpClient.get<MovieData>(`${this.TMDBUrlBase}${movieId}?api_key=${this.TMDBKey}&language=it-it`);
-  }
-
   getMovieCredits(movieId: number){
     return this.httpClient.get<MovieCredits>(`${this.TMDBUrlBase}${movieId}/credits?api_key=${this.TMDBKey}&language=it-it`);
   }
