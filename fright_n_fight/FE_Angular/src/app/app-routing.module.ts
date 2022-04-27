@@ -11,6 +11,7 @@ import { DeleteFavouriteMovieComponent } from './components/delete-favourite-mov
 import { SignupComponent } from './components/register/signup.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 import { GameComponent } from './components/game/game.component';
+import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
 
 
 const routes: Routes = [
