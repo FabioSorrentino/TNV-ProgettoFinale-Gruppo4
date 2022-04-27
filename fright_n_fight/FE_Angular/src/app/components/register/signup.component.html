@@ -1,13 +1,17 @@
 <div class="text-center" style="padding:50px 0">
-	<div class="logo">Register</div>
 	<div class="login-form-1">
 		<form id="register-form" class="text-left">
-			<div class="login-form-main-message"></div>
+			<div class="login-form-main-message">Register</div>
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
 						<label for="reg_username" class="sr-only">Username</label>
-						<input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+						<input [ngModel]
+                            type="text"
+                            class="form-control"
+                            id="reg_username"
+                            name="reg_username"
+                            placeholder="username">
 					</div>
 					<div class="form-group">
 						<label for="reg_password" class="sr-only">Password</label>
