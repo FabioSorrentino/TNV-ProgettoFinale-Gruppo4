@@ -59,9 +59,10 @@ export class BackendApiService {
 
   //servizi SB
   login(header: {}){
-    return this.httpClient.get<User>('http://localhost:8080/api/auth/login', {headers: header})
+    return this.httpClient.get<number>('http://localhost:8080/api/auth/login', {headers: header})
   }
-  addUser(addUserForm: NgForm){
-    return this.httpClient.post<User>('http://localhost:8080/api/auth/adduser', addUserForm.value)
+  signup(addUserForm: NgForm){
+    console.log(addUserForm.value);
+    return this.httpClient.post<number>('http://localhost:8080/api/auth/register', addUserForm.value)
   }
 }
