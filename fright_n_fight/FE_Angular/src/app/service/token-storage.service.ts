@@ -21,7 +21,7 @@ export class TokenStorageService {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, userId);
   }
-  public getUser(): any {
+  public getUserId(): any {
     const userId = window.sessionStorage.getItem(USER_KEY);
     if (userId) {
       return Number.parseInt(userId);

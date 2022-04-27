@@ -11,10 +11,9 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 export class CommentiComponent implements OnInit {
 
   
-  constructor (private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService) { }
+  constructor (private backendAPIService: BackendApiService) { }
 
   ngOnInit(): void {
-    console.log(this.tokenStorageService.getUser());
   }
 
   createComment(comment: NgForm) {
