@@ -10,7 +10,6 @@ export class TokenStorageService {
     window.sessionStorage.clear();
   }
   public saveToken(token: string): void {
-    //console.log(token);
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
@@ -21,11 +20,11 @@ export class TokenStorageService {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, userId);
   }
-  public getUserId(): any {
+  public getUserId(): number|null {
     const userId = window.sessionStorage.getItem(USER_KEY);
     if (userId) {
       return Number.parseInt(userId);
     }
-    return {};
+    return null;
   }
 }
