@@ -1,8 +1,7 @@
-
 <div class="container-fluid text-center">
 <form #commentsForm="ngForm" (submit)="createComment(commentsForm)">
     <div class="mb-3">
-        <label for="review" class="form-label"><h1>Scrivi una recensione:</h1></label>
+        <label for="comment" class="form-label"><h1>Scrivi una recensione:</h1></label>
         <textarea [ngModel] name="comment" minlength="30" maxlength="160" class="form-control" id="comment" #comment="ngModel" rows="3" required></textarea>
         <div [hidden]="comment.valid "
             class="alert alert-danger">
