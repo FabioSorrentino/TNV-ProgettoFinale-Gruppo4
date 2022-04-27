@@ -35,7 +35,7 @@ export class GameComponent implements OnInit {
 
   // valori per calcolo countdown e minuti mostrati
   time: number = 30;
-  amount: number = 30;
+  amount: number = 50;
   subscribeTimer: number |null = null;
   seconds : string |null = null;
   minutes : string |null = null;
@@ -47,50 +47,29 @@ export class GameComponent implements OnInit {
 
 
 
-  constructor(
-    public newMovieService: MovieApiService,
-    private router:Router
-    ){ }
+  constructor (public newMovieService: MovieApiService, private router:Router){ }
 
-  ngOnInit(): void {
-  }
-
-
+  ngOnInit(): void {}
 
    getRandomInt(max:number) {
     return Math.floor(Math.random() * max);
   }
 
-  
-  increaseTimer() {
-   this.countDownTimer();
-
-  }
-  
-  
   clickEvent() {
-
     this.showDetails = true;
-    
   }
   
- 
- // metodo che fa partire la partita
   onStart(){
     this.start = true;
     this.retirveMovie();
     this.countDownTimer();
-    
-     
     }
     
-  
     countDownTimer() {
       const t = timer(1000, 1000); //Valore 1: dopo quanto compare - valore 2: intervallo (ms)
 
-      //qua ad ogni 10 secondi mostra qualcosa, io non ne ho bisogno!
-      //devo visualizzare il valore se l'utente lo vuole visualizzare
-      const abc = t.subscribe(val => {
+      
+      const avvio = t.subscribe(val => {
        
         if(this.subscribeTimer === 0) {
           this.finish = true;
@@ -103,12 +82,12 @@ export class GameComponent implements OnInit {
               this.minutes = Math.floor(this.subscribeTimer % 3600 / 60).toString().padStart(2,'0'),
               this.seconds = Math.floor(this.subscribeTimer % 60).toString().padStart(2,'0')
         
-     /*   if (this.showDetails)
+        if (this.showDetails)
            return
-            this.subscribeTimer = this.time + this.amount,
-            this.minutes = Math.floor(this.subscribeTimer % 3600 / 60).toString().padStart(2,'0'),
-            this.seconds = Math.floor(this.subscribeTimer % 60).toString().padStart(2,'0')
-        */
+            this.subscribeTimer = this.time + this.amount
+            //this.minutes = Math.floor(this.subscribeTimer % 3600 / 60).toString().padStart(2,'0'),
+            //this.seconds = Math.floor(this.subscribeTimer % 60).toString().padStart(2,'0')
+        
       });
     }
   
