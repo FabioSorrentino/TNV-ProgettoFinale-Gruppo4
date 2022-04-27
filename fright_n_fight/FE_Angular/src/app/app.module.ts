@@ -16,6 +16,7 @@ import { DeleteFavouriteMovieComponent } from './components/delete-favourite-mov
 import { AdduserComponent } from './components/adduser/adduser.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 import { LoginComponent } from './components/login/login.component';
+import { GameComponent } from './components/game/game.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { LoginComponent } from './components/login/login.component';
     DeleteFavouriteMovieComponent,
     LoginComponent,
     AdduserComponent,
-    GetMovieDetailComponent
+    GetMovieDetailComponent,
+    GameComponent
     
   ],
   imports: [
