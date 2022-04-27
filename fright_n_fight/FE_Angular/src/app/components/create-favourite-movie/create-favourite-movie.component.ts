@@ -11,6 +11,7 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
 export class CreateFavouriteMovieComponent implements OnInit {
 
   movie : FavouriteMovie | null = null;
+  favList: FavouriteMovie[] = [];
 
   constructor(private backendAPIService : BackendApiService) { }
 
