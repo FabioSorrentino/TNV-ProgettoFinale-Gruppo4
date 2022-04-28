@@ -1,1 +1,52 @@
-<p>get-favourite-movies works!</p>
+<div class="container-fluid text-center">
+    <div class="movie" *ngFor="let movie of moviesData">
+        <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" alt="locandina film"  class="rounded mx-auto d-block"  width="65%" height="65%"/>
+            <div style='margin-top:30px;'></div>
+            <div class="row">
+                <div class="col-6">
+                    <h5>Titolo:</h5>
+                </div>
+                <div class="col-4">
+                    {{movie.title}}
+                </div>
+            </div>
+            <div style='margin-top:30px;'></div>
+            <div class="row">
+                <div class="col-6">
+                    <h5>Genere:</h5>
+                </div>
+                <div class="col-4">
+                <span *ngFor="let genres of movie?.genres"> 
+                    {{genres.name}}
+                </span>
+                </div>
+            </div>
+            <div style='margin-top:30px;'></div>
+            <div class="row">
+                <div class="col-6">
+                    <h5>Durata:</h5>
+                </div>
+                <div class="col-4">
+                    {{movie?.runtime}} minuti
+                </div>
+            </div>
+            <div style='margin-top:30px;'></div>
+            <div class="row">
+                <div class="col-6">
+                    <h5>Data d'uscita:</h5>
+                </div>
+                <div class="col-4">
+                    {{movie?.release_date}}
+                </div>
+            </div>
+            <div style='margin-top:30px;'></div>
+            <div class="row">
+                <div class="col-6">
+                <h5>Votazione media:</h5>
+                </div>
+                <div class="col-4">
+                {{movie?.vote_average}}
+                </div>
+            </div>
+    </div>   
+</div>
