@@ -13,12 +13,12 @@ export const allFavouriteMovies = async (req, res) => {
 
 export const getAllFavouriteMoviesByUserId = async (req, res) => {
     try {
-        const favMovies = await FavouriteMovie.findAll({
+        const favouriteMovies = await FavouriteMovie.findAll({
             where: {
                 user_id: req.params.user_id
             }
         });
-            res.send(favMovies);
+        res.send(favouriteMovies);
     } catch (err) {
         console.log(err);
     }
@@ -90,7 +90,7 @@ export const deleteFavouriteMovie = async (req, res) => {
     try {
         await FavouriteMovie.destroy({
             where: {
-                movie_id: req.params.movie_id
+                id: req.params.id
             }
         });
         res.json({

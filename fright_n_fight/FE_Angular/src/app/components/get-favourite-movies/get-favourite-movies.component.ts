@@ -17,16 +17,18 @@ export class GetFavouriteMoviesComponent implements OnInit {
 
   userId: number | null = null;
   movies: FavouriteMovie[] = [];
+  //favouriteMovies: FavouriteMovie[] = [];
   moviesData: MovieData []= [];
   moviesCredits: MovieCredits [] = [];
 
   constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute,
     public tokenStorageService: TokenStorageService, public movieAPIService: MovieApiService) {
-   }
+  }
 
   ngOnInit(): void {
-    this.userId = 155// this.tokenStorageService.getUserId();
+    this.userId = this.tokenStorageService.getUserId();
     this.getAllFavouriteMovies();
+    //this.getAllFavouriteMoviesByUserId(this.tokenStorageService.getUserId())
   }
 
   getAllFavouriteMovies(){
@@ -44,4 +46,21 @@ export class GetFavouriteMoviesComponent implements OnInit {
       }
     })
   }
+
+  /*getAllFavouriteMoviesByUserId(userId: number|null){
+    this.backendAPIService.getAllFavouriteMoviesByUserId(userId).subscribe({
+      next: (favouriteMovies) => {
+        this.favouriteMovies = favouriteMovies;
+        
+        for (let i = 0; i < this.favouriteMovies.length; i++) {
+            this.movieAPIService.getMovieCredits(this.favouriteMovies[i].movie_id).subscribe({
+              next : (movieCredit) => this.moviesCredits[i]= movieCredit
+            }),
+            this.movieAPIService.getMovieDetails(this.favouriteMovies[i].movie_id).subscribe({
+              next : (movieData) => this.moviesData[i] = movieData
+          })
+        }
+      }
+    });
+  }*/
 }
