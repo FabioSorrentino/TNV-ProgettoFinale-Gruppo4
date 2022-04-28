@@ -32,19 +32,12 @@ export class GetFavouriteMoviesComponent implements OnInit {
   }
 
   getAllFavouriteMovies(){
-    this.backendAPIService.getAllFavouriteMoviesByUserId(this.userId).subscribe({
-      next: (res) => { this.movies = res;
-        for (let i = 0; i < this.movies.length; i++) {
-          let movieId = this.movies[i].movie_id;
-          this.movieAPIService.getMovieCredits(movieId).subscribe({
-            next : (val) => this.moviesCredits[i]= val
-          }),
-          this.movieAPIService.getMovieDetails(movieId).subscribe({
-            next : (resu) => this.moviesData[i] = resu
-          })
-        }
-      }
-    })
+    this.userId = this.tokenStorageService.getUserId();
+    this.backendAPIService.getAllFavouriteMoviesByUser(this.userId).subscribe({   //da modificare prima di pushare
+      next: (res) => this.movies = res,
+      error: () => console.log('Error!'),
+      complete: () => console.log('Complete')
+  });
   }
 
   /*getAllFavouriteMoviesByUserId(userId: number|null){
