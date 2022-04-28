@@ -1,11 +1,23 @@
 hr{
     color: red;
+    width: 650px;
 }
 
 #locandina{
     float: left; padding: 15px 15px 15px 0;
+    width: 30%;
+    height: 25%;
 }
 
 #attributi{
     padding:5px; float:inline-start; 
+    width: 50%;
+    height: 25%;
+}
+
+#deleteButton{
+    position: relative;
+    top: 10px;
+    right: auto;
+    width: 100%;
 }
