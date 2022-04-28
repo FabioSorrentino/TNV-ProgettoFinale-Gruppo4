@@ -1,10 +1,6 @@
 <!--<div class="container">
     <div class="movie" *ngFor="let movie of moviesData">
-        <div class="col-md-9" id="poster">
-            <div class="poster_container">
-        <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" width="25%" height="25%"/>
-            </div>
-        </div>  
+        <img [src]="this.movieAPIService.getLocandina(this.movie.poster_path)" alt="locandina film"  class="rounded mx-auto d-block"  width="65%" height="65%"/>
             <div style='margin-top:30px;'></div>
             <div class="row">
                 <div class="col-6">
@@ -52,7 +48,10 @@
                 {{movie?.vote_average}}/10
                 </div>
             </div>
-            <app-delete-favourite-movie></app-delete-favourite-movie>
+            <div *ngFor="let favouriteMovie of movies">
+                <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id">
+                </app-delete-favourite-movie>
+            </div> 
             <div style='margin-top:30px;'></div>
             <div style='margin-top:30px;'></div>
             <hr>

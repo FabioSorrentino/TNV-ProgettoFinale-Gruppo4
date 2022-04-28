@@ -17,31 +17,43 @@ export class GetFavouriteMoviesComponent implements OnInit {
 
   userId: number | null = null;
   movies: FavouriteMovie[] = [];
+  //favouriteMovies: FavouriteMovie[] = [];
   moviesData: MovieData []= [];
   moviesCredits: MovieCredits [] = [];
 
   constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute,
     public tokenStorageService: TokenStorageService, public movieAPIService: MovieApiService) {
-   }
+  }
 
   ngOnInit(): void {
-    this.userId =this.tokenStorageService.getUserId();
+    this.userId = this.tokenStorageService.getUserId();
     this.getAllFavouriteMovies();
+    //this.getAllFavouriteMoviesByUserId(this.tokenStorageService.getUserId())
   }
 
   getAllFavouriteMovies(){
-    this.backendAPIService.getAllFavouriteMoviesByUserId(this.userId).subscribe({
-      next: (res) => { this.movies = res;
-        for (let i = 0; i < this.movies.length; i++) {
-          let movieId = this.movies[i].movie_id;
-          this.movieAPIService.getMovieCredits(movieId).subscribe({
-            next : (val) => this.moviesCredits[i]= val
-          }),
-          this.movieAPIService.getMovieDetails(movieId).subscribe({
-            next : (resu) => this.moviesData[i] = resu
+    this.userId = this.tokenStorageService.getUserId();
+    this.backendAPIService.getAllFavouriteMoviesByUserId(this.userId).subscribe({   //da modificare prima di pushare
+      next: (res) => this.movies = res,
+      error: () => console.log('Error!'),
+      complete: () => console.log('Complete')
+  });
+  }
+
+  /*getAllFavouriteMoviesByUserId(userId: number|null){
+    this.backendAPIService.getAllFavouriteMoviesByUserId(userId).subscribe({
+      next: (favouriteMovies) => {
+        this.favouriteMovies = favouriteMovies;
+        
+        for (let i = 0; i < this.favouriteMovies.length; i++) {
+            this.movieAPIService.getMovieCredits(this.favouriteMovies[i].movie_id).subscribe({
+              next : (movieCredit) => this.moviesCredits[i]= movieCredit
+            }),
+            this.movieAPIService.getMovieDetails(this.favouriteMovies[i].movie_id).subscribe({
+              next : (movieData) => this.moviesData[i] = movieData
           })
         }
       }
-    })
-  }
+    });
+  }*/
 }
