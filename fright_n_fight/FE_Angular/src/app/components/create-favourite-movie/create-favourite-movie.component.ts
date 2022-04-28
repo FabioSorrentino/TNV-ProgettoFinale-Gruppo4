@@ -12,14 +12,14 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 export class CreateFavouriteMovieComponent implements OnInit {
 
   userId: number | null = null // PROVA DA CANCELLARE -- prende il userId da tokenStorageService 
-  movieId: number = 500; // PROVA DA CANCELLARE -- prende il movieId da ???
+  movieId: number = 600; // PROVA DA CANCELLARE -- prende il movieId da ???
   favouriteMovie : FavouriteMovie | null = null;
   favList: FavouriteMovie[] = [];
 
   constructor(private backendAPIService : BackendApiService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
-    this.userId = 155// this.tokenStorageService.getUserId()
+    this.userId = this.tokenStorageService.getUserId()
   }
 
   createFavouriteMovie() {

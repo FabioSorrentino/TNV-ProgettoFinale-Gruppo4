@@ -5,7 +5,7 @@ import { Comments } from '../models/comments';
 import { FavouriteMovie } from '../models/favouriteMovie';
 import { Rating } from '../models/rating';
 
-const SB_API_URL = 'http://localhost:8080/api/auth/';
+const SB_API_URL = 'http://localhost:8090/api/auth/';
 const NODE_API_URL = 'http://localhost:3001/favourites/';
 
 @Injectable({
