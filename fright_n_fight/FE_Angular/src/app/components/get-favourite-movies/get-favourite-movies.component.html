@@ -1,4 +1,4 @@
-<div class="container-fluid text-center">
+<div class="container">
     <div class="movie" *ngFor="let movie of moviesData">
         <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" alt="locandina film"  class="rounded mx-auto d-block"  width="65%" height="65%"/>
             <div style='margin-top:30px;'></div>
@@ -48,5 +48,9 @@
                 {{movie?.vote_average}}
                 </div>
             </div>
+            <app-delete-favourite-movie></app-delete-favourite-movie>
+            <div style='margin-top:30px;'></div>
+            <div style='margin-top:30px;'></div>
+            <hr>
     </div>   
 </div>
