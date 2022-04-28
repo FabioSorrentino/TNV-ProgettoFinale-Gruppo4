@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FavouriteMovie } from 'src/app/models/favouriteMovie';
+import { MovieCredits } from 'src/app/models/movieCredits';
+import { MovieData } from 'src/app/models/movieData';
 import { BackendApiService } from 'src/app/service/backend-api.service';
+import { MovieApiService } from 'src/app/service/movie-api.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 
@@ -14,11 +17,15 @@ export class GetFavouriteMoviesComponent implements OnInit {
 
   userId: number | null = null;
   movies: FavouriteMovie[] = [];
+  moviesData: MovieData []= [];
+  moviesCredits: MovieCredits [] = [];
 
-  constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute, public tokenStorageService: TokenStorageService) {
+  constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute,
+    public tokenStorageService: TokenStorageService, public movieAPIService: MovieApiService) {
    }
 
   ngOnInit(): void {
+    this.userId = 155// this.tokenStorageService.getUserId();
     this.getAllFavouriteMovies();
   }
 
@@ -30,5 +37,4 @@ export class GetFavouriteMoviesComponent implements OnInit {
       complete: () => console.log('Complete')
   });
   }
-
 }
