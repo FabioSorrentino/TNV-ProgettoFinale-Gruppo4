@@ -1,63 +1,3 @@
-<!--<div class="container">
-    <div class="movie" *ngFor="let movie of moviesData">
-        <img [src]="this.movieAPIService.getLocandina(this.movie.poster_path)" alt="locandina film"  class="rounded mx-auto d-block"  width="65%" height="65%"/>
-            <div style='margin-top:30px;'></div>
-            <div class="row">
-                <div class="col-6">
-                    <h5>Titolo:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie.title}}
-                </div>
-            </div>
-            <div style='margin-top:30px;'></div>
-            <div class="row">
-                <div class="col-6">
-                    <h5>Genere:</h5>
-                </div>
-                <div class="col-4">
-                <span *ngFor="let genres of movie?.genres"> 
-                    {{genres.name}}
-                </span>
-                </div>
-            </div>
-            <div style='margin-top:30px;'></div>
-            <div class="row">
-                <div class="col-6">
-                    <h5>Durata:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie?.runtime}} minuti
-                </div>
-            </div>
-            <div style='margin-top:30px;'></div>
-            <div class="row">
-                <div class="col-6">
-                    <h5>Data d'uscita:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie?.release_date}}
-                </div>
-            </div>
-            <div style='margin-top:30px;'></div>
-            <div class="row">
-                <div class="col-6">
-                <h5>Votazione media:</h5>
-                </div>
-                <div class="col-4">
-                {{movie?.vote_average}}/10
-                </div>
-            </div>
-            <div *ngFor="let favouriteMovie of movies">
-                <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id">
-                </app-delete-favourite-movie>
-            </div> 
-            <div style='margin-top:30px;'></div>
-            <div style='margin-top:30px;'></div>
-            <hr>
-    </div>   
-</div> -->
-
 <div class="container">
     <div class="movie"  *ngFor="let movie of moviesData">
       <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" id="locandina" [border]="3"  width="25%" height="25%"/>
@@ -125,6 +65,10 @@
             </div>
         </li>
     </ul>
+    <div *ngFor="let favouriteMovie of movies">
+        <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id">
+        </app-delete-favourite-movie>
+    </div> 
     <br><br><br><br><br><br><br><br>
     </div>
 </div>
