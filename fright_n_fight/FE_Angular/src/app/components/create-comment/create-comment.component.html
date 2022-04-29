@@ -2,7 +2,7 @@
 <form #commentsForm="ngForm" (submit)="createComment(commentsForm)">
     <div class="mb-3">
         <label for="comment"><h1>Scrivi una recensione:</h1></label>
-        <textarea [ngModel] name="comment" maxlength="160" class="form-control" id="comment" #comment="ngModel" rows="5" required></textarea>
+        <textarea [ngModel] maxlength="160" id="comment" #comment="ngModel" rows="5" required></textarea>
     </div>
 <button type="submit" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Comment</button>
 </form>
