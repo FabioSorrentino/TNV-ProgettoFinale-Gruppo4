@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Comments } from 'src/app/models/comments';
@@ -13,21 +13,20 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class CommentiComponent implements OnInit {
 
-  movieId: number = 0;
+  @Input(`movieId`) movieId: number | null = null;
+  userId: number | null = null;
   
   constructor (private backendAPIService: BackendApiService, public tokenStorageService: TokenStorageService,
   private activatedRoute: ActivatedRoute, public movieAPIService: MovieApiService) {
    }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(p =>{
-      this.movieId = +p['movieId'];
-    })
-  }
+    this.userId = this.tokenStorageService.getUserId()
+    }
+  
 
   createComment(comment: NgForm) {
-    let userId: number | null = this.tokenStorageService.getUserId();
-    let firstComment: Partial<Comments> ={user_id: userId, movie_id: this.movieId, comment: comment.value.comment};
+    let firstComment: Partial<Comments> ={user_id: this.userId, movie_id: this.movieId, comment: comment.value.comment};
     this.backendAPIService.createComment(firstComment).subscribe({ 
     next: () => console.log('comment created'),
     error: () => console.log('error')
