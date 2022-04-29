@@ -1,16 +1,18 @@
 <div class="container">
-    <div class="movie" *ngFor="let movie of moviesData">
-        <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" alt="locandina film"  class="rounded mx-auto d-block"  width="65%" height="65%"/>
-            <div style='margin-top:30px;'></div>
-            <div class="row">
-                <div class="col-6">
-                    <h5>Titolo:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie.title}}
-                </div>
+    <div class="movie"  *ngFor="let movie of moviesData">
+      <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" id="locandina" [border]="3"  width="30%" height="30%"/>
+      <ul class="list-group list-group-flush" id="attributi">
+        <li class="list-group-item">
+        <div class="row">
+            <div class="col-6">
+                <h5>Titolo:</h5>
             </div>
-            <div style='margin-top:30px;'></div>
+            <div class="col-4">
+                {{movie.title}}
+            </div>
+        </div>
+        </li>
+        <li class="list-group-item">
             <div class="row">
                 <div class="col-6">
                     <h5>Genere:</h5>
@@ -21,7 +23,8 @@
                 </span>
                 </div>
             </div>
-            <div style='margin-top:30px;'></div>
+        </li>
+        <li class="list-group-item">
             <div class="row">
                 <div class="col-6">
                     <h5>Durata:</h5>
@@ -30,7 +33,8 @@
                     {{movie?.runtime}} minuti
                 </div>
             </div>
-            <div style='margin-top:30px;'></div>
+        </li>
+        <li class="list-group-item">
             <div class="row">
                 <div class="col-6">
                     <h5>Data d'uscita:</h5>
@@ -39,18 +43,33 @@
                     {{movie?.release_date}}
                 </div>
             </div>
-            <div style='margin-top:30px;'></div>
+        </li>
+        <li class="list-group-item">
             <div class="row">
                 <div class="col-6">
-                <h5>Votazione media:</h5>
+                    <h5>Votazione media:</h5>
                 </div>
                 <div class="col-4">
-                {{movie?.vote_average}}
+                    {{movie?.vote_average}}/10
                 </div>
             </div>
-            <app-delete-favourite-movie></app-delete-favourite-movie>
-            <div style='margin-top:30px;'></div>
-            <div style='margin-top:30px;'></div>
-            <hr>
-    </div>   
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-6">
+                    <h5>Titolo Originale:</h5>
+                </div>
+                <div class="col-4">
+                    {{movie?.original_title}}
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div *ngFor="let favouriteMovie of movies">
+        <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id" id="deleteButton">
+        </app-delete-favourite-movie>
+    </div> 
+    <hr>
+    <br><br><br><br><br><br><br><br>
+    </div>
 </div>

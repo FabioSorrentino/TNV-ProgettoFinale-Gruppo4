@@ -22,6 +22,17 @@
       user-select: none;
     }
 
+    .navbar {
+      position: relative;
+    }
+
+    .navbar-brand {
+      position: absolute;
+      left: 50%;
+      margin-left: -50px !important;  /* 50% of your logo width */
+      display: block;
+    }
+
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;

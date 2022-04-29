@@ -1,51 +1,67 @@
-<div class="container-fluid text-center">
-  <div class="col-sm-6" id="poster">
-      <img [src]="this.movieAPIService.getLocandina( this.movieData?.poster_path)" alt="locandina film"  class="rounded mx-auto d-block"  width="65%" height="65%"/>
-  </div>
-  <div style='margin-top:30px;'></div>
-  <div class="row">
-      <div class="col-6">
-        <h5>Titolo:</h5>
+<div class="container">
+    <img [src]="this.movieAPIService.getLocandina( this.movieData?.poster_path)" id="locandina" [border]="3" />
+  <ul class="list-group list-group-flush" id="attributi">
+      <li class="list-group-item">
+      <div class="row">
+          <div class="col-6">
+              <h5>Titolo:</h5>
+          </div>
+          <div class="col-4">
+              {{movieData?.title}}
+          </div>
       </div>
-      <div class="col-4">
-      {{movieData?.title}}
-      </div>
-  </div>
-  <div style='margin-top:30px;'></div>
-  <div class="row">
-      <div class="col-6">
-        <h5>Genere:</h5>
-      </div>
-      <div class="col-4">
-      <span *ngFor="let genres of movieData?.genres"> 
-          {{genres.name}}
-      </span>
-  </div>
-  <div style='margin-top:30px;'></div>
-  <div class="row">
-    <div class="col-6">
-      <h5>Durata:</h5>
-    </div>
-    <div class="col-4">
-      {{movieData?.runtime}} minuti
-    </div>
-  </div>
-  <div style='margin-top:30px;'></div>
-  <div class="row">
-    <div class="col-6">
-      <h5>Data d'uscita:</h5>
-    </div>
-    <div class="col-4">
-    {{movieData?.release_date}}
-    </div>
-  </div>
-  <div style='margin-top:30px;'></div>
-  <div class="row">
-    <div class="col-6">
-      <h5>Votazione media:</h5>
-    </div>
-    <div class="col-4">
-      {{movieData?.vote_average}}
-    </div>
-  </div>
+      </li>
+      <li class="list-group-item">
+          <div class="row">
+              <div class="col-6">
+                  <h5>Genere:</h5>
+              </div>
+              <div class="col-4">
+              <span *ngFor="let genres of movieData?.genres"> 
+                  {{genres.name}}
+              </span>
+              </div>
+          </div>
+      </li>
+      <li class="list-group-item">
+          <div class="row">
+              <div class="col-6">
+                  <h5>Durata:</h5>
+              </div>
+              <div class="col-4">
+                  {{movieData?.runtime}} minuti
+              </div>
+          </div>
+      </li>
+      <li class="list-group-item">
+          <div class="row">
+              <div class="col-6">
+                  <h5>Data d'uscita:</h5>
+              </div>
+              <div class="col-4">
+                  {{movieData?.release_date}}
+              </div>
+          </div>
+      </li>
+      <li class="list-group-item">
+          <div class="row">
+              <div class="col-6">
+                  <h5>Votazione media:</h5>
+              </div>
+              <div class="col-4">
+                  {{movieData?.vote_average}}/10
+              </div>
+          </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+            <div class="col-6">
+                <h5>Titolo Originale:</h5>
+            </div>
+            <div class="col-4">
+                {{movieData?.original_title}}
+            </div>
+        </div>
+    </li>
+  </ul>
 </div>
