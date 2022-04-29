@@ -3,7 +3,8 @@
 		<form id="login-form" class="text-left" (submit)="createFavouriteMovie()">
 			<div class="login-form-main-message"></div>
 			<div class="main-login-form">
-				<button type="submit" class="login-button">Add!!!</button>
+				<button type="submit" class="login-button" (click)="isVisible = !isVisible" *ngIf="isVisible && !isFavMovie" 
+				 >AddFavourite</button>
 			</div>
 		</form>
 	</div>

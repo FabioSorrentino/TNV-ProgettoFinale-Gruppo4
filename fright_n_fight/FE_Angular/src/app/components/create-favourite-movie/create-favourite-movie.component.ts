@@ -15,11 +15,31 @@ export class CreateFavouriteMovieComponent implements OnInit {
   movieId: number = 500; // PROVA DA CANCELLARE -- prende il movieId da ???
   favouriteMovie : FavouriteMovie | null = null;
   favList: FavouriteMovie[] = [];
+  isFavMovie: boolean = false;
+  isVisible: boolean = true;
 
   constructor(private backendAPIService : BackendApiService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.userId = this.tokenStorageService.getUserId()
+    this.checkListFavouriteMovie(this.movieId)
+  }
+
+  checkListFavouriteMovie(movieId: number| null){
+    if (this.tokenStorageService.getUserId != null){
+      this.backendAPIService.getAllFavouriteMoviesByUserId(this.userId).subscribe({
+        next: (res) => {this.favList = res;
+          for (let i = 0; i < this.favList.length;  i++) {
+            if (this.favList[i].movie_id == movieId){
+              this.isFavMovie = true;
+              break;
+            }else{
+              this.isFavMovie = false;
+            }
+          }
+        }
+      })
+    }
   }
 
   createFavouriteMovie() {
