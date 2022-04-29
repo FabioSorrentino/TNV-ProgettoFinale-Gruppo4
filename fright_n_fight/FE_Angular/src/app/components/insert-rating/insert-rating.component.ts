@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { BackendApiService } from 'src/app/service/backend-api.service';
@@ -15,21 +15,19 @@ import { Rating } from 'src/app/models/rating';
 })
 export class InsertRatingComponent implements OnInit {
 
-  movieId: number = 0;
+  @Input(`movieId`) movieId: number | null = null;
+  userId: number | null = null;
 
   constructor(private httpClient : HttpClient, private backendAPIService: BackendApiService, public tokenStorageService: TokenStorageService,
     private activatedRoute: ActivatedRoute, public movieAPIService: MovieApiService) { 
     }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(p =>{
-      this.movieId = +p['movieId'];
-    })
+    this.userId = this.tokenStorageService.getUserId();
   }
 
   createNewRating (ratingForm: NgForm) {
-    let userId: number | null = this.tokenStorageService.getUserId();
-    let firstRating: Partial<Rating> ={user_id: userId, movie_id: this.movieId, movie_rating: ratingForm.value.movie_rating};
+    let firstRating: Partial<Rating> ={user_id: this.userId, movie_id: this.movieId, movie_rating: ratingForm.value.movie_rating};
     this.backendAPIService.createNewRating(firstRating).subscribe({
       next: () => console.log('New rating created!'),
       error: () => console.log('Error!')
