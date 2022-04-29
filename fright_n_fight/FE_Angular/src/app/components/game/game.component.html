@@ -5,53 +5,61 @@
           
         
         
-        <div *ngIf="this.start; then gameBlock else startBlock"></div>
+        <div *ngIf="this.start; then gamePlay else startBlock"></div>
                  
 
 
-          <ng-template #gameBlock>
+       <ng-template #gamePlay>
+         
                   <!-- sezione titolo e timer     -->
               <div class="row">
                   <div class="col-6">
-                      <h2 *ngIf="this.finish">Ecco il nome del film: {{movieDetails?.title}}</h2>
+                      <h2 *ngIf="this.stop">Ecco il nome del film: {{movieDetails?.title}}</h2>
+                      <h2 *ngIf="this.finish">Hai indovinato! Era proprio {{movieDetails?.title}}</h2>
+                      
                   </div>
                   <div class="col-6">
-                      <h2 *ngIf="!this.finish" >{{minutes}}:{{seconds}}</h2>
-                      <h2 *ngIf="this.win"> Hai vinto! {{points}}pt. </h2>
-                      <h2 *ngIf="!this.win && this.finish">Hai perso! {{points}}pt.</h2>
+                      <h2 *ngIf="!this.finish" >{{minutes}}:{{seconds}}</h2>  
+                      <h2 *ngIf="this.stop"> Non hai vinto punti! </h2>
+                      <h2 *ngIf="this.finish"> Hai vinto ben {{points}} punti! </h2>
+                      <h2 *ngIf="this.finish || this.stop "><img [src]="this.newMovieService.getLocandina(movieDetails?.poster_path)" id="locandina" [border]="3"  width="30%" height="30%"/></h2>
+                      
                   </div>
               </div>
  
-              <div class="row">
+              <div class="row" *ngIf="finish == false">
                   <div class="col-6 align-self-center">
                      <dl class="row">
                       <dt class="col-sm-4">Data di Uscita:</dt>
                       <dd class="col-sm-8" ><p>{{movieDetails?.release_date}}</p></dd> 
                      
                       <dt class="col-sm-4">Genere:</dt>
-                      <dd class="col-sm-8"><p *ngFor="let genere of genres">{{genere?.name}}</p></dd>   
-                      
+                      <dd class="col-sm-8">
+                       <p><dd *ngFor="let genres of movieDetails?.genres"> 
+                          {{genres.name}}
+                        </dd>  
+                      </p> 
                       <dt class="col-sm-4">Budget:</dt>
-                      <dd class="col-sm-8" >
-                        <button (click)="onClickShowBudget()">Mostra</button> 
+                      <dd class="col-sm-8">
+                        <button (click)="onClickShowBudget()" [hidden]="showBudget">Mostra</button> 
                           <h2 [(ngModel)]="onClickShowBudget" [hidden]="!showBudget">{{movieDetails?.budget}}</h2>
                       </dd>
                       
                       <dt class="col-sm-4">Popolarità:</dt>
                       <dd class="col-sm-8" >
-                        <button (click)="onClickShowPopularity()">Mostra</button> 
+                        <button (click)="onClickShowPopularity()" [hidden]="showPopularity">Mostra</button> 
                           <h2 [(ngModel)]="onClickShowPopularity" [hidden]="!showPopularity">{{movieDetails?.popularity}}</h2>
                       </dd>
 
                       <dt class="col-sm-4">Voto medio critica:</dt>
                       <dd class="col-sm-8" >
-                        <button (click)="onClickShowVote()">Mostra</button> 
+                        <button (click)="onClickShowVote()" [hidden]="showVote">Mostra</button> 
                           <h2 [(ngModel)]="onClickShowVote" [hidden]="!showVote">{{movieDetails?.vote_average}}</h2>
                       </dd>
 
                       <dt class="col-sm-4">TagLine:</dt>
                       <dd class="col-sm-8" >
-                        <button (click)="onClickShowTagLine()">Mostra</button> 
+                        <button (click)="onClickShowTagLine()" [hidden]="showTagLine">Mostra</button> 
                           <h2 [(ngModel)]="onClickShowTagLine" [hidden]="!showTagLine">{{movieDetails?.tagline}}</h2>
                       </dd>
                       <dd>{{movieDetails?.title}}</dd>
@@ -62,38 +70,35 @@
 
 
 
-               <div *ngIf="this.finish; then end else verifyTitle"></div>
+               <div *ngIf="this.finish; then endBlock else verifyTitle"></div>
 
                   <!--    sezione dedicata ad inserimento titolo       -->
+
+
               <ng-template #verifyTitle>
 
-              <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)">
-
-                  <div class="mb-4">
-                    <label for="Title" class="form-label">Titolo:</label>
-                    <input [ngModel] name="Title" type="text" class="form-control" id="Title">
-                  </div>
-
-                  <button type="submit" class="btn btn-primary">Indovina</button>
-
-              </form>
-
+                    <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)">
+                      <div class="mb-5">
+                      <label for="Title" class="form-label">Titolo:</label>
+                        <input [ngModel] name="Title" type="text" class="form-control" id="Title">
+                      </div>
+                      <button type="submit" class="btn btn-primary me-2">Indovina!</button>
+                    </form>
+                    <br><button (click)="onStop()" class="btn btn-primary">Stop!</button>
               </ng-template>
+
                    <!-- inserire i tasti che servono al termine del game -->
-              <ng-template #end>
-                  <button  type="button" class="btn btn-primary me-1" (click)="playAgain()" >Rigioca</button>
-                  <button  type="button" class="btn btn-primary me-1">Salva Film</button> <!--Agganciare metodo-->
+              <ng-template #endBlock>
+                      <button  type="button" class="btn btn-primary me-2" (click)="playAgain()" >Rigioca</button>
+                      <button  type="button" class="btn btn-primary me-2">Salva Film</button> <!--Agganciare metodo-->
               </ng-template>
-              
-
-          </ng-template>
-
+     </ng-template>
 
                   <!--sessione di start da agganciare alla home-->
-          <ng-template #startBlock>
-              <div class="text-center"> 
-              <button (click)="onStart()" type="button" class="btn btn-primary">Inizia</button></div>
-          </ng-template>
+              <ng-template #startBlock>
+                    <div class="text-center"> 
+                    <button (click)="onStart()" type="button" class="btn btn-primary">Inizia</button></div>
+              </ng-template>
       </div> 
   </div>
 </div>
