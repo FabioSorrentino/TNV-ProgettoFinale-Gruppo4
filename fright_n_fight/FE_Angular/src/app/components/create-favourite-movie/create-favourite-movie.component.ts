@@ -12,7 +12,7 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 export class CreateFavouriteMovieComponent implements OnInit {
 
   userId: number | null = null // PROVA DA CANCELLARE -- prende il userId da tokenStorageService 
-  movieId: number = 300; // PROVA DA CANCELLARE -- prende il movieId da ???
+  movieId: number = 500; // PROVA DA CANCELLARE -- prende il movieId da ???
   favouriteMovie : FavouriteMovie | null = null;
   favList: FavouriteMovie[] = [];
 

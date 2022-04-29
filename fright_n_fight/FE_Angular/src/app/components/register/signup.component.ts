@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
   signup(signupForm: NgForm){
     this.backendAPIService.signup(signupForm).subscribe({
       next: (res) => {
-        console.log(res.valueOf)
+        //console.log(res.valueOf)
         this.tokenStorageService.saveToken(res);
         this.tokenStorageService.saveUser(res);
         this.isLoggedIn = true;
