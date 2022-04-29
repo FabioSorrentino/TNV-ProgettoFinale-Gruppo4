@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'register', component: SignupComponent},
     { path: 'rating', component: InsertRatingComponent},
-    { path: 'rating/:movie_id', component: GetRatingComponent},
+    { path: 'rating/cammadonna', component: GetRatingComponent}, // /:user_id/:movie_id
     { path: 'favourites', component: GetFavouriteMoviesComponent},
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},

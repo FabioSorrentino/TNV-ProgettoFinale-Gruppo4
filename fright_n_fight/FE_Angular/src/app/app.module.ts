@@ -17,6 +17,7 @@ import { SignupComponent } from './components/register/signup.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { GameComponent } from './components/game/game.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { GameComponent } from './components/game/game.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
