@@ -27,15 +27,21 @@ export class GetFavouriteMoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.tokenStorageService.getUserId();
+    this.getAllFavouriteMoviesByUserId();
+    //this.getAllFavouriteMoviesByUserId(this.tokenStorageService.getUserId())
+  }
+
+  /*getAllFavouriteMovies(){
+    this.userId = this.tokenStorageService.getUserId();
     this.backendAPIService.getAllFavouriteMoviesByUserId(this.userId).subscribe({   //da modificare prima di pushare
       next: (res) => this.movies = res,
       error: () => console.log('Error!'),
       complete: () => console.log('Complete')
   });
-  }
+  }*/
 
 
-  getAllFavouriteMoviesByUser(){
+  getAllFavouriteMoviesByUserId(){
     this.backendAPIService.getAllFavouriteMoviesByUserId(this.userId).subscribe({
       next: (res) => {
         this.movies = res;
