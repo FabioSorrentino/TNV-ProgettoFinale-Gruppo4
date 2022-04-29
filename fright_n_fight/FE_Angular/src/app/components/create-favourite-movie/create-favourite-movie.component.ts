@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FavouriteMovie } from 'src/app/models/favouriteMovie';
 import { BackendApiService } from 'src/app/service/backend-api.service';
@@ -11,12 +11,11 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class CreateFavouriteMovieComponent implements OnInit {
 
-  userId: number | null = null // PROVA DA CANCELLARE -- prende il userId da tokenStorageService 
-  movieId: number = 900; // PROVA DA CANCELLARE -- prende il movieId da ???
+  @Input(`movieId`) movieId: number | null = null;
+  userId: number | null = null
   favouriteMovie : FavouriteMovie | null = null;
   favList: FavouriteMovie[] = [];
   isFavMovie: boolean = false;
-  isVisible: boolean = true;
 
   constructor(private backendAPIService : BackendApiService, private tokenStorageService: TokenStorageService) { }
 
