@@ -22,8 +22,9 @@ export class GameComponent implements OnInit {
   /*Mostrare o meno info film e aggiungere del tempo*/
   showPopularity : boolean = false;
   showBudget : boolean = false;
-  showTagLine : boolean = false;
+  showOrLanguage : boolean = false;
   showVote : boolean = false;
+  showRuntime : boolean = false;
 
     /*Variabili per contatore*/
   subscribeTimer: number = 0;
@@ -37,7 +38,7 @@ export class GameComponent implements OnInit {
   maxRandom: number = 6000;
 
   /*Modello per recupero dati film*/
-  movieDetails: MovieData| null = null;
+  movieSpecs: MovieData| null = null;
   movieCredits: MovieCredits| null = null;
   genres: Genre[] = [];
 
@@ -61,9 +62,15 @@ export class GameComponent implements OnInit {
     this.getMovie();
     this.timer();
    
-     
     }
 
+
+    onClickShowRuntime() {
+      this.showRuntime = true;
+      this.timeAdded = this.timeAdded + 30;
+    }
+
+    
     onClickShowBudget(){
       this.showBudget = true;
       this.timeAdded = this.timeAdded + 30;
@@ -76,10 +83,10 @@ export class GameComponent implements OnInit {
 
     }
 
-    onClickShowTagLine(){
+    onclickOrLanguage(){
 
           //window.alert('No description!');
-      this.showTagLine = true;
+      this.showOrLanguage = true;
       this.timeAdded = this.timeAdded + 30;
       
     }
@@ -90,15 +97,13 @@ export class GameComponent implements OnInit {
       this.timeAdded = this.timeAdded + 30;
      
     }
-    
-
-    getRandomInt(max:number) {
-      return Math.floor(Math.random() * max);
-    }
 
     onStop() {
-    
       this.stop = true;
+    }
+
+    getRandomInt(max:number) {
+      return Math.floor(Math.random()*max);
     }
 
     timer() {
@@ -119,8 +124,8 @@ export class GameComponent implements OnInit {
     
         this.newMovieService.getMovieDetails(this.movieId).subscribe({
           next: (res)=> {
-              this.movieDetails = res;
-              if(this.movieDetails === null || this.movieDetails.poster_path === null || this.movieCredits === null || this.movieCredits?.cast === null || this.movieCredits?.crew === null) 
+              this.movieSpecs = res;
+              if(this.movieSpecs === null || this.movieSpecs.poster_path === null || this.movieSpecs.tagline === null || this.movieCredits === null || this.movieCredits?.cast === null || this.movieCredits?.crew === null) 
               this.getMovie();
           },  
           error: ()=> {
@@ -137,7 +142,7 @@ export class GameComponent implements OnInit {
   
 
     verifyResult(verifyForm: NgForm){
-        if(this.movieDetails?.title.toLowerCase()===verifyForm.value.Title.toLowerCase()){
+        if(this.movieSpecs?.title.toLowerCase()===verifyForm.value.Title.toLowerCase()){
           this.finish = true;
           this.points = this.subscribeTimer;
           console.log("Hai indovinato!");
