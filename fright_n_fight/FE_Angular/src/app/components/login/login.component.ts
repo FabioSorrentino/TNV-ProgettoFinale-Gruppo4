@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BackendApiService } from 'src/app/service/backend-api.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
 
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   isLoggedIn = false;
 
-  constructor(private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService) {
+  constructor(private backendAPIService: BackendApiService, private tokenStorageService: TokenStorageService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -31,13 +32,11 @@ export class LoginComponent implements OnInit {
         this.tokenStorageService.saveToken(res);
         this.tokenStorageService.saveUser(res);
         this.isLoggedIn = true;
+        this.router.navigate(['home']);
       },
-      error: () => console.log()
+      error: () => {
+        console.log()
+      }
     });
-  }
-
-  logout() {
-    this.isLoggedIn = false;
-    this.tokenStorageService.logout();
   }
 }
