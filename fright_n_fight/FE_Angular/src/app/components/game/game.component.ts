@@ -69,7 +69,7 @@ export class GameComponent implements OnInit {
     this.start = true;
     this.getMovie();
     this.countDownTimer();
-    console.log(this.points);
+   
      
     }
 
@@ -126,11 +126,11 @@ export class GameComponent implements OnInit {
     }
   
   
-  // metodo che recupera tutte le informazioni utili dall Api esterna e fa controli su presenza poster e gia giocati  
+
     getMovie(){
 
     this.movieId = this.getRandomInt(this.maxRandom);
-    console.log('ID: $this.movieId');
+    console.log(this.movieId);
     
 
     this.newMovieService.getMovieDetails(this.movieId).subscribe({
@@ -140,8 +140,8 @@ export class GameComponent implements OnInit {
           if(this.movieDetails === null || this.movieDetails.poster_path === null) 
             this.getMovie();
       },  
-      error: (res)=> {
-          console.log(res);
+      error: ()=> {
+          
           this.getMovie(); 
         },
         });

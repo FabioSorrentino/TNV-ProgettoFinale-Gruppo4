@@ -26,6 +26,17 @@
       "projectName": "loginApp",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-UserManagerApplication<UserManager>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.thenetvalue6.UserManager.UserManagerApplication",
+      "projectName": "UserManager",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }
