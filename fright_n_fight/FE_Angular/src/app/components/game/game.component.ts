@@ -36,13 +36,14 @@ export class GameComponent implements OnInit {
 
 
   // valori per calcolo conutdown e minuti mostrati
-  timeLeft: number = 120;
-  subscribeTimer: number |null = null;
+  timeLeft: number = 20;
+  subscribeTimer: number | null = null;
   seconds : string |null = null;
   minutes : string |null = null;
   
   //Punteggio
-  points: number | null = 0;
+  points: number | null = null;
+  ptRemoved : number | null = 30;
   
 
 
@@ -66,30 +67,43 @@ export class GameComponent implements OnInit {
  // metodo che fa partire la partita
   onStart(){
     this.start = true;
-    this.retirveMovie();
+    this.getMovie();
     this.countDownTimer();
-    
+    console.log(this.points);
      
     }
 
     onClickShowBudget(){
       this.showBudget = true;
       this.timeLeft = this.timeLeft + 30;
+
+      this.ptRemoved = this.points; //Leva 30 punti dal punteggio finale
+
+      console.log(this.points);
     }
 
     onClickShowVote(){
       this.showVote = true;
       this.timeLeft = this.timeLeft + 30;
+      this.points = -10;
+      console.log(this.points);
     }
 
     onClickShowTagLine(){
-      this.showTagLine = true;
+        
+      this.points = -10;
       this.timeLeft = this.timeLeft + 30;
+      
+          //window.alert('No description!');
+          return this.showTagLine = true;
+      
     }
 
     onClickShowPopularity(){
+      this.points = -10;
       this.showPopularity = true;
       this.timeLeft = this.timeLeft + 30;
+     
     }
     
     
@@ -113,18 +127,23 @@ export class GameComponent implements OnInit {
   
   
   // metodo che recupera tutte le informazioni utili dall Api esterna e fa controli su presenza poster e gia giocati  
-    retirveMovie(){
+    getMovie(){
 
     this.movieId = this.getRandomInt(this.maxRandom);
+    console.log('ID: $this.movieId');
+    
 
     this.newMovieService.getMovieDetails(this.movieId).subscribe({
       next: (res)=> {
-        this.movieDetails = res;
- 
-        if(this.movieDetails === null || this.movieDetails.poster_path === null) this.retirveMovie();},  
+          this.movieDetails = res;
+        
+          if(this.movieDetails === null || this.movieDetails.poster_path === null) 
+            this.getMovie();
+      },  
       error: (res)=> {
           console.log(res);
-          this.retirveMovie(); },
+          this.getMovie(); 
+        },
         });
 
     this.newMovieService.getMovieCredits(this.movieId).subscribe({
@@ -135,17 +154,17 @@ export class GameComponent implements OnInit {
     });
   }
   
-// Metodo per valutare l input sul tentativo titolo
-  guess(guessForm: NgForm){
-    if(this.movieDetails?.title.toLowerCase()===guessForm.value.guessTitle){
+
+  verifyResult(verifyForm: NgForm){
+    if(this.movieDetails?.title.toLowerCase()===verifyForm.value.Title){
       this.finish = true;
       this.win = true;
-      this.points = this.subscribeTimer;
-            
-      console.log("indovinato");
+        this.points = this.subscribeTimer;
+        
+      console.log("Hai indovinato!");
     }
     else{
-      console.log("Sbagliato");
+      console.log("Ops...hai sbagliato :(");
     }
   }
 
@@ -153,11 +172,11 @@ export class GameComponent implements OnInit {
   playAgain(){
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
-    this.router.navigate(["gioco"])
+    this.router.navigate(["game"]);
   }
 
   save(){
-    this.router.navigate(['/gioco', this.movieId, this.points]);
+    this.router.navigate(['/game', this.movieId, this.points]);
   }
 
 }

@@ -2,13 +2,18 @@
   <div class="row">
   
       <div class="col-12 col-md-8 offset-md-2 border border-top-0 border-bottom-0">
-          <div *ngIf="this.start; then thenBlock else elseBlock"></div>
-                  <!--    MACRO-SEZIONE GIOCO     -->
-          <ng-template #thenBlock>
+          
+        
+        
+        <div *ngIf="this.start; then gameBlock else startBlock"></div>
+                 
+
+
+          <ng-template #gameBlock>
                   <!-- sezione titolo e timer     -->
               <div class="row">
                   <div class="col-6">
-                      <h2 *ngIf="this.finish">{{movieDetails?.title}}</h2>
+                      <h2 *ngIf="this.finish">Ecco il nome del film: {{movieDetails?.title}}</h2>
                   </div>
                   <div class="col-6">
                       <h2 *ngIf="!this.finish" >{{minutes}}:{{seconds}}</h2>
@@ -18,17 +23,14 @@
               </div>
  
               <div class="row">
-                 
                   <div class="col-6 align-self-center">
-                     
-                     
                      <dl class="row">
                       <dt class="col-sm-4">Data di Uscita:</dt>
                       <dd class="col-sm-8" ><p>{{movieDetails?.release_date}}</p></dd> 
-                      
+                     
                       <dt class="col-sm-4">Genere:</dt>
-                      <dd class="col-sm-8"><p *ngFor="let genere of genres">{{genere?.name}}</p></dd>   
-
+                      <dd class="col-sm-8"><p *ngFor="let genere of genres">{{genere.name}}</p></dd>   
+                      
                       <dt class="col-sm-4">Budget:</dt>
                       <dd class="col-sm-8" >
                         <button (click)="onClickShowBudget()">Mostra</button> 
@@ -52,33 +54,43 @@
                         <button (click)="onClickShowTagLine()">Mostra</button> 
                           <h2 [(ngModel)]="onClickShowTagLine" [hidden]="!showTagLine">{{movieDetails?.tagline}}</h2>
                       </dd>
+                      <dd>{{movieDetails?.title}}</dd>
                     </dl>
                   </div>
               </div>
-                  <!--    MACRO-SEZIONE INDOVINA/RIGIOCA/SALVA-->
-               <div *ngIf="this.finish; then conclusionBlock else guessingBlock"></div>
+                 
+
+
+
+               <div *ngIf="this.finish; then end else verifyTitle"></div>
 
                   <!--    sezione dedicata ad inserimento titolo       -->
-              <ng-template #guessingBlock>
-              <form  #guessForm="ngForm" (submit)="guess(guessForm)">
-                  <div class="mb-3">
-                    <label for="guessTitle" class="form-label">Titolo:</label>
-                    <input [ngModel] name="guessTitle" type="text" class="form-control" id="guessTitle" aria-describedby="guess">
-                    <div id="guess" class="form-text">Concentrati e cerca di indovinare prima che il tempo scada. Hai tutti i tentativi che desideri!</div>
+              <ng-template #verifyTitle>
+
+              <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)">
+
+                  <div class="mb-4">
+                    <label for="Title" class="form-label">Titolo:</label>
+                    <input [ngModel] name="Title" type="text" class="form-control" id="Title">
                   </div>
+
                   <button type="submit" class="btn btn-primary">Indovina</button>
+
               </form>
+
               </ng-template>
-                   <!-- sezione dedicata rigioca salva-->
-              <ng-template #conclusionBlock>
-                  <button  type="button" class="btn btn-primary me-1" >Rigioca</button>
-                  <button  type="button" class="btn btn-primary me-1" >Salva Film</button>
+                   <!-- inserire i tasti che servono al termine del game -->
+              <ng-template #end>
+                  <button  type="button" class="btn btn-primary me-1" (click)="playAgain()" >Rigioca</button>
+                  <button  type="button" class="btn btn-primary me-1">Salva Film</button> <!--Agganciare metodo-->
               </ng-template>
               
 
           </ng-template>
-                  <!--   MACRO-SESSIONE PREGIOCO    sezione del pulsante di inizio       -->
-          <ng-template #elseBlock>
+
+
+                  <!--sessione di start da agganciare alla home-->
+          <ng-template #startBlock>
               <div class="text-center"> 
               <button (click)="onStart()" type="button" class="btn btn-primary">Inizia</button></div>
           </ng-template>

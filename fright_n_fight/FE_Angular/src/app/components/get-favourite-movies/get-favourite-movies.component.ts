@@ -31,7 +31,7 @@ export class GetFavouriteMoviesComponent implements OnInit {
 
   getAllFavouriteMovies(){
     this.userId = this.tokenStorageService.getUserId();
-    this.backendAPIService.getAllFavouriteMoviesByUser(this.userId).subscribe({   //da modificare prima di pushare
+    this.backendAPIService.getAllFavouriteMoviesByUserId(this.userId).subscribe({   //da modificare prima di pushare
       next: (res) => this.movies = res,
       error: () => console.log('Error!'),
       complete: () => console.log('Complete')
