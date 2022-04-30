@@ -42,8 +42,8 @@ export class BackendApiService {
     return this.httpClient.get<Rating>(`http://localhost:8000/api/movie_id/${movie_id}`);
   }
 
-  getRatingByUserIdMovieId(user_id: number | null, movie_id: number | null){
-    return this.httpClient.get<Rating>(`http://localhost:8000/api/rating/${user_id}/${movie_id}`);
+  getRatingValueByUserIdMovieId(user_id: number | null, movie_id: number | null){
+    return this.httpClient.get<number>(`http://localhost:8000/api/rating/${user_id}/${movie_id}`);
   }
 
   //servizi NODE

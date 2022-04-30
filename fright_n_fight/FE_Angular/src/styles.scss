@@ -1,1 +1,10 @@
-@import 'bootstrap/scss/bootstrap';
+//@import 'bootstrap/scss/bootstrap';
+
+html, body, div {
+  background: rgb(0,0,0);
+  padding: 0px;
+}
+
+.fa {
+    color: rgb(255, 0, 0);
+}

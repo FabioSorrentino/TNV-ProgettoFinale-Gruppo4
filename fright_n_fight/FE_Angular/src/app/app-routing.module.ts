@@ -12,16 +12,20 @@ import { SignupComponent } from './components/register/signup.component';
 import { GetMovieDetailComponent } from './components/get-movie-detail/get-movie-detail.component';
 import { GameComponent } from './components/game/game.component';
 import { InsertRatingComponent } from './components/insert-rating/insert-rating.component';
+import { HomeComponent } from './components/home/home.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 const routes: Routes = [
+    { path: 'home', component: HomeComponent},
     { path: 'comments/create', component: CommentiComponent},
     { path: 'comments/:movie_id', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
     { path: 'login', component: LoginComponent},
+    { path: 'logout', component: LogoutComponent},
     { path: 'register', component: SignupComponent},
     { path: 'rating', component: InsertRatingComponent},
-    { path: 'rating/:movie_id', component: GetRatingComponent},
+    { path: 'rating/cammadonna', component: GetRatingComponent}, // /:user_id/:movie_id
     { path: 'favourites', component: GetFavouriteMoviesComponent},
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
