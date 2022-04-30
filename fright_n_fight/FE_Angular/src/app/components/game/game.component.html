@@ -5,8 +5,8 @@
     
     <ng-template #gamePlay>
       <div class="text-center">
-        <h2> Indovina il titolo </h2>
-        <h3 *ngIf="!this.finish">Tempo {{minutes}}:{{seconds}}</h3>
+        <h2 class="logo"> Indovina il titolo </h2>
+        <h3 class="logo" *ngIf="!this.finish && !this.stop">Tempo {{minutes}}:{{seconds}}</h3>
         <div *ngIf="this.finish || this.stop">
         <img [src]="newMovieService.getLocandina(this.movieSpecs?.poster_path)" id="locandina" [border]="3"  width="30%" height="30%">
         </div>
@@ -15,20 +15,20 @@
       <li class="list-group-item">
       <div class="row">
           <div class="col-6">
-              <h5>Titolo:</h5>
+              <h5 class="logo">Titolo:</h5>
           </div>
           <div class="col-4" *ngIf="this.finish || this.stop">
-              {{movieSpecs?.title}}
+              <p class="logo">{{movieSpecs?.title}}</p>
           </div>
       </div>
       </li>
       <li class="list-group-item">
           <div class="row">
               <div class="col-6">
-                  <h5>Genere:</h5>
+                  <h5 class="logo">Genere:</h5>
               </div>
               <div class="col-4">
-              <span *ngFor="let genres of movieSpecs?.genres"> 
+              <span class="logo" *ngFor="let genres of movieSpecs?.genres"> 
                   {{genres.name}}
               </span>
               </div>
@@ -37,43 +37,43 @@
       <li class="list-group-item">
           <div class="row">
               <div class="col-6">
-                  <h5>Durata:</h5>
+                  <h5 class="logo">Durata:</h5>
               </div>
               <div class="col-4">
                 <button (click)="onClickShowRuntime()" [hidden]="showRuntime">Mostra</button> 
-                <p [(ngModel)]="onClickShowRuntime" [hidden]="!showRuntime">{{movieSpecs?.runtime}} minuti</p>
+                <p class="logo" [(ngModel)]="onClickShowRuntime" [hidden]="!showRuntime">{{movieSpecs?.runtime}} minuti</p>
               </div>
           </div>
       </li>
       <li class="list-group-item">
           <div class="row">
               <div class="col-6">
-                  <h5>Data d'uscita:</h5>
+                  <h5 class="logo" >Data d'uscita:</h5>
               </div>
               <div class="col-4">
-                  {{movieSpecs?.release_date}}
+                 <p class="logo"> {{movieSpecs?.release_date}}</p>
               </div>
           </div>
       </li>
       <li class="list-group-item">
           <div class="row">
               <div class="col-6">
-                  <h5>Votazione media:</h5>
+                  <h5 class="logo">Votazione media:</h5>
               </div>
               <div class="col-4">
                 <button (click)="onClickShowVote()" [hidden]="showVote">Mostra</button> 
-                <p [(ngModel)]="onClickShowVote" [hidden]="!showVote">{{movieSpecs?.vote_average}}/10</p>
+                <p class="logo" [(ngModel)]="onClickShowVote" [hidden]="!showVote">{{movieSpecs?.vote_average}}/10</p>
               </div>
           </div>
       </li>
       <li class="list-group-item">
           <div class="row">
               <div class="col-6">
-                  <h5>Lingua originale:</h5>
+                  <h5 class="logo">Lingua originale:</h5>
               </div>
               <div class="col-4">
                 <button (click)="onclickOrLanguage()" [hidden]="showOrLanguage">Mostra</button> 
-                <p [(ngModel)]="onclickOrLanguage" [hidden]="!showOrLanguage">{{movieSpecs?.title}}</p>
+                <p class="logo" [(ngModel)]="onclickOrLanguage" [hidden]="!showOrLanguage">{{movieSpecs?.title}}</p>
               </div>
           </div>
       </li>
@@ -81,34 +81,40 @@
   <div *ngIf="this.finish; then endBlock else verifyTitle"></div>
 
 
-  <ng-template #verifyTitle>
+    <ng-template #verifyTitle>
+        <div class="text-center" style="padding:50px 0">
+            <div class="login-form-1">
+        <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)">
+        <div class="main-login-form">
+            <div class="login-group">
+                <div class="form-group">
+            <label for="Title">Inserisci il titolo:</label>
+                <input [ngModel] name="Title" type="text" class="form-control" id="Title">
+                <button type="submit" class="btn-danger">Indovina!</button>
 
-    <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)">
-      <div class="row">
-        
-      <label for="Title" class="form-label">Inserisci il titolo:</label>
-        <input [ngModel] name="Title" type="text" class="form-control" id="Title"><hr>
-      
-      <button type="submit" class="btn-primary">Indovina!</button>
-    </div>
-    </form>
-    <div class="row">
-    <br><button (click)="onStop()" class="btn-primary">Stop!</button>
-    </div>
- 
+                <!--<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">-->
+              
+             </div>
+             </div>
+             </div>  
+              
+        </form>
+        </div>
+        </div>
     </ng-template>
 
 
         <ng-template #endBlock>
                      
-      <button  type="button">Salva Film</button> <!--Agganciare metodo-->
+      <button type="button" class="btn-danger">Salva Film</button> <!--Agganciare metodo-->
       </ng-template>
 </ng-template>
   <hr>
   <ng-template #startBlock>
-    <div> 
-    <button (click)="onStart()" type="button" class="btn btn-primary">Inizia</button></div>
+    <button (click)="onStart()" type="button" class="btn btn-primary">Inizia</button>
 </ng-template>
-  <br><br><br><br><br><br><br><br>
+
   </div>
 </div>
