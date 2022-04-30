@@ -1,6 +1,5 @@
 hr{
-    color: red;
-    width: 650px;
+    color:  rgb(137, 32, 32);
 }
 
 #locandina{
@@ -9,15 +8,66 @@ hr{
     height: 25%;
 }
 
-#attributi{
-    padding:5px; float:inline-start; 
-    width: 50%;
-    height: 25%;
-}
-
 #deleteButton{
     position: relative;
-    top: 25px;
-    right: auto;
+    top: -75px;
+    right: 30px;
     width: 100%;
 }
+
+.card img {
+    width: 100%;
+    margin: auto;
+}
+
+.card {
+    margin: 0;
+    background-color: black;
+}
+
+.card-title{
+    margin-left: auto;
+    margin-right: auto;
+    color:  rgb(137, 32, 32);
+}
+
+.container{
+    background-color: black;
+    width: 100%;
+}
+
+.card-body{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    color:  rgb(137, 32, 32);
+}
+.login-form-1 .login-button {
+    position: relative;
+    right: -25px;
+    top: 50%;
+    background: rgb(0,0,0);
+    color: rgb(200, 0, 0);
+    font-weight: bold;
+    padding: 11px 0;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    border: 5px solid rgb(35, 35, 35);
+    border-radius: 50%;
+    transition: all ease-in-out 1000ms;
+  }
+  .login-form-1 .login-button:hover {
+    color: rgb(137, 32, 32);
+    transform: rotate(720deg);
+  }
+  .login-form-1 .login-button.clicked {
+    color: rgb(137, 32, 32);
+  }
+  .login-form-1 .login-button.clicked:hover {
+    transform: none;
+  }

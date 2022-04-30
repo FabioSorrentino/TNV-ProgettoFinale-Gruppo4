@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Comments } from 'src/app/models/comments';
 import { BackendApiService } from 'src/app/service/backend-api.service';
@@ -10,11 +10,10 @@ import { BackendApiService } from 'src/app/service/backend-api.service';
   styleUrls: ['./get-comment.component.scss']
 })
 export class ListCommentsComponent implements OnInit {
-
-  movie_id: number;
+  
+  @Input(`movie_id`) movie_id: number|null = null;
   comment: Comments | null = null;
   constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService) {
-    this.movie_id = +activatedRoute.snapshot.params['movie_id'];
   }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieCredits } from 'src/app/models/movieCredits';
 import { MovieData } from 'src/app/models/movieData';
@@ -12,14 +12,16 @@ import { MovieApiService } from 'src/app/service/movie-api.service';
 })
 export class GetMovieDetailComponent implements OnInit {
 
+  movieId: number|null = null;
 
   movieData: MovieData | null = null;
   movieCredits: MovieCredits | null = null;
-  movieId: number = 500;
   genre: Partial<MovieData>[] = [];
 
   constructor(private backendAPIService: BackendApiService, activatedRoute: ActivatedRoute, 
-    public movieAPIService: MovieApiService) { }
+    public movieAPIService: MovieApiService) { 
+      this.movieId = +activatedRoute.snapshot.params['movieId'];
+    }
 
   ngOnInit(): void {
     this.getMovieData();

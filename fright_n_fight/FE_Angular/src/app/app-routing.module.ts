@@ -29,7 +29,7 @@ const routes: Routes = [
     { path: 'favourites', component: GetFavouriteMoviesComponent},
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
-    { path: 'movie/details', component: GetMovieDetailComponent},
+    { path: 'movie/details/:movieId', component: GetMovieDetailComponent},
     { path: 'game', component: GameComponent },
     { path:'', redirectTo: '/', pathMatch: 'full'}
   ];

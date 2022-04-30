@@ -21,12 +21,12 @@ export class GetFavouriteMoviesComponent implements OnInit {
   moviesData: MovieData []= [];
   moviesCredits: MovieCredits [] = [];
 
-  constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute,
+  constructor(public backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute,
     public tokenStorageService: TokenStorageService, public movieAPIService: MovieApiService) {
   }
 
   ngOnInit(): void {
-    this.userId = this.tokenStorageService.getUserId();
+    this.userId = 0//this.tokenStorageService.getUserId();
     this.getAllFavouriteMoviesByUserId();
     //this.getAllFavouriteMoviesByUserId(this.tokenStorageService.getUserId())
   }
