@@ -22,8 +22,8 @@
                             <h5 class="logo">Genere:</h5>
                     </div>
                     <div class="col-4">
-                        <span class="logo" *ngFor="let genres of movieSpecs?.genres"> 
-                            {{genres.name}}
+                        <span class="logo" *ngFor="let genre of movieSpecs?.genres"> 
+                            {{genre.name}}
                         </span>
                     </div>
                     </div>
@@ -35,8 +35,8 @@
                             <h5 class="logo">Durata:</h5>
                     </div>
                     <div class="col-4">
-                        <button class="button" (click)="onClickShowRuntime()" [hidden]="showRuntime">Mostra</button> 
-                        <p class="logo" [(ngModel)]="onClickShowRuntime" [hidden]="!showRuntime">{{movieSpecs?.runtime}} minuti</p>
+                        <button class="button" name="button" (click)="onClickShowRuntime()" [hidden]="showRuntime">Mostra</button> 
+                        <p class="logo" name="button" [(ngModel)]="onClickShowRuntime" ngDefaultControl [hidden]="!showRuntime">{{movieSpecs?.runtime}} minuti</p>
                     </div>
                     </div>
                 </li>
@@ -59,8 +59,8 @@
                         </div>
                     <div class="col-4">
                         
-                            <button class="button" (click)="onClickShowVote()" [hidden]="showVote">Mostra</button> 
-                            <p class="logo" [(ngModel)]="onClickShowVote" [hidden]="!showVote">{{movieSpecs?.vote_average}}/10</p>
+                            <button class="button" name="button" (click)="onClickShowVote()" [hidden]="showVote">Mostra</button> 
+                            <p class="logo" [(ngModel)]="onClickShowVote" ngDefaultControl [hidden]="!showVote">{{movieSpecs?.vote_average}}/10</p>
                         
                     </div>
                     </div>
@@ -72,8 +72,8 @@
                             <h5 class="logo">Lingua originale:</h5>
                         </div>
                     <div class="col-4">
-                        <button class="button" (click)="onclickOrLanguage()" [hidden]="showOrLanguage">Mostra</button> 
-                        <p class="logo" [(ngModel)]="onclickOrLanguage" [hidden]="!showOrLanguage">{{movieSpecs?.title}}</p>
+                        <button class="button" name="button" (click)="onclickOrLanguage()" [hidden]="showOrLanguage">Mostra</button> 
+                        <p class="logo" [(ngModel)]="onclickOrLanguage" ngDefaultControl [hidden]="!showOrLanguage">{{movieSpecs?.title}}</p>
                     </div>
                     </div>
                 </li>
@@ -86,12 +86,12 @@
     <ng-template #verifyTitle>
     <div class="text-center" style="padding:50px 0">
         <div class="login-form-1">
-            <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)">
+            <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)" name="Title">
                 <div class="main-login-form">
                     <div class="login-group">
                         <div class="form-group">
                              <label for="Title">Inserisci il titolo:</label>
-                             <input [ngModel] name="Title" type="text" class="form-control" id="Title">
+                             <input [ngModel] name="Title"  type="text" class="form-control" id="Title">
                               <hr><button type="submit" class="button-2">Indovina!</button> 
                          </div>
                      </div>

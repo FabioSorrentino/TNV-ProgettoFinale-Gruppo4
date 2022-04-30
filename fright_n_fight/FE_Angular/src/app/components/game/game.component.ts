@@ -1,8 +1,6 @@
 import {Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
-import { interval, Subscriber } from 'rxjs';
-
+import { interval } from 'rxjs';
 import { MovieCredits } from 'src/app/models/movieCredits';
 import { MovieData, Genre } from 'src/app/models/movieData';
 import { MovieApiService } from 'src/app/service/movie-api.service';
@@ -46,18 +44,17 @@ export class GameComponent implements OnInit {
   points: number = 0;
   ptRemoved: number = 0;
 
-  constructor(
+    constructor(
     public newMovieService: MovieApiService,
-    private router: Router
     ){ }
 
   ngOnInit(): void {
     }
 
-  onStart(){
-    this.start = true;
-    this.getMovie();
-    this.timer();
+    onStart(){
+      this.start = true;
+      this.getMovie();
+      this.timer();
     }
 
     onClickShowRuntime() {
@@ -79,11 +76,13 @@ export class GameComponent implements OnInit {
       //window.alert('No description!');
       this.showOrLanguage = true;
       this.timeAdded = this.timeAdded + 30;
+
     }
 
     onClickShowPopularity(){
       this.showPopularity = true;
       this.timeAdded = this.timeAdded + 30;
+
     }
 
     onStop() {
@@ -98,17 +97,16 @@ export class GameComponent implements OnInit {
         const source = interval(1000);
         
         const abc = source.subscribe(val => {  
-
-          if(val === 25) this.ptRemoved = this.ptRemoved - 20;
-          if(val === 45) this.ptRemoved = this.ptRemoved - 20;
-          if(val === 55) this.ptRemoved = this.ptRemoved - 20;
-          if(val === 75) this.ptRemoved = this.ptRemoved - 20;
-          if(val === 85) this.ptRemoved = this.ptRemoved - 20;
-
-          if(this.finish) return
+          console.log(this.ptRemoved)
+          if(this.subscribeTimer === 45) this.ptRemoved = this.ptRemoved - 20;
+          if(this.subscribeTimer === 55) this.ptRemoved = this.ptRemoved - 20;
+          if(this.subscribeTimer === 75) this.ptRemoved = this.ptRemoved - 20;
+          if(this.subscribeTimer === 85) this.ptRemoved = this.ptRemoved - 20;
+          if(this.subscribeTimer === 200) this.ptRemoved = this.ptRemoved - 150;
           this.subscribeTimer = this.timeAdded + val,         
           this.minutes = Math.floor(this.subscribeTimer % 3600 / 60).toString().padStart(2,'0'),
           this.seconds = Math.floor(this.subscribeTimer % 60).toString().padStart(2,'0')
+          
       });
     }
     
@@ -146,8 +144,8 @@ export class GameComponent implements OnInit {
         },
     });
 
-  this.newMovieService.getMovieCredits(this.movieId).subscribe({
-    next:(res)=>{ this.movieCredits = res;}
+      this.newMovieService.getMovieCredits(this.movieId).subscribe({
+            next:(res)=>{ this.movieCredits = res;}
     });
   }
 }

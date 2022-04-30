@@ -1,6 +1,7 @@
+
 <div class="container">
-    <img [src]="this.movieAPIService.getLocandina( this.movieData?.poster_path)" id="locandina"  />
-  <ul class="list-group list-group-flush" id="attributi">
+    <img [src]="this.movieAPIService.getLocandina( this.movieData?.poster_path)" id="locandina">
+    <ul class="list-group list-group-flush" id="attributi">
       <li class="list-group-item">
       <div class="row">
           <div class="col-6">
@@ -63,8 +64,9 @@
             </div>
         </div>
     </li>
-  
-  <app-get-rating [movie_id]="movieId"></app-get-rating>
-  <app-get-comment [movie_id]="movieId"></app-get-comment>
 </ul>
+
+<app-get-rating [movie_id]="movieId"></app-get-rating>
+<app-get-comment [movie_id]="movieId"></app-get-comment>
 </div>
+

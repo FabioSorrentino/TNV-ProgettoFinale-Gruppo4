@@ -1,5 +1,11 @@
 html,
 body {
   background: rgb(0,0,0);
+  --bs-body-bg: black;
   padding: 10px;
+}
+
+container {
+  background: black;
+  
 }
