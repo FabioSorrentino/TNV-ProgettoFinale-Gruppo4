@@ -99,10 +99,10 @@ export class GameComponent implements OnInit {
         const abc = source.subscribe(val => {  
           console.log(this.subscribeTimer)
           if(this.subscribeTimer === 60) this.ptRemoved = this.ptRemoved - 20;
-          if(this.subscribeTimer === 80) this.ptRemoved = this.ptRemoved - 20;
-          if(this.subscribeTimer === 100) this.ptRemoved = this.ptRemoved - 20;
-          if(this.subscribeTimer === 120) this.ptRemoved = this.ptRemoved - 20;
-          if(this.subscribeTimer === 250) this.ptRemoved = this.ptRemoved - 150;
+          if(this.subscribeTimer === 80) this.ptRemoved = this.ptRemoved - 80;
+          if(this.subscribeTimer === 100) this.ptRemoved = this.ptRemoved - 100;
+          if(this.subscribeTimer === 120) this.ptRemoved = this.ptRemoved - 150;
+          if(this.subscribeTimer === 250) this.ptRemoved = this.ptRemoved - 200;
           
           this.subscribeTimer = this.timeAdded + val,         
           this.minutes = Math.floor(this.subscribeTimer % 3600 / 60).toString().padStart(2,'0'),
