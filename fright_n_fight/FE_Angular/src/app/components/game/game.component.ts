@@ -29,8 +29,8 @@ export class GameComponent implements OnInit {
     /*Variabili per contatore*/
   subscribeTimer: number = 0;
   timeAdded : number = 0;
-  seconds : string |null = null;
-  minutes : string |null = null;
+  seconds : string | null = null;
+  minutes : string | null = null;
   stop : boolean = false;
 
   /*Recupero dei film da API esterna*/
@@ -152,14 +152,4 @@ export class GameComponent implements OnInit {
         }
 }
 
-  save(){
-    this.router.navigate(['/game', this.movieId, this.points]);
-  }
-
-
-  playAgain(){
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.onSameUrlNavigation = 'reload';
-    this.router.navigate(["game"]);
-  }
 }
