@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { LoginComponent } from '../login/login.component';
-import { HeaderComponent } from 'src/app/header/header.component';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,8 @@ import { HeaderComponent } from 'src/app/header/header.component';
 })
 
 export class HomeComponent implements OnInit {
+  
+  @Input(`isLoggedIn`) isLoggedIn: boolean = false;
 
   constructor() { }
 
