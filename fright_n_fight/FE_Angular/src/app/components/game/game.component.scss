@@ -7,6 +7,31 @@ a {
     text-decoration: none;
   }
 
+  .button {
+    width: 25x;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 50px;
+    font-weight: bold;
+    height:auto;
+  }
+  
+  li{
+    background-color: black;
+}
+
+  .button-2 {
+    width: 40x;
+    height: 40px;
+    background-color: red;
+    position: center;
+    //left: 30%;
+    font-weight: bold;
+    height:auto;
+  }
   .etc-login-form {
     color: rgb(200, 0, 0);
     padding: 10px 20px;
@@ -23,15 +48,16 @@ a {
   .main-login-form {
     position: relative;
   }
-  .login-form-1 .form-control {
+  .login-form-1 .form-control {     //controllo del form
     border: 0;
     box-shadow: 0 0 0;
     border-radius: 0;
     background: rgb(0,0,0);
-    color: rgb(200, 0, 0);
+    color: red;
     padding: 7px 0;
     font-weight: bold;
     height:auto;
+    outline:solid 1px; 
   }
   .login-form-1 .form-control::-webkit-input-placeholder {
     color: rgb(137, 32, 32);
