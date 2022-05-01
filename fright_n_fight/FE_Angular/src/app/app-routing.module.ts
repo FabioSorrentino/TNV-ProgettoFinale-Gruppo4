@@ -30,18 +30,12 @@ const routes: Routes = [
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
     { path: 'movie/details/:movieId', component: GetMovieDetailComponent},
+    { path: 'game', component: GameComponent },
     { path:'', redirectTo: 'home', pathMatch: 'full'}
   ];
   
   @NgModule({
-    declarations: [
-    ], 
-    imports: [
-      RouterModule.forRoot([
-        { path: 'game', component: GameComponent }
-      ], {onSameUrlNavigation: 'reload' })
-    ],
-      
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
   })
   export class AppRoutingModule { }
