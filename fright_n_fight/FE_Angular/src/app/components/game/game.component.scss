@@ -23,6 +23,11 @@ a {
     background-color: black;
 }
 
+.wrong-guess-message {
+  color: rgb(200, 0, 0);
+  text-align: center;
+}
+
   .button-2 {
     width: 40x;
     height: 40px;
@@ -130,3 +135,18 @@ a {
     color: rgb(200, 0, 0);
     font-weight: bold;
   }
+
+  .start {
+    padding-top: 80%;
+    padding-right: 50%;
+    padding-bottom: 50%;
+    padding-left: 180%;
+  }
+
+  .start-button {
+    font-size: 40px;
+    color: rgb(200, 0, 0);
+    font-weight: bold;
+    background-color: #000000;
+  }
+

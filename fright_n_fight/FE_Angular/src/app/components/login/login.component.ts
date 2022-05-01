@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
       },
       error: () => {
-        console.log()
+          let loginErrorMessage = document.getElementsByClassName('login-message');
+          loginErrorMessage[0].textContent = "Login Failed!!!";
       }
     });
   }

@@ -73,7 +73,31 @@
                         </div>
                     <div class="col-4">
                         <button class="button" name="button" (click)="onclickOrLanguage()" [hidden]="showOrLanguage">Mostra</button> 
-                        <p class="logo" [(ngModel)]="onclickOrLanguage" ngDefaultControl [hidden]="!showOrLanguage">{{movieSpecs?.title}}</p>
+                        <p class="logo" [(ngModel)]="onclickOrLanguage" ngDefaultControl [hidden]="!showOrLanguage">{{movieSpecs?.original_language}}</p>
+                    </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Attore:</h5>
+                        </div>
+                    <div class="col-4">
+                        <button class="button" name="button" (click)="onClickShowActor()" [hidden]="showActor">Mostra</button> 
+                        <p class="logo" [(ngModel)]="onClickShowActor" ngDefaultControl [hidden]="!showActor">{{cast[2].name}}</p>
+                    </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Regista:</h5>
+                        </div>
+                    <div class="col-4">
+                        <button class="button" name="button" (click)="onClickShowDirector()" [hidden]="showDirector">Mostra</button> 
+                        <p class="logo" [(ngModel)]="onClickShowDirector" ngDefaultControl [hidden]="!showDirector">{{director[0].name}}</p>
                     </div>
                     </div>
                 </li>
@@ -84,6 +108,7 @@
     <div *ngIf="this.finish; then endBlock else verifyTitle"></div>
 
     <ng-template #verifyTitle>
+    
     <div class="text-center" style="padding:50px 0">
         <div class="login-form-1">
             <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)" name="Title">
@@ -92,6 +117,7 @@
                         <div class="form-group">
                              <label for="Title">Inserisci il titolo:</label>
                              <input [ngModel] name="Title"  type="text" class="form-control" id="Title">
+                             <div class="wrong-guess-message"></div>
                               <hr><button type="submit" class="button-2">Indovina!</button> 
                          </div>
                      </div>
@@ -113,7 +139,14 @@
     </ng-template>
   
         <ng-template #startBlock>
-            <button (click)="onStart()" type="button" class="button-2">Inizia</button>
+            <div class="row col-3">
+
+                    <div class="start">
+                    <input (click)="onStart()" type="button" class="start-button" value="START!">
+                </div>       
+            </div>
+            
+        
         </ng-template>
 
 </div>
