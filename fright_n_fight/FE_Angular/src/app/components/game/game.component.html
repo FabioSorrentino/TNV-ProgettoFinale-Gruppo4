@@ -84,6 +84,7 @@
     <div *ngIf="this.finish; then endBlock else verifyTitle"></div>
 
     <ng-template #verifyTitle>
+    
     <div class="text-center" style="padding:50px 0">
         <div class="login-form-1">
             <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)" name="Title">
@@ -92,6 +93,7 @@
                         <div class="form-group">
                              <label for="Title">Inserisci il titolo:</label>
                              <input [ngModel] name="Title"  type="text" class="form-control" id="Title">
+                             <div class="wrong-guess-message"></div>
                               <hr><button type="submit" class="button-2">Indovina!</button> 
                          </div>
                      </div>
