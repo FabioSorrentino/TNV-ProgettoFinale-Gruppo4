@@ -27,10 +27,9 @@ const routes: Routes = [
     { path: 'rating', component: InsertRatingComponent},
     { path: 'rating/cammadonna', component: GetRatingComponent}, // /:user_id/:movie_id
     { path: 'favourites', component: GetFavouriteMoviesComponent},
-    { path: 'favourites/create/:movieId', component: CreateFavouriteMovieComponent}, 
+    { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
     { path: 'movie/details/:movieId', component: GetMovieDetailComponent},
-    
     { path:'', redirectTo: 'home', pathMatch: 'full'}
   ];
   
