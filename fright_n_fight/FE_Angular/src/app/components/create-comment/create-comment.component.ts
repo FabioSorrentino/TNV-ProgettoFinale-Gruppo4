@@ -13,7 +13,7 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class CommentiComponent implements OnInit {
 
-  @Input(`movieId`) movieId: number | null = null;
+  movieId: number | null = 770;
   userId: number | null = null;
   
   constructor (private backendAPIService: BackendApiService, public tokenStorageService: TokenStorageService,
