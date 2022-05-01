@@ -1,5 +1,12 @@
 
 <div class="container">
+    <form id="back" class="text-left"> 
+        <a href="http://localhost:4200/favourites">
+        <input type="button" value="Torna alla lista preferiti" id="BottoneListaPreferiti">
+    </a>
+        <div class="login-form-main-message"></div>
+    </form>
+    
     <img [src]="this.movieAPIService.getLocandina( this.movieData?.poster_path)" id="locandina">
     <ul class="list-group list-group-flush" id="attributi">
       <li class="list-group-item">
@@ -69,4 +76,6 @@
 <app-get-rating [movie_id]="movieId"></app-get-rating>
 <app-get-comment ></app-get-comment>
 </div>
+
+
 

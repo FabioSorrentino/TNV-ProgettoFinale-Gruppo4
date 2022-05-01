@@ -29,7 +29,7 @@ export class GameComponent implements OnInit {
 
   /*Recupero dei film da API esterna*/
   movieId: number | null  = null;
-  maxRandom: number = 6000;
+  maxRandom: number = 20000;
 
   /*Modello per recupero dati film*/
   movieSpecs: MovieData| null = null;

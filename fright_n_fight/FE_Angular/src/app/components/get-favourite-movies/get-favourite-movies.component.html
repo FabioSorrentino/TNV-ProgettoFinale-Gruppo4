@@ -1,4 +1,11 @@
 <div class="container">
+    <form>
+        <input type="button" value="Torna alla home" 
+        onClick= "location.href = 'http://localhost:4200/home'"
+        id="goBack">
+    </form>
+
+    <br><br>
     <h1 class="listaPreferiti">Ecco la tua lista preferiti:</h1>
     <br>
     <div class="movie"  *ngFor="let movie of moviesData">
@@ -17,7 +24,7 @@
             </div>
         </div>
     <div *ngFor="let favouriteMovie of movies">
-        <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id" id="deleteButton">
+        <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id" id="deleteButton" onClick="document.location.reload()">
         </app-delete-favourite-movie>
     </div> 
     </div>

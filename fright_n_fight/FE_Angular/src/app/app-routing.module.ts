@@ -31,7 +31,7 @@ const routes: Routes = [
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
     { path: 'movie/details/:movieId', component: GetMovieDetailComponent},
     { path: 'game', component: GameComponent },
-    { path:'', redirectTo: '/', pathMatch: 'full'}
+    { path:'', redirectTo: 'home', pathMatch: 'full'}
   ];
   
   @NgModule({
