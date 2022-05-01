@@ -1,75 +1,34 @@
 <div class="container">
+    <form>
+        <input type="button" value="Torna alla home" 
+        onClick= "location.href = 'http://localhost:4200/home'"
+        id="goBack">
+    </form>
+
+    <br><br>
+    <h1 class="listaPreferiti">Ecco la tua lista preferiti:</h1>
+    <br>
     <div class="movie"  *ngFor="let movie of moviesData">
-      <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" id="locandina" [border]="3"  width="30%" height="30%"/>
-      <ul class="list-group list-group-flush" id="attributi">
-        <li class="list-group-item">
-        <div class="row">
-            <div class="col-6">
-                <h5>Titolo:</h5>
-            </div>
-            <div class="col-4">
-                {{movie.title}}
+    <div class="card">
+        <h3 class="card-title">{{movie.title}}</h3>
+    <img [src]="this.movieAPIService.getLocandina( this.movie.poster_path)" id="locandina" width="30%" height="30%"/>
+    <div class="card-body">
+        <div class="details" style="padding:50px 0">
+            <div class="login-form-1">
+                <form id="login-form" class="text-left"> 
+                    <a href="http://localhost:4200/movie/details/{{movie.id}}">
+                    <input type="button" value="Detail" class="login-button">
+                </a>
+                    <div class="login-form-main-message"></div>
+                </form>
             </div>
         </div>
-        </li>
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-6">
-                    <h5>Genere:</h5>
-                </div>
-                <div class="col-4">
-                <span *ngFor="let genres of movie?.genres"> 
-                    {{genres.name}}
-                </span>
-                </div>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-6">
-                    <h5>Durata:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie?.runtime}} minuti
-                </div>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-6">
-                    <h5>Data d'uscita:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie?.release_date}}
-                </div>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-6">
-                    <h5>Votazione media:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie?.vote_average}}/10
-                </div>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-6">
-                    <h5>Titolo Originale:</h5>
-                </div>
-                <div class="col-4">
-                    {{movie?.original_title}}
-                </div>
-            </div>
-        </li>
-    </ul>
     <div *ngFor="let favouriteMovie of movies">
-        <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id" id="deleteButton">
+        <app-delete-favourite-movie *ngIf="favouriteMovie.movie_id === movie.id" [favouriteMovieId]="favouriteMovie.id" id="deleteButton" onClick="document.location.reload()">
         </app-delete-favourite-movie>
     </div> 
-    <hr>
-    <br><br><br><br><br><br><br><br>
+    </div>
+    <hr width=100% size="10">
+</div> 
     </div>
 </div>

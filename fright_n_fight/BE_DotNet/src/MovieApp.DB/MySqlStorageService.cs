@@ -72,5 +72,16 @@ namespace MovieApp.DB
 
             return CommentsEntityMapper.From(commentToUpdate);
         }
+
+        public Comments? GetCommentByUserIdMovieId(int userId, int movieId)
+        {
+            var comment = _context.MovieComments.FirstOrDefault(c => c.User_Id == userId && c.Movie_Id == movieId);
+            if (comment != null)
+            {
+                return CommentsEntityMapper.From(comment);
+            }
+            return null;
+    
+        }
     }
 }

@@ -1,0 +1,132 @@
+a {
+    color: rgb(200, 0, 0);
+    transition: all ease-in-out 200ms;
+  }
+  a:hover {
+    color: rgb(137, 32, 32);
+    text-decoration: none;
+  }
+
+  .button {
+    width: 25x;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 50px;
+    font-weight: bold;
+    height:auto;
+  }
+  
+  li{
+    background-color: black;
+}
+
+  .button-2 {
+    width: 40x;
+    height: 40px;
+    background-color: red;
+    position: center;
+    //left: 30%;
+    font-weight: bold;
+    height:auto;
+  }
+
+  .createButton{
+    width: 40x;
+    height: 40px;
+    background-color: red;
+    position: center;
+    //left: 30%;
+    font-weight: bold;
+    height:auto;
+  }
+  .etc-login-form {
+    color: rgb(200, 0, 0);
+    padding: 10px 20px;
+  }
+  .etc-login-form p {
+    margin-bottom: 5px;
+  }
+  
+  .login-form-1 {
+    max-width: 300px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .main-login-form {
+    position: relative;
+  }
+  .login-form-1 .form-control {     //controllo del form
+    border: 0;
+    box-shadow: 0 0 0;
+    border-radius: 0;
+    background: rgb(0,0,0);
+    color: red;
+    padding: 7px 0;
+    font-weight: bold;
+    height:auto;
+    outline:solid 1px; 
+  }
+  .login-form-1 .form-control::-webkit-input-placeholder {
+    color: rgb(137, 32, 32);
+  }
+  .login-form-1 .form-control:-moz-placeholder,
+  .login-form-1 .form-control::-moz-placeholder,
+  .login-form-1 .form-control:-ms-input-placeholder {
+    color: rgb(137, 32, 32);
+  }
+  .login-form-1 .form-group {
+    margin-bottom: 0;
+    border-bottom: 2px solid rgb(0,0,0);
+    padding-right: 20px;
+    position: relative;
+  }
+  .login-form-1 .form-group:last-child {
+    border-bottom: 0;
+  }
+  .login-group {
+    background: rgb(0,0,0);
+    color: rgb(137, 32, 32);
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+  
+  
+  .login-form-1 .login-button {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    background: rgb(0,0,0);
+    color: rgb(200, 0, 0);
+    font-weight: bold;
+    padding: 11px 0;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    border: 5px solid rgb(35, 35, 35);
+    border-radius: 50%;
+    transition: all ease-in-out 1000ms;
+  }
+  .login-form-1 .login-button:hover { // OK
+    color: rgb(137, 32, 32);
+    transform: rotate(720deg);
+  }
+  .login-form-1 .login-button.clicked { // OK
+    color: rgb(137, 32, 32);
+  }
+  .login-form-1 .login-button.clicked:hover { // OK
+    transform: none;
+  }
+  
+  label:hover:before {
+    border: 1px solid #000000 !important;
+  }
+  
+  .logo {
+    padding: 15px 0;
+    font-size: 25px;
+    color: rgb(200, 0, 0);
+    font-weight: bold;
+  }

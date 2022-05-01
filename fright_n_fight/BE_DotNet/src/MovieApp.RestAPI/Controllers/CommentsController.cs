@@ -203,5 +203,44 @@ namespace MovieApp.RestAPI.Controllers
             }
         }
 
+        [EnableCors("Policy1")]
+        [HttpGet]
+        [Route("{user-id}/{movie-id}")]
+        public ActionResult<CommentsDTO> GetCommentByUserIdMovieId([FromRoute(Name = "user-id")] int userId, [FromRoute(Name = "movie-id")] int movieId)
+        {
+            try
+            {
+                var comment = _commentsApplicationService.GetCommentByUserIdMovieId(userId, movieId);
+#pragma warning disable CS8604 // Possibile argomento di riferimento Null.
+                return Ok(CommentsMapper.From(comment));
+#pragma warning restore CS8604 // Possibile argomento di riferimento Null.
+
+            }
+            catch (CommentNotFoundException ex)
+            {
+                return NotFound(new ErrorResponse()
+                {
+                    ErrorMessage = ex.Message,
+                    timestamp = DateTime.Now
+                });
+            }
+            catch (NegativeFieldException ex)
+            {
+                return BadRequest(new ErrorResponse()
+                {
+                    ErrorMessage = ex.Message,
+                    timestamp = DateTime.Now
+                });
+            }
+            catch (NullReferenceException ex)
+            {
+                return BadRequest(new ErrorResponse()
+                {
+                    ErrorMessage = ex.Message,
+                    timestamp = DateTime.Now
+                });
+            }
+        }
+
     }
 }

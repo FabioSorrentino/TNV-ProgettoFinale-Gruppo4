@@ -1,100 +1,118 @@
-<div class="container-fluid text-center">
-  <div class="row">
-  
-      <div class="col-12 col-md-8 offset-md-2">
-          
-        
-        
-        <div *ngIf="this.start; then gamePlay else startBlock"></div>
-                 
-
-
-       <ng-template #gamePlay>
-         
-                
-              <div class="row">
-                  <div class="col-2">
-                      
-                      
-                  </div>
-                  
-                  
-                  <div class="col-8">
-                      <h2 *ngIf="!this.finish">Tempo {{minutes}}:{{seconds}}</h2>  
-                      <h2 *ngIf="this.stop"> Non hai vinto punti! </h2>
-                      <h2 *ngIf="this.stop">Ecco il nome del film: "{{movieSpecs?.title}}"</h2>
-                      <h2 *ngIf="this.finish">Hai indovinato! Era proprio "{{movieSpecs?.title}}"</h2>
-                      <h2 *ngIf="this.finish"> Hai vinto ben {{points}} punti! </h2>
-                      <h2 *ngIf="this.finish || this.stop"><img [src]="this.newMovieService.getLocandina(movieSpecs?.poster_path)" id="locandina" [border]="3"  width="30%" height="30%"/></h2>
-                  </div>
-              </div>
- 
-              <div *ngIf="!this.finish || !this.stop" class="row">
-                <div>
-                  <dl class="col-6 align-self-center">
-                    <dt class="col-sm-4">Genere:</dt>
-                        <dd class="col-sm-8" *ngFor="let genres of movieSpecs?.genres"> <p>{{genres.name}} </p> </dd> 
-                    <dt class="col-sm-4">Data di Uscita:</dt>
-                        <dd class="col-sm-8" ><p>{{movieSpecs?.release_date}}</p> </dd> 
+<div class="container-col-12">
     
-                      <dt class="col-sm-4">Durata:</dt>
-                        <dd class="col-sm-8">
-                        <button (click)="onClickShowRuntime()" [hidden]="showRuntime">Mostra</button> 
-                        <p [(ngModel)]="onClickShowRuntime" [hidden]="!showRuntime">{{movieSpecs?.runtime}} minuti</p>
-                      </dd>
-                      
-                      <dt class="col-sm-4">Budget:</dt>
-                      <dd class="col-sm-8" >
-                        <button (click)="onClickShowBudget()" [hidden]="showBudget">Mostra</button> 
-                          <p [(ngModel)]="onClickShowBudget" [hidden]="!showBudget">{{movieSpecs?.budget}}</p>
-                      </dd>
+    <div *ngIf="this.start; then gamePlay else startBlock"></div>
+    
+    
+    <ng-template #gamePlay>
+        <div class="text-center">
+            <h2 class="logo" *ngIf="!this.finish"> Indovina il titolo </h2>
+            <h2 class="logo" *ngIf="this.finish"> Sì, era "{{movieSpecs?.title}}" e hai vinto {{points}} punti! </h2>
+            <h3 class="logo" *ngIf="!this.finish">Tempo {{minutes}}:{{seconds}}</h3>
+                
+                <div *ngIf="this.finish">
+                    <img [src]="newMovieService.getLocandina(this.movieSpecs?.poster_path)" id="locandina" [border]="3"  width="30%" height="30%">
+                </div>
+        </div>
 
-                      <dt class="col-sm-4">Voto medio critica:</dt>
-                      <dd class="col-sm-8" >
-                        <button (click)="onClickShowVote()" [hidden]="showVote">Mostra</button> 
-                          <p [(ngModel)]="onClickShowVote" [hidden]="!showVote">{{movieSpecs?.vote_average}}/10</p>
-                      </dd>
+        <div *ngIf="!this.finish">
+            <ul>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Genere:</h5>
+                    </div>
+                    <div class="col-4">
+                        <span class="logo" *ngFor="let genre of movieSpecs?.genres"> 
+                            {{genre.name}}
+                        </span>
+                    </div>
+                    </div>
+                </li>
+                
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Durata:</h5>
+                    </div>
+                    <div class="col-4">
+                        <button class="button" name="button" (click)="onClickShowRuntime()" [hidden]="showRuntime">Mostra</button> 
+                        <p class="logo" name="button" [(ngModel)]="onClickShowRuntime" ngDefaultControl [hidden]="!showRuntime">{{movieSpecs?.runtime}} minuti</p>
+                    </div>
+                    </div>
+                </li>
 
-                      <dt class="col-sm-4">Lingua originale:</dt>
-                      <dd class="col-sm-8" >
-                        <button (click)="onclickOrLanguage()" [hidden]="showOrLanguage">Mostra</button> 
-                          <p [(ngModel)]="onclickOrLanguage" [hidden]="!showOrLanguage">{{movieSpecs?.original_language}}</p>
-                      </dd>
-                      <dd>{{movieSpecs?.title}}</dd>
-                    </dl>
-                  </div>
-              </div>
-                 
-               <div *ngIf="this.finish; then endBlock else verifyTitle"></div>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo" >Data d'uscita:</h5>
+                        </div>
+                    <div class="col-4">
+                        <p class="logo"> {{movieSpecs?.release_date}}</p>
+                    </div>
+                    </div>
+                </li>
 
-                 
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Votazione media:</h5>
+                        </div>
+                    <div class="col-4">
+                        
+                            <button class="button" name="button" (click)="onClickShowVote()" [hidden]="showVote">Mostra</button> 
+                            <p class="logo" [(ngModel)]="onClickShowVote" ngDefaultControl [hidden]="!showVote">{{movieSpecs?.vote_average}}/10</p>
+                        
+                    </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Lingua originale:</h5>
+                        </div>
+                    <div class="col-4">
+                        <button class="button" name="button" (click)="onclickOrLanguage()" [hidden]="showOrLanguage">Mostra</button> 
+                        <p class="logo" [(ngModel)]="onclickOrLanguage" ngDefaultControl [hidden]="!showOrLanguage">{{movieSpecs?.title}}</p>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
 
-              <ng-template #verifyTitle>
+    <div *ngIf="this.finish; then endBlock else verifyTitle"></div>
 
-                    <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)">
-                      <div class="mb-5">
-                      <label for="Title" class="form-label">Titolo:</label>
-                        <input [ngModel] name="Title" type="text" class="form-control" id="Title">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Indovina!</button>
-                    </form>
-                    <br><button (click)="onStop()" class="btn btn-primary">Stop!</button>
-                    
-              </ng-template>
+    <ng-template #verifyTitle>
+    <div class="text-center" style="padding:50px 0">
+        <div class="login-form-1">
+            <form  #verifyForm="ngForm" (submit)="verifyResult(verifyForm)" name="Title">
+                <div class="main-login-form">
+                    <div class="login-group">
+                        <div class="form-group">
+                             <label for="Title">Inserisci il titolo:</label>
+                             <input [ngModel] name="Title"  type="text" class="form-control" id="Title">
+                              <hr><button type="submit" class="button-2">Indovina!</button> 
+                         </div>
+                     </div>
+                 </div>     
+            </form>
+        </div>
+    </div>
+    </ng-template>
 
-                   <!-- inserire i tasti che servono al termine del game -->
-              <ng-template #endBlock>
-                      <button  type="button" class="btn btn-primary me-2" (click)="playAgain()" >Rigioca</button>
-                      <button  type="button" class="btn btn-primary me-2">Salva Film</button> <!--Agganciare metodo-->
-              </ng-template>
-     </ng-template>
+        <ng-template #endBlock> 
+            <!--<div class="text-center">         
+                <br><button type="button" class="button-2" >Salva Film</button> <!--Agganciare metodo
+            </div> -->   
+            <app-create-favourite-movie [movieId]="movieId" id="createButton" onClick="location.href = 'http://localhost:4200/favourites'">
+            </app-create-favourite-movie>
+        </ng-template>
 
-                  <!--sessione di start da agganciare alla home-->
-              <ng-template #startBlock>
-                    <div class="text-center"> 
-                    <button (click)="onStart()" type="button" class="btn btn-primary">Inizia</button></div>
-              </ng-template>
-      </div> 
-  </div>
+    </ng-template>
+  
+        <ng-template #startBlock>
+            <button (click)="onStart()" type="button" class="button-2">Inizia</button>
+        </ng-template>
+
 </div>

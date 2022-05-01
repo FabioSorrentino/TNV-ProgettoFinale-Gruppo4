@@ -111,5 +111,17 @@ namespace MovieApp.Core.Service
                 return _commentsStorageService.DeleteCommentById(commentId);
             }
         }
+
+        public Comments? GetCommentByUserIdMovieId(int userId, int movieId)
+        {
+            var comment = _commentsStorageService.GetCommentByUserIdMovieId(userId, movieId);
+            if (comment != null)
+            {
+                return comment;
+            }
+            throw new CommentNotFoundException(userId);
+
+        
+        }
     }
 }

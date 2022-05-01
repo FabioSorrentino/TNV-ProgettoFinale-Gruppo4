@@ -21,7 +21,7 @@ export class GetFavouriteMoviesComponent implements OnInit {
   moviesData: MovieData []= [];
   moviesCredits: MovieCredits [] = [];
 
-  constructor(private backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute,
+  constructor(public backendAPIService: BackendApiService, private activatedRoute: ActivatedRoute,
     public tokenStorageService: TokenStorageService, public movieAPIService: MovieApiService) {
   }
 

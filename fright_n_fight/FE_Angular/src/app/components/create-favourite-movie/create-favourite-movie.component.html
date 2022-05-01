@@ -1,9 +1,17 @@
 <div class="text-center" style="padding:50px 0">
+<div class="container-fluid text-center">
+	<form #commentsForm="ngForm" (submit)="createComment(commentsForm)">
+		<div class="mb-3">
+			<h1>Scrivi una recensione: </h1>
+			<textarea [ngModel] name="comment" maxlength="160" id="comment" #comment="ngModel" required></textarea>
+		</div>
+	</form>
+	</div>
 	<div class="login-form-1">
 		<form id="login-form" class="text-left" (submit)="createFavouriteMovie()">
 			<div class="login-form-main-message"></div>
 			<div class="main-login-form">
-				<button type="submit" class="login-button" *ngIf="!isFavMovie" >Love</button>
+				<button type="submit" class="login-button" *ngIf="!isFavMovie" onClick="document.location.reload()" >Add Favourites</button>
 			</div>
 		</form>
 	</div>

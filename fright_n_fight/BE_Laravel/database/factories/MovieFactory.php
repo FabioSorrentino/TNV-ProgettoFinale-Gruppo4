@@ -18,7 +18,7 @@ class MovieFactory extends Factory
     {
         return [
             'movie_id' => $this->faker->numberBetween(1, 200),
-            'user_id' => $this->faker->numberBetween(0, 10000),
+            'user_id' => $this->faker->numberBetween(0, 10000000),
             'movie_rating' => $this->faker->numberBetween(1, 5)
         ];
     }

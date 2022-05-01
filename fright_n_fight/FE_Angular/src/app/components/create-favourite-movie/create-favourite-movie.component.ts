@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Comments } from 'src/app/models/comments';
 import { FavouriteMovie } from 'src/app/models/favouriteMovie';
 import { BackendApiService } from 'src/app/service/backend-api.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
@@ -17,7 +18,7 @@ export class CreateFavouriteMovieComponent implements OnInit {
   favList: FavouriteMovie[] = [];
   isFavMovie: boolean = false;
 
-  constructor(private backendAPIService : BackendApiService, private tokenStorageService: TokenStorageService) { }
+  constructor(private backendAPIService : BackendApiService, public tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.userId = this.tokenStorageService.getUserId()
@@ -47,5 +48,13 @@ export class CreateFavouriteMovieComponent implements OnInit {
       next: () => console.log('Favourite Movie added!'),
       error: () => console.log('Error!')
     })
+  }
+
+  createComment(comment: NgForm) {
+    let firstComment: Partial<Comments> ={user_id: this.userId, movie_id: this.movieId, comment: comment.value.comment};
+    this.backendAPIService.createComment(firstComment).subscribe({ 
+    next: () => console.log('comment created'),
+    error: () => console.log('error')
+  });
   }
 }

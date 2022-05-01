@@ -77,6 +77,31 @@
   }
 }
 
+#gioco{
+  font-family: 'Press Start 2P';
+      display: flex;
+      border-radius: 40px;
+      justify-content: center;
+      align-items: center;
+      //background-color: rgb(137, 32, 32);
+      width: 350px;
+      text-align: center;
+      padding-left: 25px;
+      margin: auto;
+}
+
+#login{
+  font-family: 'Press Start 2P';
+}
+
+#preferiti{
+  font-family: 'Press Start 2P';
+}
+
+#logout{
+  font-family: 'Press Start 2P';
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

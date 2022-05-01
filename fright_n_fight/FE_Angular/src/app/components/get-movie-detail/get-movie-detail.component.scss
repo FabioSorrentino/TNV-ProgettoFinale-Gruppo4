@@ -1,20 +1,68 @@
+
+.list-group-item{
+    background-color: black;
+}
+ul{
+    background-color: black;
+}
+
 #poster{
     display:block;
     margin:0px auto;
     text-align:center;
-}
-hr{
-    color: red;
+    background-color: black;
 }
 
 #locandina{
     float: left; padding: 15px 15px 15px 0;
     width: 30%;
     height: 25%;
+    background-color: black;
 }
 
 #attributi{
     padding:5px; float:inline-start; 
     width: 50%;
     height: 25%;
+    background-color: black;
 }
+
+
+
+
+#list-group{
+    background-color: black;
+    width: 100%;
+}
+
+h5{
+    color:  rgb(137, 32, 32);
+    background-color: black;
+}
+
+.col-4{
+    color:  rgb(137, 32, 32);
+    background-color: black;
+}
+
+.row{
+    background-color: black;
+}
+
+li{
+    background-color: black;
+}
+
+.bs-body-bg {
+    background-color: black;
+}
+
+#BottoneListaPreferiti{
+    width: 40x;
+    height: 40px;
+    background-color: red;
+    position: center;
+    left: -1110px;
+    font-weight: bold;
+    height:auto;
+  }

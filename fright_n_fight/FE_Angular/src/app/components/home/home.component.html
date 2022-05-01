@@ -65,10 +65,25 @@
       </a>
     </div>
     <div>
-      <a href="login">Login</a>
+      <form *ngIf="!isLoggedIn" id="login">
+        <a href="login">
+            <input type="button" value="Login">
+        </a>
+      </form>
       <br>
-      <a href="logout">Logout</a>
+      <form *ngIf="isLoggedIn" id="logout">
+        <a href="logout">
+            <input type="button" value="Logout">
+        </a>
+      </form>
+      <br>
+      <form *ngIf="isLoggedIn" id="preferiti">
+        <a href="http://localhost:4200/favourites">
+            <input type="button" value="Preferiti">
+        </a>
+    </form>
     </div>
+
   </nav>
   <!-- Header-->
   <header class="bg-dark py-5">
@@ -82,8 +97,15 @@
             <ol class="no-bullets">
               <li>Indovina nel minor tempo possibile!</li>
               <li>Clicca sui pulsanti per avere un suggerimento</li>
-              <li>TUA MAMMA ;-)</li>
             </ol>
+          </div>
+          <br><br>
+          <div *ngIf="isLoggedIn" id="gioco">
+            <form>
+              <a href="http://localhost:4200/game">
+                  <input type="button" value="Gioca ora!">
+              </a>
+          </form>
           </div>
 
 

@@ -19,7 +19,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'comments/create', component: CommentiComponent},
-    { path: 'comments/:movie_id', component: ListCommentsComponent},
+    { path: 'comments', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
     { path: 'login', component: LoginComponent},
     { path: 'logout', component: LogoutComponent},
@@ -29,9 +29,9 @@ const routes: Routes = [
     { path: 'favourites', component: GetFavouriteMoviesComponent},
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
-    { path: 'movie/details', component: GetMovieDetailComponent},
+    { path: 'movie/details/:movieId', component: GetMovieDetailComponent},
     { path: 'game', component: GameComponent },
-    { path:'', redirectTo: '/', pathMatch: 'full'}
+    { path:'', redirectTo: 'home', pathMatch: 'full'}
   ];
   
   @NgModule({

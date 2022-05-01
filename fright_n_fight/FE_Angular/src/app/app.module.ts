@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { GameComponent } from './components/game/game.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LogoutComponent } from './components/logout/logout.component'
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LogoutComponent } from './components/logout/logout.component'
     GetMovieDetailComponent,
     GameComponent,
     SignupComponent,
-    LogoutComponent
+    LogoutComponent,
+    HomeComponent
     
   ],
   imports: [

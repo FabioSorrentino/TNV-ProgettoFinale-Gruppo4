@@ -28,6 +28,8 @@ export class InsertRatingComponent implements OnInit {
 
   createNewRating (ratingForm: NgForm) {
     let firstRating: Partial<Rating> ={user_id: this.userId, movie_id: this.movieId, movie_rating: ratingForm.value.movie_rating};
+    
+    
     this.backendAPIService.createNewRating(firstRating).subscribe({
       next: () => console.log('New rating created!'),
       error: () => console.log('Error!')
