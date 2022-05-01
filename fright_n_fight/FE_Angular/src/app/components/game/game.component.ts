@@ -121,6 +121,8 @@ export class GameComponent implements OnInit {
           console.log("Hai indovinato!");
         }
         else {
+          let wrongMovieErrorMessage = document.getElementsByClassName('wrong-guess-message');
+          wrongMovieErrorMessage[0].textContent = "Hai sbagliato titolo! Riprova..";
           console.log("Ops...hai sbagliato :(");
         }
     }
