@@ -24,12 +24,12 @@ export class CommentiComponent implements OnInit {
     this.userId = this.tokenStorageService.getUserId()
     }
   
-
+/*
   createComment(comment: NgForm) {
     let firstComment: Partial<Comments> ={user_id: this.userId, movie_id: this.movieId, comment: comment.value.comment};
     this.backendAPIService.createComment(firstComment).subscribe({ 
     next: () => console.log('comment created'),
     error: () => console.log('error')
   });
-  }
+  }*/
 }

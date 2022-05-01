@@ -129,8 +129,12 @@
     </ng-template>
 
         <ng-template #endBlock> 
-            <app-create-favourite-movie [movieId]="movieId" id="createButton">
-            </app-create-favourite-movie>
+            <div class="text-center">         
+                <br>
+                <a href="http://localhost:3001/favourites/create/{{movieId}}">
+                    <input type="button" value="Salva Film nei preferiti">
+                </a>
+            </div>
         </ng-template>
 
     </ng-template>

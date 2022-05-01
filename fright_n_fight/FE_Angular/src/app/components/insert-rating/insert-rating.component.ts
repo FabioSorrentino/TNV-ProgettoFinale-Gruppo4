@@ -26,7 +26,7 @@ export class InsertRatingComponent implements OnInit {
     this.userId = this.tokenStorageService.getUserId();
   }
 
-  createNewRating (ratingForm: NgForm) {
+  /*createNewRating (ratingForm: NgForm) {
     let firstRating: Partial<Rating> ={user_id: this.userId, movie_id: this.movieId, movie_rating: ratingForm.value.movie_rating};
     
     
@@ -34,5 +34,5 @@ export class InsertRatingComponent implements OnInit {
       next: () => console.log('New rating created!'),
       error: () => console.log('Error!')
     });
-  }
+  }*/
 }
