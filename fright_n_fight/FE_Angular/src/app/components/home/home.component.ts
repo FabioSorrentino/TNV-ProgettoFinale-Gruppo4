@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 
 export class HomeComponent implements OnInit {
   
-  public isLoggedIn: boolean = false;
+  isLoggedIn: boolean = false;
   user_id: number | null = null;
 
   constructor(public tokenStorageService: TokenStorageService) {}

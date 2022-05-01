@@ -15,7 +15,6 @@ export class LogoutComponent implements OnInit {
       this.tokenStorageService.logout();
       this.router.navigate(['home']);
   }
-
 }
 
 /*<div *ngIf="isLoggedIn" class="text-center" style="padding:50px 0">
