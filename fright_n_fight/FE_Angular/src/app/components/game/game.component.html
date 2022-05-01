@@ -139,6 +139,11 @@
   
         <ng-template #startBlock>
             <div class="row col-3">
+                <form>
+                    <input type="button" value="Torna alla home" 
+                    onClick= "location.href = 'http://localhost:4200/home'"
+                    id="goBack">
+                </form>
 
                     <div class="start">
                     <input (click)="onStart()" type="button" class="start-button" value="START!">

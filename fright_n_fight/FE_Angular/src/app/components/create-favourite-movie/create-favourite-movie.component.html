@@ -1,5 +1,11 @@
-<div class="login-form-1">
-	<form id="login-form" class="text-left" (submit)="createFavouriteMovie()" , (submit)="reloadCurrentPage()">
-		<button type="submit" class="login-button" *ngIf="!isFavMovie" >Aggiungi ai preferiti</button>
-	</form>
+
+<div class="text-center" style="padding:50px 0">
+	<div class="login-form-1">
+		<form id="login-form" class="text-left" (submit)="createFavouriteMovie()" (submit)="reloadCurrentPage()">
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<button type="submit" class="login-button" *ngIf="!isFavMovie" >Add favourite</button>
+			</div>
+		</form>
+	</div>
 </div>
