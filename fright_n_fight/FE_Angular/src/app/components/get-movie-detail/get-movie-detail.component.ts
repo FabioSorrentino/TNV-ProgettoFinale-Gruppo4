@@ -17,7 +17,7 @@ export class GetMovieDetailComponent implements OnInit {
   movieCredits: MovieCredits | null = null;
   genre: Partial<MovieData>[] = [];
 
-  constructor(private backendAPIService: BackendApiService, activatedRoute: ActivatedRoute, 
+  constructor(public backendAPIService: BackendApiService, activatedRoute: ActivatedRoute, 
     public movieAPIService: MovieApiService) { 
       this.movieId = +activatedRoute.snapshot.params['movieId'];
     }
