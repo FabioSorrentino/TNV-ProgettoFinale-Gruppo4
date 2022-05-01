@@ -84,8 +84,8 @@
                             <h5 class="logo">Attore:</h5>
                         </div>
                     <div class="col-4">
-                        <button class="button" name="button" (click)="onClickShowActor()" [hidden]="showActor">Mostra</button> 
-                        <p class="logo" [(ngModel)]="onClickShowActor" ngDefaultControl [hidden]="!showActor">{{cast[2].name}}</p>
+                        <button class="button" name="button" (click)="onClickShowActor()" [hidden]="!showActor">Mostra</button> 
+                        <p class="logo" [(ngModel)]="onClickShowActor" ngDefaultControl [hidden]="showActor">{{cast[2].name}}</p>
                     </div>
                     </div>
                 </li>
