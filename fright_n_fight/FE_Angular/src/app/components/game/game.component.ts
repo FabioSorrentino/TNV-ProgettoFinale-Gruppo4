@@ -1,7 +1,8 @@
+import { CookedRawString } from '@angular/compiler/src/output/output_ast';
 import {Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { interval } from 'rxjs';
-import { MovieCredits } from 'src/app/models/movieCredits';
+import { MovieCredits, Crew, Cast } from 'src/app/models/movieCredits';
 import { MovieData, Genre } from 'src/app/models/movieData';
 import { MovieApiService } from 'src/app/service/movie-api.service';
 
@@ -19,6 +20,8 @@ export class GameComponent implements OnInit {
   showOrLanguage : boolean = false;
   showVote : boolean = false;
   showRuntime : boolean = false;
+  showDirector : boolean = false;
+  showActor : boolean = false;
 
   /*Variabili per contatore*/
   subscribeTimer: number = 0;
@@ -32,9 +35,11 @@ export class GameComponent implements OnInit {
   maxRandom: number = 20000;
 
   /*Modello per recupero dati film*/
-  movieSpecs: MovieData| null = null;
-  movieCredits: MovieCredits| null = null;
+  movieSpecs: MovieData | null = null;
+  movieCredits: MovieCredits | null = null;
   genres: Genre[] = [];
+  cast: Cast[]= [];
+  director : Crew[] = [];
 
   /*Booleani di start e di fine gioco*/
   start: boolean = false;
@@ -85,8 +90,16 @@ export class GameComponent implements OnInit {
 
     }
 
-    onStop() {
-      this.stop = true;
+    onClickShowDirector(){
+      this.showDirector = true;
+      this.timeAdded = this.timeAdded + 30;
+
+    }
+
+    onClickShowActor(){
+      this.showActor = true;
+      this.timeAdded = this.timeAdded + 30;
+
     }
 
     getRandomInt(max:number) {
@@ -97,7 +110,7 @@ export class GameComponent implements OnInit {
         const source = interval(1000);
         
         const abc = source.subscribe(val => {  
-          console.log(this.subscribeTimer)
+          
           if(this.subscribeTimer === 60) this.ptRemoved = this.ptRemoved - 20;
           if(this.subscribeTimer === 80) this.ptRemoved = this.ptRemoved - 80;
           if(this.subscribeTimer === 100) this.ptRemoved = this.ptRemoved - 100;
@@ -142,6 +155,8 @@ export class GameComponent implements OnInit {
               this.movieCredits?.crew === null) 
             
                 this.getMovie();
+                console.log(this.movieSpecs.title);
+
                     },  
         
         error: ()=> {
@@ -150,7 +165,12 @@ export class GameComponent implements OnInit {
     });
 
       this.newMovieService.getMovieCredits(this.movieId).subscribe({
-            next:(res)=>{ this.movieCredits = res;}
+            next:(res)=>{ 
+                this.movieCredits = res;
+                this.cast = this.movieCredits.cast;
+                this.director = this.movieCredits.crew?.filter(crew => crew.job ==="Director");
+                
+            }
     });
   }
 }

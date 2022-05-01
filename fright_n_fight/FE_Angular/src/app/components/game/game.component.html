@@ -73,7 +73,31 @@
                         </div>
                     <div class="col-4">
                         <button class="button" name="button" (click)="onclickOrLanguage()" [hidden]="showOrLanguage">Mostra</button> 
-                        <p class="logo" [(ngModel)]="onclickOrLanguage" ngDefaultControl [hidden]="!showOrLanguage">{{movieSpecs?.title}}</p>
+                        <p class="logo" [(ngModel)]="onclickOrLanguage" ngDefaultControl [hidden]="!showOrLanguage">{{movieSpecs?.original_language}}</p>
+                    </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Attore:</h5>
+                        </div>
+                    <div class="col-4">
+                        <button class="button" name="button" (click)="onClickShowActor()" [hidden]="showActor">Mostra</button> 
+                        <p class="logo" [(ngModel)]="onClickShowActor" ngDefaultControl [hidden]="!showActor">{{cast[2].name}}</p>
+                    </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="logo">Regista:</h5>
+                        </div>
+                    <div class="col-4">
+                        <button class="button" name="button" (click)="onClickShowDirector()" [hidden]="showDirector">Mostra</button> 
+                        <p class="logo" [(ngModel)]="onClickShowDirector" ngDefaultControl [hidden]="!showDirector">{{director[0].name}}</p>
                     </div>
                     </div>
                 </li>
