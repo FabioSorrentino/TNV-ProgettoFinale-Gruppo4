@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
 import { CommentiComponent } from './components/create-comment/create-comment.component';
 import { DeleteCommentComponent } from './components/delete-comment/delete-comment.component';
@@ -30,12 +30,19 @@ const routes: Routes = [
     { path: 'favourites/create', component: CreateFavouriteMovieComponent}, 
     { path: 'favourites/delete', component: DeleteFavouriteMovieComponent},
     { path: 'movie/details/:movieId', component: GetMovieDetailComponent},
-    { path: 'game', component: GameComponent },
+    
     { path:'', redirectTo: 'home', pathMatch: 'full'}
   ];
   
   @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    declarations: [
+    ], 
+    imports: [
+      RouterModule.forRoot([
+        { path: 'game', component: GameComponent }
+      ], {onSameUrlNavigation: 'reload' })
+    ],
+      
     exports: [RouterModule]
   })
   export class AppRoutingModule { }

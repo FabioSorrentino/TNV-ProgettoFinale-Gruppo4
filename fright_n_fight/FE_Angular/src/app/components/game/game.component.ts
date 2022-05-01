@@ -5,6 +5,7 @@ import { interval } from 'rxjs';
 import { MovieCredits, Crew, Cast } from 'src/app/models/movieCredits';
 import { MovieData, Genre } from 'src/app/models/movieData';
 import { MovieApiService } from 'src/app/service/movie-api.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -51,6 +52,9 @@ export class GameComponent implements OnInit {
 
     constructor(
     public newMovieService: MovieApiService,
+    public router: Router,
+    private activatedRoute: ActivatedRoute,
+    
     ){ }
 
   ngOnInit(): void {
@@ -105,6 +109,14 @@ export class GameComponent implements OnInit {
     getRandomInt(max:number) {
       return Math.floor(Math.random()*max);
     }
+
+    reloadCurrentPage() {
+      window.location.reload();
+     }
+
+     refreshComponent(){
+      this.router.navigate([this.router.url]);
+   }
 
     timer() {
         const source = interval(1000);
