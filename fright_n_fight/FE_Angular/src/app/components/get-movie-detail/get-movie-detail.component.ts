@@ -13,7 +13,6 @@ import { MovieApiService } from 'src/app/service/movie-api.service';
 export class GetMovieDetailComponent implements OnInit {
 
   movieId: number|null = null;
-
   movieData: MovieData | null = null;
   movieCredits: MovieCredits | null = null;
   genre: Partial<MovieData>[] = [];

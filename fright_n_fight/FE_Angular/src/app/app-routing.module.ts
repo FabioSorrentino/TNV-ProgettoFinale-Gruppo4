@@ -19,7 +19,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'comments/create', component: CommentiComponent},
-    { path: 'comments/:movie_id', component: ListCommentsComponent},
+    { path: 'comments', component: ListCommentsComponent},
     { path: 'comments/delete/:commentId', component: DeleteCommentComponent},
     { path: 'login', component: LoginComponent},
     { path: 'logout', component: LogoutComponent},

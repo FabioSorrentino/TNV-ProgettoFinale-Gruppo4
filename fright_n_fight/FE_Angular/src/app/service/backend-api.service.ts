@@ -24,6 +24,10 @@ export class BackendApiService {
     return this.httpClient.get<Comments>(`http://localhost:5161/comments/${movie_id}`);
   }
 
+  getCommentByUserIdMovieId(user_id: number | null, movie_id: number | null){
+    return this.httpClient.get<Comments>(`http://localhost:5161/comments/${user_id}/${movie_id}`);
+  }
+
   createComment(comment: Partial<Comments>){
     return this.httpClient.post<Comments>(`http://localhost:5161/comments/`, comment);
   }

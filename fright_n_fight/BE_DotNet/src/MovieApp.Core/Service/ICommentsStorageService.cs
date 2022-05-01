@@ -12,6 +12,8 @@ namespace MovieApp.Core.Service
         Comments CreateComment(int userId, int movieId, string comment);
         List<Comments> GetAllComments();
         Comments GetCommentById(int commentId);
+
+        Comments? GetCommentByUserIdMovieId(int userId, int movieId);
         Comments? UpdateComment(int id, Comments commentWhitUpdateProperties);
         bool DeleteCommentById(int commentId);
     }

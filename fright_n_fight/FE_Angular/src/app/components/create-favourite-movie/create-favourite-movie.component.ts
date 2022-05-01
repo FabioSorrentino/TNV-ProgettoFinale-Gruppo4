@@ -17,7 +17,7 @@ export class CreateFavouriteMovieComponent implements OnInit {
   favList: FavouriteMovie[] = [];
   isFavMovie: boolean = false;
 
-  constructor(private backendAPIService : BackendApiService, private tokenStorageService: TokenStorageService) { }
+  constructor(private backendAPIService : BackendApiService, public tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.userId = this.tokenStorageService.getUserId()

@@ -26,7 +26,7 @@ export class GetFavouriteMoviesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userId = 0//this.tokenStorageService.getUserId();
+    this.userId = this.tokenStorageService.getUserId();
     this.getAllFavouriteMoviesByUserId();
     //this.getAllFavouriteMoviesByUserId(this.tokenStorageService.getUserId())
   }
