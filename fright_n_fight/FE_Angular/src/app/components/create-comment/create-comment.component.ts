@@ -25,7 +25,7 @@ export class CommentiComponent implements OnInit {
   
 
   createComment(commentsForm: NgForm) {
-    let firstComment: Comments ={user_id: this.userId, movie_id: this.movieId, comment: commentsForm.controls['comment'].value};
+    let firstComment: Comments ={user_id: this.userId, movie_id: this.movieId, commentText: commentsForm.controls['commentText'].value};
     this.backendAPIService.createComment(firstComment).subscribe({ 
     next: () => console.log('comment created'),
     error: () => console.log('error')

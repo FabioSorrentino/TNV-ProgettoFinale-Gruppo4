@@ -6,8 +6,10 @@ use App\Models\Movie;
 use Illuminate\Http\Request;
 use App\Http\Resources\MovieResource;
 use App\Http\Resources\MovieCollection;
-use Illuminate\Http\Response;
+//use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Response;
 
 class MovieController extends Controller
 {
@@ -39,8 +41,8 @@ class MovieController extends Controller
             ),
                 [
                     //Set dei valori massimi da inserire
-                    'movie_id' => 'required|integer|between:1,200', 
-                    'user_id'=> 'required|integer|between:1,500', 
+                    'movie_id' => 'required|integer', 
+                    'user_id'=> 'required|integer', 
                     'movie_rating'=>'required|integer|between: 1,5'
                 ]
             );

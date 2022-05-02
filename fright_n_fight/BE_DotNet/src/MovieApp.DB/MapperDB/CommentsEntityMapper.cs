@@ -15,15 +15,15 @@ namespace MovieApp.DB.MapperDB
             return new()
             {
                 Id = comments.Id,
-                User_Id = comments.User_id,
-                Movie_Id = comments.Movie_id,
-                Comment = comments.Comment
+                user_id = comments.user_id,
+                movie_id = comments.movie_id,
+                commentText = comments.commentText
             };
         }
 
         public static Comments From(CommentEntity commentsEntity)
         {
-            return new(commentsEntity.Id, commentsEntity.User_Id, commentsEntity.Movie_Id, commentsEntity.Comment);
+            return new(commentsEntity.Id, commentsEntity.user_id, commentsEntity.movie_id, commentsEntity.commentText);
         }
 
     }

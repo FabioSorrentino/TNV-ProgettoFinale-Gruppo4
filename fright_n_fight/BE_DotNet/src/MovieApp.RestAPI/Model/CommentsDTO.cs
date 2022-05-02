@@ -3,8 +3,8 @@
     public class CommentsDTO
     {
         public int Id { get; set; }
-        public int User_id { get; set; }
-        public int Movie_id { get; set; }
-        public string? Comment { get; set; }
+        public int user_id { get; set; }
+        public int movie_id { get; set; }
+        public string? commentText { get; set; }
     }
 }

@@ -15,14 +15,14 @@ namespace MovieApp.DB.Entities
         public int Id { get; set; }
 
         [Column("user_id")]
-        public int User_Id { get; set; }
+        public int user_id { get; set; }
 
         [Column("movie_id")]
-        public int Movie_Id { get; set; }
+        public int movie_id { get; set; }
 
-        [Column("comment")]
+        [Column("commentText")]
 #pragma warning disable CS8618 // Il campo non nullable deve contenere un valore non Null all'uscita dal costruttore. Provare a dichiararlo come nullable.
-        public string Comment { get; set; }
+        public string commentText { get; set; }
 #pragma warning restore CS8618 // Il campo non nullable deve contenere un valore non Null all'uscita dal costruttore. Provare a dichiararlo come nullable.
     }
 }

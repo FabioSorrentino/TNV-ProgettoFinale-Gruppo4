@@ -2,7 +2,7 @@
 <form #commentsForm="ngForm">
     <div class="mb-3">
         <h3>Scrivi una recensione: </h3>
-        <textarea [ngModel] name="comment" maxlength="160" id="comment" placeholder="comment" required></textarea>
+        <textarea [ngModel] name="commentText" maxlength="160" id="commentText" placeholder="commentText" required></textarea>
     </div>
     <br>
     <button (click)="createComment(commentsForm)" class="login-button" onclick="this.disabled=true" data-bs-toggle="button" autocomplete="off">Add</button>

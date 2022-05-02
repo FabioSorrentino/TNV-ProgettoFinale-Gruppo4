@@ -65,7 +65,7 @@ namespace MovieApp.RestAPI.Controllers
         {
             try
             {
-                var createdComment = _commentsApplicationService.CreateComment(parameters.Movie_Id, parameters.User_Id, parameters.Comment);
+                var createdComment = _commentsApplicationService.CreateComment(parameters.user_id, parameters.movie_id, parameters.commentText);
                 return Ok(CommentsMapper.From(createdComment));
             }
             catch (InvalidNumberCharactersCommentException ex)
@@ -103,7 +103,7 @@ namespace MovieApp.RestAPI.Controllers
             try
             {
                 var comment = _commentsApplicationService.GetCommentById(commentId);
-                Comments commentWhitUpdateProp = new(parameters.Movie_Id, parameters.User_Id, parameters.Comment);
+                Comments commentWhitUpdateProp = new(parameters.movie_id, parameters.user_id, parameters.commentText);
 #pragma warning disable CS8602 // Dereferenziamento di un possibile riferimento Null.
                 comment = _commentsApplicationService.UpdateComment(comment.Id,
                     commentWhitUpdateProp);

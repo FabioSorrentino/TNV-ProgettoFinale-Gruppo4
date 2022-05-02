@@ -9,16 +9,16 @@ namespace MovieApp.Core.Model
     public class Comments
     {
         public int Id { get; }
-        public int User_id { get; set; }
-        public int Movie_id {get; set; }
-        public string Comment { get; set; }
+        public int user_id { get; set; }
+        public int movie_id {get; set; }
+        public string commentText { get; set; }
 
         public Comments(int userId, int movieId, string comment)
         {
             Id = 0;
-            User_id = userId;
-            Movie_id = movieId;
-            Comment = comment;
+            user_id = userId;
+            movie_id = movieId;
+            commentText = comment;
         }
 
         public Comments(int id, int userId, int movieId, string comment) : this(userId, movieId, comment)

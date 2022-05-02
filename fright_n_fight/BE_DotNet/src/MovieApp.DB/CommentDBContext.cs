@@ -16,7 +16,7 @@ namespace MovieApp.DB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=localhost;Port=3306;Database=movieApp;Uid=root;Pwd= ";
+            var connectionString = "Server=localhost;Port=3306;Database=movieapp;Uid=root;Pwd= ";
             var mySqlServerVersion = new MySqlServerVersion(new Version(10, 4, 22));
 
             optionsBuilder.UseMySql(connectionString, mySqlServerVersion);

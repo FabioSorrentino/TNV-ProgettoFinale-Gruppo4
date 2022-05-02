@@ -69,17 +69,17 @@ namespace MovieApp.Core.Service
             {
                 throw new NegativeFieldException("id", id);
             }
-            else if (commentWhitUpdateProperties.Comment.Length < 10)
+            else if (commentWhitUpdateProperties.commentText.Length < 10)
             {
-                throw new InvalidNumberCharactersCommentException(10, commentWhitUpdateProperties.Comment.Length);
+                throw new InvalidNumberCharactersCommentException(10, commentWhitUpdateProperties.commentText.Length);
             }
-            else if (commentWhitUpdateProperties.User_id < 0)
+            else if (commentWhitUpdateProperties.user_id < 0)
             {
-                throw new NegativeFieldException("user_id", commentWhitUpdateProperties.User_id);
+                throw new NegativeFieldException("user_id", commentWhitUpdateProperties.user_id);
             }
-            else if (commentWhitUpdateProperties.Movie_id < 0)
+            else if (commentWhitUpdateProperties.movie_id < 0)
             {
-                throw new NegativeFieldException("movie_id", commentWhitUpdateProperties.Movie_id);
+                throw new NegativeFieldException("movie_id", commentWhitUpdateProperties.movie_id);
             }
             var commentUpdatedWhitSuccess = _commentsStorageService.UpdateComment(id, commentWhitUpdateProperties);
             if (commentUpdatedWhitSuccess != null)

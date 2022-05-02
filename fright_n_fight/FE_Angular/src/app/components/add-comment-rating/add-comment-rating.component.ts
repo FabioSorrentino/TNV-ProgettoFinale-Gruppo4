@@ -20,16 +20,8 @@ export class AddCommentRatingComponent implements OnInit {
     private activatedRoute: ActivatedRoute, public movieAPIService: MovieApiService) { }
 
   ngOnInit(): void {
-    this.getMovieData();
   }
 
-  getMovieData(){
-    this.movieAPIService.getMovieDetails(this.movieId).subscribe({
-      next: (res) => this.movieData = res,
-      error: () => console.log('Error!'),
-      complete: () => console.log('Complete')
-    })
-  }
 
   goBack(){
     window.location.href=`http://localhost:4200/home`;

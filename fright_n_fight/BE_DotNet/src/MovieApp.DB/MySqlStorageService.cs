@@ -25,9 +25,9 @@ namespace MovieApp.DB
         {
             var commentVar = new CommentEntity()
             {
-                User_Id = userId,
-                Movie_Id = movieId,
-                Comment = comment
+                user_id = userId,
+                movie_id = movieId,
+                commentText = comment
             };
 
             var createdComment = _context.MovieComments.Add(commentVar);
@@ -63,9 +63,9 @@ namespace MovieApp.DB
             var commentToUpdate = _context.MovieComments.Find(id);
             if (commentToUpdate != null)
             {
-                commentToUpdate.User_Id = commentWhitUpdateProperties.User_id;
-                commentToUpdate.Movie_Id = commentWhitUpdateProperties.Movie_id;
-                commentToUpdate.Comment= commentWhitUpdateProperties.Comment;
+                commentToUpdate.user_id = commentWhitUpdateProperties.user_id;
+                commentToUpdate.movie_id = commentWhitUpdateProperties.movie_id;
+                commentToUpdate.commentText= commentWhitUpdateProperties.commentText;
                 _context.SaveChanges();
             }
             if (commentToUpdate == null) return null;
@@ -75,7 +75,7 @@ namespace MovieApp.DB
 
         public Comments? GetCommentByUserIdMovieId(int userId, int movieId)
         {
-            var comment = _context.MovieComments.FirstOrDefault(c => c.User_Id == userId && c.Movie_Id == movieId);
+            var comment = _context.MovieComments.FirstOrDefault(c => c.user_id == userId && c.movie_id == movieId);
             if (comment != null)
             {
                 return CommentsEntityMapper.From(comment);

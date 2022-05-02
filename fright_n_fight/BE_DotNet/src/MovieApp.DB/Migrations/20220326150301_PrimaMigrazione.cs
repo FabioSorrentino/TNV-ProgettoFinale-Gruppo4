@@ -20,7 +20,7 @@ namespace MovieApp.DB.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     user_id = table.Column<int>(type: "int", nullable: false),
                     movie_id = table.Column<int>(type: "int", nullable: false),
-                    comment = table.Column<string>(type: "longtext", nullable: false)
+                    commentText = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
