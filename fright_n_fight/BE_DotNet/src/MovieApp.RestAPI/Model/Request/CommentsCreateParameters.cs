@@ -4,10 +4,10 @@ namespace MovieApp.RestAPI.Model.Request
 {
     public class CommentsCreateParameters
     {
-        [JsonPropertyName("userId")]
+        [JsonPropertyName("user_id")]
         public int User_Id { get; set; }
 
-        [JsonPropertyName("movieId")]
+        [JsonPropertyName("movie_id")]
         public int Movie_Id { get; set; }
 
         [JsonPropertyName("comment")]
