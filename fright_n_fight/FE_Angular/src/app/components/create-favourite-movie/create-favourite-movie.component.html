@@ -1,5 +1,5 @@
-
-<div class="text-center" style="padding:50px 0">
+<div class="container-fluid text-center">>
+	<app-add-comment-rating [movieId]="movieId" [userId]="userId"></app-add-comment-rating>
 	<div class="login-form-1">
 		<form id="login-form" class="text-left" (submit)="createFavouriteMovie()" (submit)="reloadCurrentPage()">
 			<div class="login-form-main-message"></div>
@@ -7,5 +7,6 @@
 				<button type="submit" class="login-button" *ngIf="!isFavMovie" >Add favourite</button>
 			</div>
 		</form>
+		<hr width=100% size="10">
 	</div>
 </div>

@@ -20,6 +20,7 @@ import { GameComponent } from './components/game/game.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LogoutComponent } from './components/logout/logout.component'
 import { HomeComponent } from './components/home/home.component';
+import { AddCommentRatingComponent } from './components/add-comment-rating/add-comment-rating.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HomeComponent } from './components/home/home.component';
     GameComponent,
     SignupComponent,
     LogoutComponent,
-    HomeComponent
+    HomeComponent,
+    AddCommentRatingComponent
     
   ],
   imports: [

@@ -1,9 +1,11 @@
-<!--<div class="container-fluid text-center">
-<form #commentsForm="ngForm" (submit)="createComment(commentsForm)">
+<div class="container-fluid text-center">
+<form #commentsForm="ngForm">
     <div class="mb-3">
-        <h1>Scrivi una recensione: </h1>
-        <textarea [ngModel] name="comment" maxlength="160" id="comment" #comment="ngModel" required></textarea>
+        <h3>Scrivi una recensione: </h3>
+        <textarea [ngModel] name="comment" maxlength="160" id="comment" placeholder="comment" required></textarea>
     </div>
-    <button type="submit" class="login-button" data-bs-toggle="button" autocomplete="off">Add</button>
+    <br>
+    <button (click)="createComment(commentsForm)" class="login-button" onclick="this.disabled=true" data-bs-toggle="button" autocomplete="off">Add</button>
 </form>
-</div>-->
+<hr width=100% size="10">
+</div>

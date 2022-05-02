@@ -13,23 +13,22 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class CommentiComponent implements OnInit {
 
-  movieId: number | null = 770;
-  userId: number | null = null;
+  @Input((`movieId`)) movieId : number | null = null;
+  @Input((`userId`)) userId : number | null = null;
   
   constructor (private backendAPIService: BackendApiService, public tokenStorageService: TokenStorageService,
   private activatedRoute: ActivatedRoute, public movieAPIService: MovieApiService) {
    }
 
   ngOnInit(): void {
-    this.userId = this.tokenStorageService.getUserId()
     }
   
-/*
-  createComment(comment: NgForm) {
-    let firstComment: Partial<Comments> ={user_id: this.userId, movie_id: this.movieId, comment: comment.value.comment};
+
+  createComment(commentsForm: NgForm) {
+    let firstComment: Comments ={user_id: this.userId, movie_id: this.movieId, comment: commentsForm.controls['comment'].value};
     this.backendAPIService.createComment(firstComment).subscribe({ 
     next: () => console.log('comment created'),
     error: () => console.log('error')
   });
-  }*/
+  }
 }

@@ -1,6 +1,5 @@
 .container-fluid .login-button {
     position: relative;
-    right: -25px;
     top: 50%;
     background: rgb(0,0,0);
     color: rgb(200, 0, 0);
@@ -22,4 +21,14 @@
   }
   .container-fluid .login-button.clicked:hover {
     transform: none;
+  }
+
+  h3{
+    margin-left: auto;
+    margin-right: auto;
+    color:  rgb(137, 32, 32);
+  }
+
+  hr{
+    color:  rgb(137, 32, 32);
   }

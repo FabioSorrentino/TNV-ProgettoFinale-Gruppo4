@@ -1,10 +1,11 @@
-<!--<div class="container-fluid text-center">
-<form #ratingForm="ngForm" (submit)="createNewRating(ratingForm)">
-    <h1>Rating:</h1>  <br>   
+<div class="container-fluid text-center">
+<form #ratingForm="ngForm">
+    <h3>Rating:</h3>  
  <p>
     &nbsp;<input 
-        [ngModel] name="movie_rating" id="movie_rating" #movie_rating="ngModel"
+        [ngModel] name="movie_rating" id="movie_rating" 
         name="movie_rating"
+        placeholder="movie_rating"
         id="1"
         type="radio"
         value="1"
@@ -13,8 +14,9 @@
 
     
     &nbsp;<input 
-        [ngModel] name="movie_rating" id="movie_rating" #movie_rating="ngModel"
+        [ngModel] name="movie_rating" id="movie_rating" 
         name="movie_rating"
+        placeholder="movie_rating"
         id="2"
         type="radio"
         value="2"
@@ -23,8 +25,9 @@
 
     
     &nbsp;<input 
-        [ngModel] name="movie_rating" id="movie_rating" #movie_rating="ngModel"
+        [ngModel] name="movie_rating" id="movie_rating" 
         name="movie_rating"
+        placeholder="movie_rating"
         id="3"
         type="radio"
         value="3"
@@ -33,8 +36,9 @@
 
     
     &nbsp;<input 
-        [ngModel] name="movie_rating" id="movie_rating" #movie_rating="ngModel"
+        [ngModel] name="movie_rating" id="movie_rating" 
         name="movie_rating"
+        placeholder="movie_rating"
         id="4"
         type="radio"
         value="4"
@@ -43,15 +47,17 @@
 
     
     &nbsp;<input 
-        [ngModel] name="movie_rating" id="movie_rating" #movie_rating="ngModel"
+        [ngModel] name="movie_rating" id="movie_rating" 
         name="movie_rating"
+        placeholder="movie_rating"
         id="5"
         type="radio"
         value="5"
     >
     <label for="5">5</label><br>
 </p>
-<button type="submit" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Vota</button>
+<br>
+<button (click)="createNewRating(ratingForm)" class="login-button" onclick="this.disabled=true" data-bs-toggle="button" autocomplete="off">Add</button>
 </form>
+<hr width=100% size="10">
 </div>
--->
