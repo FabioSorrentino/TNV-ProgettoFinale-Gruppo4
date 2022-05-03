@@ -71,6 +71,17 @@
             </div>
         </div>
     </li>
+    <app-get-comment [user_id]="user_id" [movie_id]="movieId"></app-get-comment>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-6">
+                <h5>valutazione utente:</h5>
+            </div>
+            <div class="col-4">
+                <app-get-rating [movie_id]="movieId" [user_id]="user_id"></app-get-rating>
+            </div>
+        </div>
+    </li>
 </ul>
 </div>
 

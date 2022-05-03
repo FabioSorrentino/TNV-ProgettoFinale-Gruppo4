@@ -11,7 +11,7 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class GetRatingComponent implements OnInit {
   @Input(`movie_id`) movie_id: number|null = null;
-  user_id: number | null = null;
+  @Input(`user_id`) user_id: number|null = null;
   //rating: Rating | null = null;
   rating: number;
 
@@ -27,7 +27,6 @@ export class GetRatingComponent implements OnInit {
     stars.className = "fa fa-star checked";
       document.getElementsByTagName('body')[0].appendChild(stars);
     }
-    this.user_id = this.tokenStorageService.getUserId();
     //this.getRating();
   }
 

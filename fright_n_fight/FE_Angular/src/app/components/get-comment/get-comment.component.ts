@@ -13,7 +13,7 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 export class ListCommentsComponent implements OnInit {
   
   @Input(`movie_id`) movie_id: number|null = null;
-  user_id: number|null = null;
+  @Input(`user_id`) user_id: number|null = null;
   comment: Partial<Comments> | null = null;
   constructor(activatedRoute: ActivatedRoute, private backendAPIService: BackendApiService, 
   public tokenStorageService: TokenStorageService ) {
@@ -21,7 +21,6 @@ export class ListCommentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCommentByUserIdMovieId();
-    this.user_id= this.tokenStorageService.getUserId();
   }
 
   getCommentByUserIdMovieId() {

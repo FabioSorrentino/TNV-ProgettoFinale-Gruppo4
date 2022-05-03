@@ -4,6 +4,7 @@ import { MovieCredits } from 'src/app/models/movieCredits';
 import { MovieData } from 'src/app/models/movieData';
 import { BackendApiService } from 'src/app/service/backend-api.service';
 import { MovieApiService } from 'src/app/service/movie-api.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-get-movie-detail',
@@ -16,9 +17,10 @@ export class GetMovieDetailComponent implements OnInit {
   movieData: MovieData | null = null;
   movieCredits: MovieCredits | null = null;
   genre: Partial<MovieData>[] = [];
+  user_id: number | null = this.tokenStorageService.getUserId();
 
   constructor(public backendAPIService: BackendApiService, activatedRoute: ActivatedRoute, 
-    public movieAPIService: MovieApiService) { 
+    public movieAPIService: MovieApiService , public tokenStorageService: TokenStorageService ) { 
       this.movieId = +activatedRoute.snapshot.params['movieId'];
     }
 
