@@ -130,7 +130,7 @@ class MovieController extends Controller
 
     public function getRatingsByUserIdAndMovieId($user_id, $movie_id){
         return response()->json([
-            'Ratings'=>new MovieCollection( Movie::where('user_id','LIKE',$user_id)->where('movie_id','LIKE',$movie_id)->get()),
+            'Ratings'=> new MovieCollection(Movie::where('user_id','LIKE',$user_id)->where('movie_id','LIKE',$movie_id)->get()),
             'Response Status'=>Response::HTTP_OK
         ]);
     }

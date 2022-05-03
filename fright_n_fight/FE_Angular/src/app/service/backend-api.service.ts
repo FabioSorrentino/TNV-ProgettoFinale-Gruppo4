@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Comments } from '../models/comments';
 import { FavouriteMovie } from '../models/favouriteMovie';
-import { Rating } from '../models/rating';
+import { Rating, RatingsApiResponse, Rating_NewEntry } from '../models/rating';
 
 const SB_API_URL = 'http://localhost:8090/api/auth/';
 const NODE_API_URL = 'http://localhost:3001/favourites/';
@@ -38,16 +38,16 @@ export class BackendApiService {
 
   //servizi Laravel
 
-  createNewRating(rating: Rating){
-    return this.httpClient.post<Rating>(`http://localhost:8000/api/movie`, rating);
+  createNewRating(rating: Rating_NewEntry){
+    return this.httpClient.post<Rating_NewEntry>(`http://localhost:8000/api/movie`, rating);
   }
 
   getRating (movie_id: number | null){
     return this.httpClient.get<Rating>(`http://localhost:8000/api/movie_id/${movie_id}`);
   }
 
-  getRatingValueByUserIdMovieId(user_id: number | null, movie_id: number | null){
-    return this.httpClient.get<number>(`http://localhost:8000/api/rating/${user_id}/${movie_id}`);
+  getRatingsByUserIdMovieId(user_id: number | null, movie_id: number | null){
+    return this.httpClient.get<RatingsApiResponse>(`http://localhost:8000/api/rating/${user_id}/${movie_id}`);
   }
 
   //servizi NODE
